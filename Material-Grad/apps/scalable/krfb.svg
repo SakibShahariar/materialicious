@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" style="color:#feb0d2">
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" style="color:#b8cac6">
     <defs id="defs1">
         <style id="current-color-scheme" type="text/css">
         .ColorScheme-Text {
-            color:#feb0d2;
+            color:#b8cac6;
         }
         .ColorScheme-Background {
-            color:#feb0d2;
+            color:#b8cac6;
         }
         .ColorScheme-PositiveText {
-            color:#feb0d2;
+            color:#b8cac6;
         }
         .ColorScheme-NeutralText {
-            color:#feb0d2;
+            color:#b8cac6;
         }
         .ColorScheme-NegativeText {
-            color:#feb0d2;
+            color:#b8cac6;
         }
         </style>
     </defs>

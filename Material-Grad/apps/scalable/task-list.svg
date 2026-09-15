@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="128" height="128" viewBox="0 0 128 128" style="color:#feb0d2">
- <g transform="translate(64 64) scale(9.84615) translate(-7.99219 -7.99219)" style="color:#feb0d2">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="128" height="128" viewBox="0 0 128 128" style="color:#b8cac6">
+ <g transform="translate(64 64) scale(9.84615) translate(-7.99219 -7.99219)" style="color:#b8cac6">
 
  <defs>
   <style id="current-color-scheme" type="text/css">
-   .ColorScheme-Text { color:#feb0d2; } .ColorScheme-Highlight { color:#feb0d2; } .ColorScheme-NeutralText { color:#feb0d2; } .ColorScheme-PositiveText { color:#feb0d2; } .ColorScheme-NegativeText { color:#feb0d2; }
+   .ColorScheme-Text { color:#b8cac6; } .ColorScheme-Highlight { color:#b8cac6; } .ColorScheme-NeutralText { color:#b8cac6; } .ColorScheme-PositiveText { color:#b8cac6; } .ColorScheme-NegativeText { color:#b8cac6; }
   </style>
  </defs>
  <path style="fill:currentColor" class="ColorScheme-Text" d="M 8,10 H 14 V 12 H 8 Z"/>

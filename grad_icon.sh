@@ -104,13 +104,14 @@ if [[ "$need_sweep" == "1" ]]; then
     printf '%s\n%s\n' "$target_hex" "$on_primary_hex" > "$state"
 fi
 
-# ── 6. Re-color the existing duotone app icons using themselves ─────────────
-# Each duotone SVG already carries its own tonal sculpture (a dark->accent
-# ramp encoded as hardcoded hexes). On accent change we recolour those icons
-# in place via mono-icons.py -- they do NOT depend on external Papirus art.
-# Papirus is only consulted once at conversion time, when a brand-new icon is
-# being added to the theme.
+# ── 6. Regenerate the duotone app icons from the repo's own sources ────────
+# The ramps are re-derived from the color art vendored in $repo/sources/ (part
+# of this git repo — no external Papirus fetch needed). Using the S-curve +
+# autoscale path reproduces the exact tonal sculpture that was originally
+# approved, and is idempotent: re-running with the same accent yields the same
+# file, so repeated matugen runs never darken or collapse the ramps.
 generator="$repo/mono-icons.py"
+sources_dir="$repo/sources"
 target_apps="$mono_theme/apps/scalable"
 
 duotone_icons=(
@@ -127,14 +128,14 @@ duotone_icons=(
 )
 
 for icon in "${duotone_icons[@]}"; do
-    cur="$target_apps/$icon.svg"
-    [[ -f "$cur" ]] || continue
+    src="$sources_dir/$icon.svg"
+    [[ -f "$src" ]] || continue
     python3 "$generator" --dark "#000000" --light "$target_hex" --radius 0.5 \
-        --autoscale --linear --outdir "$target_apps" "$cur" 2>/dev/null || true
+        --autoscale --outdir "$target_apps" "$src" 2>/dev/null || true
     # mono-icons.py outputs <name>.mono.svg — rename to the canonical icon name.
     mono_out="$target_apps/$icon.mono.svg"
     if [[ -f "$mono_out" ]]; then
-        mv -f "$mono_out" "$cur"
+        mv -f "$mono_out" "$target_apps/$icon.svg"
     fi
 done
 
