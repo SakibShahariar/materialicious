@@ -125,6 +125,27 @@ duotone_icons=(
     telegram
     spotify-client
     org.gnome.Weather
+    com.google.Chrome
+    zen-browser
+    firefox-nightly
+    dev.zed.Zed
+    brave-origin-nightly
+    wechat
+    qbittorrent
+    vlc
+    org.gnome.Software
+    org.gnome.SystemMonitor
+    org.gnome.Maps
+    org.gnome.Loupe
+    org.gnome.Papers
+    org.gnome.TextEditor
+    org.gnome.Snapshot
+    org.gnome.Screenshot
+    org.gnome.Meld
+    org.gnome.SimpleScan
+    com.mattjakeman.ExtensionManager
+    gparted
+    io.bassi.Amberol
 )
 
 for icon in "${duotone_icons[@]}"; do

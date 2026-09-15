@@ -1,22 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="128" height="128" viewBox="0 0 128 128" style="color:#b8cac6">
- <g transform="translate(64 64) scale(5.37127) translate(-15.98438 -15.98438)" style="color:#b8cac6">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="128" height="128" viewBox="0 0 128 128" style="color:#87d6bc">
+ <g transform="translate(64 64) scale(5.37127) translate(-15.98438 -15.98438)" style="color:#87d6bc">
 
     <defs id="defs1">
         <style id="current-color-scheme" type="text/css">
         .ColorScheme-Text {
-            color:#b8cac6;
+            color:#87d6bc;
         }
         .ColorScheme-Background {
-            color:#b8cac6;
+            color:#87d6bc;
         }
         .ColorScheme-PositiveText {
-            color:#b8cac6;
+            color:#87d6bc;
         }
         .ColorScheme-NeutralText {
-            color:#b8cac6;
+            color:#87d6bc;
         }
         .ColorScheme-NegativeText {
-            color:#b8cac6;
+            color:#87d6bc;
         }
         </style>
     </defs>

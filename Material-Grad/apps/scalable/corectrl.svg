@@ -1,12 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="128" height="128" viewBox="0 0 128 128" style="color:#b8cac6">
- <g transform="translate(64 64) scale(7.38221) translate(-7.99219 -7.99219)" style="color:#b8cac6">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="128" height="128" viewBox="0 0 128 128" style="color:#87d6bc">
+ <g transform="translate(64 64) scale(7.38221) translate(-7.99219 -7.99219)" style="color:#87d6bc">
 
  <defs>
   <style id="current-color-scheme" type="text/css">
-   .ColorScheme-Text { color:#b8cac6; } .ColorScheme-Highlight { color:#b8cac6; } .ColorScheme-NeutralText { color:#b8cac6; } .ColorScheme-PositiveText { color:#b8cac6; } .ColorScheme-NegativeText { color:#b8cac6; }
+   .ColorScheme-Text { color:#87d6bc; } .ColorScheme-Highlight { color:#87d6bc; } .ColorScheme-NeutralText { color:#87d6bc; } .ColorScheme-PositiveText { color:#87d6bc; } .ColorScheme-NegativeText { color:#87d6bc; }
   </style>
  </defs>
  <g>
-  <path style="fill:#b8cac6" d="M 1,0 V 2 H 0 V 14 H 1 V 16 H 3 V 14 H 5 V 16 H 7 V 14 H 9 V 16 H 11 V 14 H 13 V 16 H 15 V 14 H 16 V 2 H 15 V 0 H 13 V 2 H 11 V 0 H 9 V 2 H 7 V 0 H 5 V 2 H 3 V 0 Z M 2,4 H 7 V 6 H 6 V 5 H 3 V 8 L 4,8 4,11 H 6 V 10 H 7 V 12 H 2 Z M 9,4 H 14 V 6 H 13 V 5 H 10 V 8 L 11,8 11,11 H 13 V 10 H 14 V 12 H 9 Z"/>
+  <path style="fill:#87d6bc" d="M 1,0 V 2 H 0 V 14 H 1 V 16 H 3 V 14 H 5 V 16 H 7 V 14 H 9 V 16 H 11 V 14 H 13 V 16 H 15 V 14 H 16 V 2 H 15 V 0 H 13 V 2 H 11 V 0 H 9 V 2 H 7 V 0 H 5 V 2 H 3 V 0 Z M 2,4 H 7 V 6 H 6 V 5 H 3 V 8 L 4,8 4,11 H 6 V 10 H 7 V 12 H 2 Z M 9,4 H 14 V 6 H 13 V 5 H 10 V 8 L 11,8 11,11 H 13 V 10 H 14 V 12 H 9 Z"/>
  </g>
 </g></svg>
