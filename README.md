@@ -1,22 +1,47 @@
-# Material-Tela
+# Materialicious
 
-A monochrome icon theme for Linux desktops. Tela-style folders are paired
-with a full icon set recolored to a single `matugen` accent color, produced
-from the system wallpaper.
+A monochrome icon theme family for Linux desktops. Tela-style folders are
+paired with a full icon set recolored to a single `matugen` accent color,
+produced from the system wallpaper.
+
+Materialicious ships two variants that share the same base art:
+
+- **Material-Solo** — flat: every icon is a single flat accent color.
+- **Material-Grad** — duotone: SVG fills are luminance-mapped onto a
+  dark-to-accent ramp (`mono-icons.py`), so glyphs gain subtle depth while
+  staying monochrome.
 
 The theme is a re-color + extension of the **Yet Another Monochrome Icon
 Set** with **Tela** folder shapes. App icons that aren't part of the base set
-are added as single-color glyphs traced from each app's official icon.
+are added as glyphs traced from each app's official icon.
 
 ## Contents
 
+- `Material-Solo/` — flat theme (all icon contexts, ~1800 apps)
+- `Material-Grad/` — duotone theme (full standalone copy of Solo, with
+  luminance-mapped app icons overriding the flat ones)
+- `mono-icons.py` — the duotone generator (`Material-Solo` fills → grain) —
+  used to produce `Material-Grad` app icons from a flat source and a
+  `--dark`/`--light` ramp.
+- `install.sh` — symlinks both themes into `~/.icons`.
 - `apps/` — application icons (including ~200 hand-extracted Flathub apps)
 - `actions/`, `categories/`, `devices/`, `emblems/`, `mimetypes/`,
   `places/`, `preferences/`, `status/` — system icon contexts (mostly
   single-color traces of the Tela and Papirus glyphs below)
-- `index.theme` — icon theme declaration (inherits Adwaita, hicolor)
-- Font-fallback chain: icons not present here are inherited from the
-  themes listed above.
+
+## Install
+
+```sh
+./install.sh
+gsettings set org.gnome.desktop.interface icon-theme Material-Solo   # or Material-Grad
+```
+
+## Regenerating the duotone (Grad) icons
+
+```sh
+python3 mono-icons.py --dark "#2e3436" --light "#c9bfff" --radius 0.5 \
+  --autoscale --outdir out Material-Solo/apps/scalable/*.svg
+```
 
 ## Sources and acknowledgement
 
