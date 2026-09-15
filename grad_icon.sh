@@ -157,6 +157,25 @@ duotone_icons=(
     org.gnome.Settings
     org.gnome.Extensions
     libreoffice-impress
+    btop
+    org.gnome.Logs
+    org.gnome.font-viewer
+    org.gnome.Connections
+    org.gnome.Characters
+    org.gnome.Yelp
+    org.gnome.Shell.Extensions
+    libreoffice-base
+    libreoffice-draw
+    libreoffice-math
+    libreoffice-startcenter
+    qemu
+    preferences-system
+    balena-etcher
+    ca.desrt.dconf-editor
+    helium
+    ibus-setup-hangul
+    org.fedoraproject.MediaWriter
+    com.github.rafostar.Clapper
 )
 
 for icon in "${duotone_icons[@]}"; do
@@ -175,6 +194,20 @@ for icon in "${duotone_icons[@]}"; do
         org.gnome.Boxes)                 extra=(--piecewise "0.31:0.40,0.77:0.72,1.0:0.98");;
         org.gnome.Settings)              extra=(--piecewise "0.65:0.05,0.75:0.30,0.86:0.55,1.0:0.92");;
         mpv)                             extra=(--piecewise "0.20:0.30,0.30:0.46,1.0:0.96");;
+        btop)                            extra=(--piecewise "0.247:0.38,0.306:0.62,1.0:0.95");;
+        org.gnome.font-viewer)           extra=(--piecewise "0.39:0.50,1.0:0.95");;
+        org.gnome.Connections)           extra=(--piecewise "0.25:0.35,0.37:0.50,0.52:0.70,1.0:0.95");;
+        org.gnome.Logs)                  extra=(--piecewise "0.51:0.75,0.69:0.55,0.78:0.55,0.9:0.60,1.0:0.95");;
+        org.gnome.Characters)            extra=(--piecewise "0.39:0.70,0.53:0.72,0.74:0.78,0.9:0.55,1.0:0.95");;
+        libreoffice-base)                extra=(--piecewise "0.27:0.32,0.34:0.50,0.48:0.65,0.65:0.80,1.0:0.95");;
+        libreoffice-draw)                extra=(--piecewise "0.55:0.45,0.70:0.55,0.92:0.75,1.0:0.95");;
+        libreoffice-startcenter)         extra=(--piecewise "0.31:0.15,0.37:0.35,0.67:0.55,0.93:0.65,1.0:0.80");;
+        qemu)                            extra=(--piecewise "0.31:0.45,0.38:0.50,0.53:0.78,1.0:0.95");;
+        preferences-system)              extra=(--piecewise "0.40:0.50,0.46:0.60,0.89:0.80,1.0:0.95");;
+        ca.desrt.dconf-editor)           extra=(--piecewise "0.48:0.15,0.51:0.30,0.80:0.50,0.89:0.60,1.0:0.90");;
+        helium)                          extra=(--piecewise "0.28:0.45,0.36:0.55,1.0:0.95");;
+        com.github.rafostar.Clapper)     extra=(--piecewise "0.25:0.28,0.32:0.48,0.80:0.65,0.89:0.78,1.0:0.95");;
+        org.gnome.Yelp)                  extra=(--piecewise "0.42:0.42,0.9:0.70,1.0:0.95");;
         *)                     extra=();;
     esac
     python3 "$generator" --dark "#000000" --light "$target_hex" --radius 0.5 \
