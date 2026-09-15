@@ -119,20 +119,28 @@ def build_ramp(dark, light, radius, autoscale=False, src_min=0.0, src_max=1.0,
     # (telegram's light-blue circle + white plane no longer collapse together).
     src_span = src_max - src_min or 1.0
 
-    def scale(t):
-        # t in [0,1] relative to the ramp; autoscale remaps by source range.
+    def scale(lum):
+        t = (lum - dark_lum) / global_span
         if autoscale:
-            t = (t - src_min) / src_span
+            # Normalise on the RAW source luminance once. For a colourful
+            # source this stretches its own range onto the ramp; for --linear
+            # self-recolor the source's min/max already span the old ramp,
+            # and double-normalising pushes t > 1 (channel overflow -> the
+            # 8-digit hex corruption seen as wrong colours).
+            t = (lum - src_min) / src_span
         # --linear preserves the source icon's own tone positions exactly
         # (used for *re-colouring* an existing duotone icon, whose sculpture
         # is already baked in). Without it the S-curve re-sharpens the ramp
         # on every pass and midtones collapse to the dark/light ends.
-        return t if linear else s_curve(t, radius)
+        # Clamp — the sigmoid normalises to [0,1] implicitly, linear must too,
+        # otherwise lerp overshoots the light end.
+        if linear:
+            return max(0.0, min(1.0, t))
+        return s_curve(t, radius)
 
     def ramp(r, g, b):
         lum = luminance(r, g, b) / 255.0
-        t = (lum - dark_lum) / global_span
-        t = scale(t)
+        t = scale(lum)
         return tuple(
             round(dark_rgb[i] + (light_rgb[i] - dark_rgb[i]) * t) for i in range(3)
         )
