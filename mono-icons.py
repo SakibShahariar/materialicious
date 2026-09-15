@@ -107,7 +107,7 @@ def s_curve(t: float, radius: float) -> float:
 
 
 def build_ramp(dark, light, radius, autoscale=False, src_min=0.0, src_max=1.0,
-               linear=False, min_t=0.0):
+               linear=False, min_t=0.0, max_t=1.0, invert=False):
     dark_rgb = hex_to_rgb(dark)
     light_rgb = hex_to_rgb(light)
     dark_lum = luminance(*dark_rgb) / 255.0
@@ -119,21 +119,34 @@ def build_ramp(dark, light, radius, autoscale=False, src_min=0.0, src_max=1.0,
     # (telegram's light-blue circle + white plane no longer collapse together).
     src_span = src_max - src_min or 1.0
 
-    def scale(t):
-        if autoscale:
-            t = (t - src_min) / src_span
-        if linear:
-            return max(0.0, min(1.0, t))
-        return s_curve(t, radius)
-
     def ramp(r, g, b):
         lum = luminance(r, g, b) / 255.0
-        t = (lum - dark_lum) / global_span
-        t = scale(t)
-        # Tone floor: keep the darkest ramp position above near-black so flat
-        # or dark-dominant icons stay legible instead of sinking to pure ink.
-        if min_t:
-            t = min_t + (1.0 - min_t) * t
+        if invert:
+            # Invert path: pure source-tone normalization (the icon's own
+            # darkest/brightest fills sit at the ramp ends regardless of the
+            # accent ink/light window), then swap dark/light roles so a white
+            # paper (source light) becomes the ink body and the dark pencil
+            # strokes become the accent highlight. A hard sigmoid (through
+            # ~0.45) re-spreads the inverted tones so both the page body and
+            # the pencil accents keep contrast instead of flattening to
+            # midtones.
+            t = (lum - src_min) / src_span
+            t = 1.0 - t
+            import math
+            t = 1.0 / (1.0 + math.exp(-9.0 * (t - 0.45)))
+        else:
+            t = (lum - dark_lum) / global_span
+            if autoscale:
+                t = (t - src_min) / src_span
+            if linear:
+                t = max(0.0, min(1.0, t))
+            else:
+                t = s_curve(t, radius)
+        # Clamp into [min_t, max_t]: keeps the darkest ramp position above
+        # near-black and the lightest below full accent where a flat or
+        # dark-dominant icon needs a body instead of blown-out highlights.
+        if min_t or max_t < 1.0:
+            t = min_t + (max_t - min_t) * t
         return tuple(
             round(dark_rgb[i] + (light_rgb[i] - dark_rgb[i]) * t) for i in range(3)
         )
@@ -190,6 +203,13 @@ def main() -> int:
     ap.add_argument("--min-t", type=float, default=0.0,
                     help="floor tone: final t = min_t + (1-min_t)*t  (raise the "
                          "darkest end; 0.25 keeps no pixel below ~25%% of ramp)")
+    ap.add_argument("--max-t", type=float, default=1.0,
+                    help="ceiling tone: t lands in [min_t, max_t] instead of "
+                         "[min_t, 1.0]; 0.62 caps the lightest end so a page "
+                         "reads as a body instead of blown-out accent")
+    ap.add_argument("--invert", action="store_true",
+                    help="swap dark/light roles (white paper -> ink body, dark "
+                         "pencil -> accent) for light-dominant artwork")
     ap.add_argument("svgs", nargs="+", help="source SVG files")
     args = ap.parse_args()
 
@@ -217,7 +237,8 @@ def main() -> int:
                 pass
         ramp = build_ramp(args.dark, args.light, args.radius,
                           autoscale=args.autoscale, src_min=src_min, src_max=src_max,
-                          linear=args.linear, min_t=0.0 if not args.min_t else args.min_t)
+                          linear=args.linear,
+                          min_t=args.min_t, max_t=args.max_t, invert=args.invert)
         new, n = recolor_content(content, ramp)
         if n == 0:
             print(f"mono-icons: skip (no #rrggbb/rgb() colours): {src}", file=sys.stderr)

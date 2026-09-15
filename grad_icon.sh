@@ -146,13 +146,27 @@ duotone_icons=(
     com.mattjakeman.ExtensionManager
     gparted
     io.bassi.Amberol
+    libreoffice-writer
+    org.gnome.Calendar
+    org.gnome.DiskUtility
+    org.gnome.clocks
+    org.gnome.tweaks
 )
 
 for icon in "${duotone_icons[@]}"; do
     src="$sources_dir/$icon.svg"
     [[ -f "$src" ]] || continue
+    # Per-icon ramp tweaks (mostly tone floors / inverse ramps decided by eye).
+    case "$icon" in
+        com.mattjakeman.ExtensionManager) extra=(--min-t 0.30);;
+        kitty)                           extra=(--min-t 0.15);;
+        org.gnome.Maps)                  extra=(--min-t 0.15);;
+        org.gnome.Papers)                extra=(--min-t 0.20);;
+        org.gnome.TextEditor)            extra=(--invert --min-t 0.10 --max-t 0.90);;
+        *)                     extra=();;
+    esac
     python3 "$generator" --dark "#000000" --light "$target_hex" --radius 0.5 \
-        --autoscale --outdir "$target_apps" "$src" 2>/dev/null || true
+        --autoscale --outdir "$target_apps" "${extra[@]}" "$src" 2>/dev/null || true
     # mono-icons.py outputs <name>.mono.svg — rename to the canonical icon name.
     mono_out="$target_apps/$icon.mono.svg"
     if [[ -f "$mono_out" ]]; then
