@@ -251,17 +251,21 @@ def main() -> int:
                          "land there; interpolated between, clamped outside). "
                          "Use for flat single-colour sources whose body tone "
                          "would otherwise be blown to accent or sunk to ink.")
-    ap.add_argument("svgs", nargs="+", help="source SVG files")
+    ap.add_argument("svgs", nargs="*", help="source SVG files (optional with --jobs)")
+    ap.add_argument("--jobs", default=None, metavar="FILE",
+                    help="batch mode: process many icons in ONE interpreter "
+                         "(avoids 60+ Python startups). Each line is "
+                         "<src-svg>\\t<space-separated extra flags>, e.g.\n"
+                         "  /p/sources/a.svg\\t--invert --min-t 0.30\n"
+                         "Ramp args (--dark/--light/--radius/--autoscale) come "
+                         "from the CLI and apply to every job.")
     args = ap.parse_args()
 
     if not (args.dark.startswith("#") and args.light.startswith("#")):
         print("mono-icons: dark/light must be #rrggbb", file=sys.stderr)
         return 2
 
-    for src in args.svgs:
-        if not os.path.isfile(src):
-            print(f"mono-icons: skip (missing): {src}", file=sys.stderr)
-            continue
+    def run_job(src, extra: list):
         content = open(src, encoding="utf-8", errors="ignore").read()
         src_min, src_max = 0.0, 1.0
         if args.autoscale:
@@ -277,9 +281,10 @@ def main() -> int:
             except ValueError:
                 pass
         piecewise = None
-        if args.piecewise:
+        if extra and "--piecewise" in extra:
+            spec = extra[extra.index("--piecewise") + 1]
             piecewise = []
-            for pair in args.piecewise.split(","):
+            for pair in spec.split(","):
                 lum, t = pair.split(":")
                 piecewise.append((float(lum), float(t)))
             piecewise.sort()
@@ -291,15 +296,71 @@ def main() -> int:
         new, n = recolor_content(content, ramp)
         if n == 0:
             print(f"mono-icons: skip (no #rrggbb/rgb() colours): {src}", file=sys.stderr)
-            continue
+            return 1
         out_dir = args.outdir or os.path.dirname(src)
         os.makedirs(out_dir, exist_ok=True)
         base = os.path.splitext(os.path.basename(src))[0]
         out = os.path.join(out_dir, f"{base}.mono.svg")
         open(out, "w", encoding="utf-8").write(new)
         print(f"{src} -> {out}   ({n} colours remapped)")
+        return 0
 
-    return 0
+    # --jobs batched mode: one interpreter for all icons.
+    if args.jobs:
+        n_fail = 0
+        with open(args.jobs, encoding="utf-8") as fh:
+            for raw in fh:
+                line = raw.strip()
+                if not line or line.startswith("#"):
+                    continue
+                parts = line.split("\t", 1)
+                src, flags = parts[0], parts[1] if len(parts) > 1 else ""
+                # Reset per-job mutable ramp args to their CLI defaults.
+                args.invert = False
+                args.min_t = 0.0
+                args.max_t = 1.0
+                args.piecewise = None
+                extra = []
+                for tok in flags.split():
+                    if tok == "--invert":
+                        args.invert = True
+                    elif tok == "--autoscale":
+                        args.autoscale = True
+                import re as _re
+                m = _re.search(r"--min-t\s+([0-9.]+)", flags)
+                if m:
+                    args.min_t = float(m.group(1))
+                m = _re.search(r"--max-t\s+([0-9.]+)", flags)
+                if m:
+                    args.max_t = float(m.group(1))
+                m = _re.search(r"--piecewise\s+([0-9.:,]+)", flags)
+                if m:
+                    args.piecewise = m.group(1)  # run_job reads extra below
+                if args.piecewise:
+                    extra.append("--piecewise")
+                    extra.append(args.piecewise)
+                if not os.path.isfile(src):
+                    print(f"mono-icons: skip (missing): {src}", file=sys.stderr)
+                    continue
+                if run_job(src, extra):
+                    n_fail += 1
+        return 0 if n_fail == 0 else 1
+
+    if not os.path.isfile(args.svgs[0]) and os.path.isdir(args.svgs[0]):
+        print("mono-icons: pass SVG files, not a directory", file=sys.stderr)
+        return 2
+    if not any(os.path.isfile(s) for s in args.svgs):
+        print(f"mono-icons: no input files found", file=sys.stderr)
+        return 2
+
+    n_fail = 0
+    for src in args.svgs:
+        if not os.path.isfile(src):
+            print(f"mono-icons: skip (missing): {src}", file=sys.stderr)
+            continue
+        if run_job(src, []):
+            n_fail += 1
+    return 0 if n_fail == 0 else 1
 
 
 if __name__ == "__main__":

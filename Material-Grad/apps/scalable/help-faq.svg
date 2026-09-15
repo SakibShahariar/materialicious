@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="128" height="128" viewBox="0 0 128 128" style="color:#87d6bc">
- <g transform="translate(64 64) scale(7.87487) translate(-8.49219 -8.49219)" style="color:#87d6bc">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="128" height="128" viewBox="0 0 128 128" style="color:#80d4da">
+ <g transform="translate(64 64) scale(7.87487) translate(-8.49219 -8.49219)" style="color:#80d4da">
 
  <defs>
   <style id="current-color-scheme" type="text/css">
-   .ColorScheme-Text { color:#87d6bc; } .ColorScheme-Highlight { color:#87d6bc; } .ColorScheme-NeutralText { color:#87d6bc; } .ColorScheme-PositiveText { color:#87d6bc; } .ColorScheme-NegativeText { color:#87d6bc; }
+   .ColorScheme-Text { color:#80d4da; } .ColorScheme-Highlight { color:#80d4da; } .ColorScheme-NeutralText { color:#80d4da; } .ColorScheme-PositiveText { color:#80d4da; } .ColorScheme-NegativeText { color:#80d4da; }
   </style>
  </defs>
  <path style="fill:currentColor" class="ColorScheme-Text" d="M 3,4 C 2.446,4 2,4.45 2,5 V 15 C 2,15.55 2.446,16 3,16 H 11 C 11.554,16 12,15.55 12,15 V 8 L 8,4 Z M 7,7 C 8.1,7 9,7.9 9,9 9,10.1 8.1,11 7,11 V 12 H 6 V 10 H 7 C 7.55,10 8,9.55 8,9 8,8.45 7.55,8 7,8 6.45,8 6,8.45 6,9 H 5 C 5,7.9 5.9,7 7,7 Z M 6,13 H 7 V 14 H 6 Z"/>

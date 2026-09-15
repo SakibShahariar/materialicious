@@ -9,8 +9,8 @@
         </g>
     </mask>
     <linearGradient id="c" gradientTransform="matrix(0 1.428571 -1.428571 0 427.285702 12.714302)" gradientUnits="userSpaceOnUse" x1="24" x2="38" y1="238" y2="238">
-        <stop offset="0" stop-color="#87d6bc"/>
-        <stop offset="1" stop-color="#87d6bc" stop-opacity="0"/>
+        <stop offset="0" stop-color="#80d4da"/>
+        <stop offset="1" stop-color="#80d4da" stop-opacity="0"/>
     </linearGradient>
     <clipPath id="d">
         <rect height="152" width="192"/>
@@ -37,9 +37,9 @@
         </g>
     </mask>
     <radialGradient id="j" cx="-72" cy="190" gradientTransform="matrix(-1 0 0 1 -12 -123.882362)" gradientUnits="userSpaceOnUse" r="29.937637">
-        <stop offset="0" stop-color="#87d6bc"/>
-        <stop offset="0.271152" stop-color="#87d6bc" stop-opacity="0.866667"/>
-        <stop offset="1" stop-color="#87d6bc" stop-opacity="0"/>
+        <stop offset="0" stop-color="#80d4da"/>
+        <stop offset="0.271152" stop-color="#80d4da" stop-opacity="0.866667"/>
+        <stop offset="1" stop-color="#80d4da" stop-opacity="0"/>
     </radialGradient>
     <clipPath id="k">
         <rect height="152" width="192"/>
@@ -48,10 +48,10 @@
         <path d="m 93 67 c -5.523438 0 -10 -4.476562 -10 -10 s 4.476562 -10 10 -10 s 10 4.476562 10 10 s -4.476562 10 -10 10 z m 0 0" fill="url(#c)"/>
     </g>
     <g clip-path="url(#f)" mask="url(#e)" transform="matrix(1 0 0 1 -168 -16)">
-        <path d="m 11.890625 268.550308 l 15.457031 -15.457031" fill="none" stroke="#87d6bc" stroke-linecap="round" stroke-width="1.63784" transform="matrix(1 0 0 1 2 -137.882339)"/>
+        <path d="m 11.890625 268.550308 l 15.457031 -15.457031" fill="none" stroke="#80d4da" stroke-linecap="round" stroke-width="1.63784" transform="matrix(1 0 0 1 2 -137.882339)"/>
     </g>
     <g clip-path="url(#h)" mask="url(#g)" transform="matrix(1 0 0 1 -168 -16)">
-        <path d="m -170.584656 386.756477 l 16 -16" fill="none" stroke="#87d6bc" stroke-linecap="round" stroke-width="2" transform="matrix(1 0 0 1 183.584656 -255.63929)"/>
+        <path d="m -170.584656 386.756477 l 16 -16" fill="none" stroke="#80d4da" stroke-linecap="round" stroke-width="2" transform="matrix(1 0 0 1 183.584656 -255.63929)"/>
     </g>
     <g clip-path="url(#k)" mask="url(#i)" transform="matrix(1 0 0 1 -168 -16)">
         <path d="m 30.0625 88.179688 c 0 16.535156 13.402344 29.9375 29.9375 29.9375 s 29.9375 -13.402344 29.9375 -29.9375 c 0 -16.535157 -13.402344 -29.9375 -29.9375 -29.9375 s -29.9375 13.402343 -29.9375 29.9375 z m 0 0" fill="url(#j)"/>

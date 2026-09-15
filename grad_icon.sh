@@ -110,6 +110,11 @@ fi
 # autoscale path reproduces the exact tonal sculpture that was originally
 # approved, and is idempotent: re-running with the same accent yields the same
 # file, so repeated matugen runs never darken or collapse the ramps.
+#
+# Batching: all 61 icons go through ONE python interpretizer call (--jobs),
+# which turns ~4s of interpreter startups into ~0.4s. When the accent on disk
+# already equals the target AND the emblem matches, the duotone set is already
+# hardened to the current accent — skip regeneration entirely.
 generator="$repo/mono-icons.py"
 sources_dir="$repo/sources"
 target_apps="$mono_theme/apps/scalable"
@@ -178,56 +183,61 @@ duotone_icons=(
     com.github.rafostar.Clapper
 )
 
-for icon in "${duotone_icons[@]}"; do
-    src="$sources_dir/$icon.svg"
-    [[ -f "$src" ]] || continue
-    # Per-icon ramp tweaks (mostly tone floors / inverse ramps decided by eye).
-    case "$icon" in
-        com.mattjakeman.ExtensionManager) extra=(--piecewise "0.43:0.50,1.0:0.92");;
-        kitty)                           extra=(--piecewise "0.247:0.42,0.46:0.52,0.48:0.58,0.95:0.88,1.0:0.92");;
-        org.gnome.Maps)                  extra=(--min-t 0.15);;
-        org.gnome.Papers)                extra=(--min-t 0.20);;
-        org.gnome.TextEditor)            extra=(--invert --min-t 0.30 --max-t 0.88);;
-        libreoffice-writer)              extra=(--min-t 0.25);;
-        org.gnome.Weather)               extra=(--piecewise "0.0:0.30,0.46:0.55,0.62:0.65,0.80:0.85,1.0:0.95");;
-        org.gnome.tweaks)                extra=(--piecewise "0.48:0.10,0.68:0.35,0.89:0.55,1.0:0.95");;
-        org.gnome.Boxes)                 extra=(--piecewise "0.31:0.40,0.77:0.72,1.0:0.98");;
-        org.gnome.Settings)              extra=(--piecewise "0.65:0.05,0.75:0.30,0.86:0.55,1.0:0.92");;
-        mpv)                             extra=(--piecewise "0.20:0.30,0.30:0.46,1.0:0.96");;
-        btop)                            extra=(--piecewise "0.247:0.38,0.30:0.85,0.38:0.90,1.0:0.95");;
-        org.gnome.Terminal)              extra=(--piecewise "0.0:0.12,0.31:0.42,0.38:0.50,0.64:0.70,1.0:0.95");;
-        dev.zed.Zed)                     extra=(--piecewise "0.247:0.35,0.31:0.45,0.45:0.60,0.89:0.90,1.0:0.95");;
-        org.gnome.Screenshot)            extra=(--piecewise "0.37:0.45,0.46:0.55,0.57:0.68,1.0:0.95");;
-        qbittorrent)                     extra=(--piecewise "0.30:0.40,0.38:0.52,0.44:0.58,0.75:0.75,1.0:0.95");;
-        gnome-control-center)            extra=(--piecewise "0.40:0.50,0.46:0.60,0.89:0.80,1.0:0.95");;
-        io.bassi.Amberol)                extra=(--piecewise "0.40:0.50,0.50:0.60,0.60:0.70,1.0:0.95");;
-        org.gnome.Meld)                  extra=(--piecewise "0.38:0.45,0.48:0.52,0.65:0.62,1.0:0.85");;
-        brave-origin-nightly)            extra=(--piecewise "0.32:0.42,0.40:0.52,0.45:0.60,1.0:0.95");;
-        org.gnome.Extensions)            extra=(--piecewise "0.66:0.50,1.0:0.92");;
-        org.gnome.Shell.Extensions)      extra=(--piecewise "0.66:0.50,1.0:0.92");;
-        org.gnome.font-viewer)           extra=(--piecewise "0.39:0.50,1.0:0.95");;
-        org.gnome.Connections)           extra=(--piecewise "0.25:0.35,0.37:0.50,0.52:0.70,1.0:0.95");;
-        org.gnome.Logs)                  extra=(--piecewise "0.51:0.75,0.69:0.55,0.78:0.55,0.9:0.60,1.0:0.95");;
-        org.gnome.Characters)            extra=(--piecewise "0.39:0.70,0.53:0.72,0.74:0.78,0.9:0.55,1.0:0.95");;
-        libreoffice-base)                extra=(--piecewise "0.27:0.32,0.34:0.50,0.48:0.65,0.65:0.80,1.0:0.95");;
-        libreoffice-draw)                extra=(--piecewise "0.55:0.45,0.70:0.55,0.92:0.75,1.0:0.95");;
-        libreoffice-startcenter)         extra=(--piecewise "0.31:0.15,0.37:0.35,0.67:0.55,0.93:0.65,1.0:0.80");;
-        qemu)                            extra=(--piecewise "0.31:0.45,0.38:0.50,0.53:0.78,1.0:0.95");;
-        preferences-system)              extra=(--piecewise "0.40:0.50,0.46:0.60,0.89:0.80,1.0:0.95");;
-        ca.desrt.dconf-editor)           extra=(--piecewise "0.48:0.15,0.51:0.30,0.80:0.50,0.89:0.60,1.0:0.90");;
-        helium)                          extra=(--piecewise "0.28:0.45,0.36:0.55,1.0:0.95");;
-        com.github.rafostar.Clapper)     extra=(--piecewise "0.25:0.28,0.32:0.48,0.80:0.65,0.89:0.78,1.0:0.95");;
-        org.gnome.Yelp)                  extra=(--piecewise "0.42:0.42,0.9:0.70,1.0:0.95");;
-        *)                     extra=();;
-    esac
+if [[ "$need_sweep" == "1" ]]; then
+    jobs_file="$(mktemp)"
+    for icon in "${duotone_icons[@]}"; do
+        src="$sources_dir/$icon.svg"
+        [[ -f "$src" ]] || continue
+        # Per-icon ramp tweaks (mostly tone floors / inverse ramps decided by eye),
+        # written in --jobs flag syntax (whitespace-separated per source line).
+        case "$icon" in
+            com.mattjakeman.ExtensionManager) flags="piecewise 0.43:0.50,1.0:0.92";;
+            kitty)                           flags="piecewise 0.247:0.42,0.46:0.52,0.48:0.58,0.95:0.88,1.0:0.92";;
+            org.gnome.Maps)                  flags="min-t 0.15";;
+            org.gnome.Papers)                flags="min-t 0.20";;
+            org.gnome.TextEditor)            flags="invert min-t 0.30 max-t 0.88";;
+            libreoffice-writer)              flags="min-t 0.25";;
+            org.gnome.Weather)               flags="piecewise 0.0:0.30,0.46:0.55,0.62:0.65,0.80:0.85,1.0:0.95";;
+            org.gnome.tweaks)                flags="piecewise 0.48:0.10,0.68:0.35,0.89:0.55,1.0:0.95";;
+            org.gnome.Boxes)                 flags="piecewise 0.31:0.40,0.77:0.72,1.0:0.98";;
+            org.gnome.Settings)              flags="piecewise 0.65:0.05,0.75:0.30,0.86:0.55,1.0:0.92";;
+            mpv)                             flags="piecewise 0.20:0.30,0.30:0.46,1.0:0.96";;
+            btop)                            flags="piecewise 0.247:0.38,0.30:0.85,0.38:0.90,1.0:0.95";;
+            org.gnome.Terminal)              flags="piecewise 0.0:0.12,0.31:0.42,0.38:0.50,0.64:0.70,1.0:0.95";;
+            dev.zed.Zed)                     flags="piecewise 0.247:0.35,0.31:0.45,0.45:0.60,0.89:0.90,1.0:0.95";;
+            org.gnome.Screenshot)            flags="piecewise 0.37:0.45,0.46:0.55,0.57:0.68,1.0:0.95";;
+            qbittorrent)                     flags="piecewise 0.30:0.40,0.38:0.52,0.44:0.58,0.75:0.75,1.0:0.95";;
+            gnome-control-center)            flags="piecewise 0.40:0.50,0.46:0.60,0.89:0.80,1.0:0.95";;
+            io.bassi.Amberol)                flags="piecewise 0.40:0.50,0.50:0.60,0.60:0.70,1.0:0.95";;
+            org.gnome.Meld)                  flags="piecewise 0.38:0.45,0.48:0.52,0.65:0.62,1.0:0.85";;
+            brave-origin-nightly)            flags="piecewise 0.32:0.42,0.40:0.52,0.45:0.60,1.0:0.95";;
+            org.gnome.Extensions)            flags="piecewise 0.66:0.50,1.0:0.92";;
+            org.gnome.Shell.Extensions)      flags="piecewise 0.66:0.50,1.0:0.92";;
+            org.gnome.font-viewer)           flags="piecewise 0.39:0.50,1.0:0.95";;
+            org.gnome.Connections)           flags="piecewise 0.25:0.35,0.37:0.50,0.52:0.70,1.0:0.95";;
+            org.gnome.Logs)                  flags="piecewise 0.51:0.75,0.69:0.55,0.78:0.55,0.9:0.60,1.0:0.95";;
+            org.gnome.Characters)            flags="piecewise 0.39:0.70,0.53:0.72,0.74:0.78,0.9:0.55,1.0:0.95";;
+            libreoffice-base)                flags="piecewise 0.27:0.32,0.34:0.50,0.48:0.65,0.65:0.80,1.0:0.95";;
+            libreoffice-draw)                flags="piecewise 0.55:0.45,0.70:0.55,0.92:0.75,1.0:0.95";;
+            libreoffice-startcenter)         flags="piecewise 0.31:0.15,0.37:0.35,0.67:0.55,0.93:0.65,1.0:0.80";;
+            qemu)                            flags="piecewise 0.31:0.45,0.38:0.50,0.53:0.78,1.0:0.95";;
+            preferences-system)              flags="piecewise 0.40:0.50,0.46:0.60,0.89:0.80,1.0:0.95";;
+            ca.desrt.dconf-editor)           flags="piecewise 0.48:0.15,0.51:0.30,0.80:0.50,0.89:0.60,1.0:0.90";;
+            helium)                          flags="piecewise 0.28:0.45,0.36:0.55,1.0:0.95";;
+            com.github.rafostar.Clapper)     flags="piecewise 0.25:0.28,0.32:0.48,0.80:0.65,0.89:0.78,1.0:0.95";;
+            org.gnome.Yelp)                  flags="piecewise 0.42:0.42,0.9:0.70,1.0:0.95";;
+            *)                               flags="";;
+        esac
+        printf '%s\t%s\n' "$src" "$flags" >> "$jobs_file"
+    done
     python3 "$generator" --dark "#000000" --light "$target_hex" --radius 0.5 \
-        --autoscale --outdir "$target_apps" "${extra[@]}" "$src" 2>/dev/null || true
+        --autoscale --outdir "$target_apps" --jobs "$jobs_file" 2>/dev/null || true
+    rm -f "$jobs_file"
     # mono-icons.py outputs <name>.mono.svg — rename to the canonical icon name.
-    mono_out="$target_apps/$icon.mono.svg"
-    if [[ -f "$mono_out" ]]; then
-        mv -f "$mono_out" "$target_apps/$icon.svg"
-    fi
-done
+    for src in "$target_apps/"*.mono.svg; do
+        [[ -f "$src" ]] && mv -f "$src" "${src%.mono.svg}.svg"
+    done
+fi
 
 # ── 7. Rebuild icon cache + restore theme ────────────────────────────────────
 gtk-update-icon-cache -f -t "$mono_theme" 2>/dev/null
