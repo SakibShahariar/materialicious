@@ -281,8 +281,8 @@ def main() -> int:
             except ValueError:
                 pass
         piecewise = None
-        if extra and "--piecewise" in extra:
-            spec = extra[extra.index("--piecewise") + 1]
+        if args.piecewise:
+            spec = args.piecewise
             piecewise = []
             for pair in spec.split(","):
                 lum, t = pair.split(":")
@@ -321,19 +321,19 @@ def main() -> int:
                 args.max_t = 1.0
                 args.piecewise = None
                 extra = []
-                for tok in flags.split():
-                    if tok == "--invert":
-                        args.invert = True
-                    elif tok == "--autoscale":
-                        args.autoscale = True
-                import re as _re
-                m = _re.search(r"--min-t\s+([0-9.]+)", flags)
+                # Per-job overrides survive in either CLI form ("--min-t 0.30")
+                # or the compact jobs form ("min-t 0.30"): dash is optional.
+                if re.search(r"(^|[\s-])(--?)?invert(\s|$)", flags):
+                    args.invert = True
+                if re.search(r"(^|[\s-])(--?)?autoscale(\s|$)", flags):
+                    args.autoscale = True
+                m = re.search(r"-?min-t\s+([0-9.]+)", flags)
                 if m:
                     args.min_t = float(m.group(1))
-                m = _re.search(r"--max-t\s+([0-9.]+)", flags)
+                m = re.search(r"-?max-t\s+([0-9.]+)", flags)
                 if m:
                     args.max_t = float(m.group(1))
-                m = _re.search(r"--piecewise\s+([0-9.:,]+)", flags)
+                m = re.search(r"-?piecewise\s+([0-9.:,]+)", flags)
                 if m:
                     args.piecewise = m.group(1)  # run_job reads extra below
                 if args.piecewise:
