@@ -151,6 +151,12 @@ duotone_icons=(
     org.gnome.DiskUtility
     org.gnome.clocks
     org.gnome.tweaks
+    mpv
+    org.gnome.Boxes
+    org.gnome.baobab
+    org.gnome.Settings
+    org.gnome.Extensions
+    libreoffice-impress
 )
 
 for icon in "${duotone_icons[@]}"; do
@@ -162,7 +168,13 @@ for icon in "${duotone_icons[@]}"; do
         kitty)                           extra=(--min-t 0.15);;
         org.gnome.Maps)                  extra=(--min-t 0.15);;
         org.gnome.Papers)                extra=(--min-t 0.20);;
-        org.gnome.TextEditor)            extra=(--invert --min-t 0.10 --max-t 0.90);;
+        org.gnome.TextEditor)            extra=(--invert --min-t 0.30 --max-t 0.88);;
+        libreoffice-writer)              extra=(--min-t 0.25);;
+        org.gnome.Weather)               extra=(--max-t 0.70);;
+        org.gnome.tweaks)                extra=(--piecewise "0.48:0.10,0.68:0.35,0.89:0.55,1.0:0.95");;
+        org.gnome.Boxes)                 extra=(--piecewise "0.31:0.40,0.77:0.72,1.0:0.98");;
+        org.gnome.Settings)              extra=(--piecewise "0.65:0.05,0.75:0.30,0.86:0.55,1.0:0.92");;
+        mpv)                             extra=(--piecewise "0.20:0.30,0.30:0.46,1.0:0.96");;
         *)                     extra=();;
     esac
     python3 "$generator" --dark "#000000" --light "$target_hex" --radius 0.5 \

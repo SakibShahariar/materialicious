@@ -106,8 +106,30 @@ def s_curve(t: float, radius: float) -> float:
     return 1.0 / (1.0 + math.exp(-k * (t - 0.5)))
 
 
+def piecewise_raster(lum: float, table: list[tuple[float, float]]) -> float:
+    """Piecewise-linear luminance -> ramp-position lookup.
+
+    `table` is a list of (source_luminance, ramp_t) sorted by luminance.
+    Source tone outside the table clamps to the nearest endpoint.
+    """
+    if not table:
+        return lum
+    lo_lum, lo_t = table[0]
+    hi_lum, hi_t = table[-1]
+    if lum <= lo_lum:
+        return lo_t
+    if lum >= hi_lum:
+        return hi_t
+    for (l1, t1), (l2, t2) in zip(table, table[1:]):
+        if l1 <= lum <= l2:
+            frac = (lum - l1) / (l2 - l1) if l2 > l1 else 0.0
+            return t1 + (t2 - t1) * frac
+    return hi_t
+
+
 def build_ramp(dark, light, radius, autoscale=False, src_min=0.0, src_max=1.0,
-               linear=False, min_t=0.0, max_t=1.0, invert=False):
+               linear=False, min_t=0.0, max_t=1.0, invert=False,
+               piecewise=None):
     dark_rgb = hex_to_rgb(dark)
     light_rgb = hex_to_rgb(light)
     dark_lum = luminance(*dark_rgb) / 255.0
@@ -121,6 +143,19 @@ def build_ramp(dark, light, radius, autoscale=False, src_min=0.0, src_max=1.0,
 
     def ramp(r, g, b):
         lum = luminance(r, g, b) / 255.0
+        if piecewise is not None:
+            # Hand-tuned luminance -> ramp-position table for sources whose
+            # dominant body tone would be blown to accent (or sunk to ink) by
+            # the generic s-curve (e.g. flat single-colour logos). The table
+            # lists ascending luminance breakpoints with the ramp position to
+            # land there; positions between breakpoints are interpolated.
+            t = piecewise_raster(lum, piecewise)
+            if min_t or max_t < 1.0:
+                t = min_t + (max_t - min_t) * t
+            return tuple(
+                round(dark_rgb[i] + (light_rgb[i] - dark_rgb[i]) * t)
+                for i in range(3)
+            )
         if invert:
             # Invert path: pure source-tone normalization (the icon's own
             # darkest/brightest fills sit at the ramp ends regardless of the
@@ -210,6 +245,12 @@ def main() -> int:
     ap.add_argument("--invert", action="store_true",
                     help="swap dark/light roles (white paper -> ink body, dark "
                          "pencil -> accent) for light-dominant artwork")
+    ap.add_argument("--piecewise", default=None, metavar="SPEC",
+                    help="hand-tuned luminance->ramp table as LUM:T,LUM:T,... "
+                         "(ascending source luminance with the ramp position to "
+                         "land there; interpolated between, clamped outside). "
+                         "Use for flat single-colour sources whose body tone "
+                         "would otherwise be blown to accent or sunk to ink.")
     ap.add_argument("svgs", nargs="+", help="source SVG files")
     args = ap.parse_args()
 
@@ -235,10 +276,18 @@ def main() -> int:
                     src_min, src_max = min(lums), max(lums)
             except ValueError:
                 pass
+        piecewise = None
+        if args.piecewise:
+            piecewise = []
+            for pair in args.piecewise.split(","):
+                lum, t = pair.split(":")
+                piecewise.append((float(lum), float(t)))
+            piecewise.sort()
         ramp = build_ramp(args.dark, args.light, args.radius,
                           autoscale=args.autoscale, src_min=src_min, src_max=src_max,
                           linear=args.linear,
-                          min_t=args.min_t, max_t=args.max_t, invert=args.invert)
+                          min_t=args.min_t, max_t=args.max_t, invert=args.invert,
+                          piecewise=piecewise)
         new, n = recolor_content(content, ramp)
         if n == 0:
             print(f"mono-icons: skip (no #rrggbb/rgb() colours): {src}", file=sys.stderr)
