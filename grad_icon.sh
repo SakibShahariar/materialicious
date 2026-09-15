@@ -183,18 +183,28 @@ for icon in "${duotone_icons[@]}"; do
     [[ -f "$src" ]] || continue
     # Per-icon ramp tweaks (mostly tone floors / inverse ramps decided by eye).
     case "$icon" in
-        com.mattjakeman.ExtensionManager) extra=(--min-t 0.30);;
-        kitty)                           extra=(--min-t 0.15);;
+        com.mattjakeman.ExtensionManager) extra=(--piecewise "0.43:0.50,1.0:0.92");;
+        kitty)                           extra=(--piecewise "0.247:0.42,0.46:0.52,0.48:0.58,0.95:0.88,1.0:0.92");;
         org.gnome.Maps)                  extra=(--min-t 0.15);;
         org.gnome.Papers)                extra=(--min-t 0.20);;
         org.gnome.TextEditor)            extra=(--invert --min-t 0.30 --max-t 0.88);;
         libreoffice-writer)              extra=(--min-t 0.25);;
-        org.gnome.Weather)               extra=(--max-t 0.70);;
+        org.gnome.Weather)               extra=(--piecewise "0.0:0.30,0.46:0.55,0.62:0.65,0.80:0.85,1.0:0.95");;
         org.gnome.tweaks)                extra=(--piecewise "0.48:0.10,0.68:0.35,0.89:0.55,1.0:0.95");;
         org.gnome.Boxes)                 extra=(--piecewise "0.31:0.40,0.77:0.72,1.0:0.98");;
         org.gnome.Settings)              extra=(--piecewise "0.65:0.05,0.75:0.30,0.86:0.55,1.0:0.92");;
         mpv)                             extra=(--piecewise "0.20:0.30,0.30:0.46,1.0:0.96");;
-        btop)                            extra=(--piecewise "0.247:0.38,0.306:0.62,1.0:0.95");;
+        btop)                            extra=(--piecewise "0.247:0.38,0.30:0.85,0.38:0.90,1.0:0.95");;
+        org.gnome.Terminal)              extra=(--piecewise "0.0:0.12,0.31:0.42,0.38:0.50,0.64:0.70,1.0:0.95");;
+        dev.zed.Zed)                     extra=(--piecewise "0.247:0.35,0.31:0.45,0.45:0.60,0.89:0.90,1.0:0.95");;
+        org.gnome.Screenshot)            extra=(--piecewise "0.37:0.45,0.46:0.55,0.57:0.68,1.0:0.95");;
+        qbittorrent)                     extra=(--piecewise "0.30:0.40,0.38:0.52,0.44:0.58,0.75:0.75,1.0:0.95");;
+        gnome-control-center)            extra=(--piecewise "0.40:0.50,0.46:0.60,0.89:0.80,1.0:0.95");;
+        io.bassi.Amberol)                extra=(--piecewise "0.40:0.50,0.50:0.60,0.60:0.70,1.0:0.95");;
+        org.gnome.Meld)                  extra=(--piecewise "0.38:0.45,0.48:0.52,0.65:0.62,1.0:0.85");;
+        brave-origin-nightly)            extra=(--piecewise "0.32:0.42,0.40:0.52,0.45:0.60,1.0:0.95");;
+        org.gnome.Extensions)            extra=(--piecewise "0.66:0.50,1.0:0.92");;
+        org.gnome.Shell.Extensions)      extra=(--piecewise "0.66:0.50,1.0:0.92");;
         org.gnome.font-viewer)           extra=(--piecewise "0.39:0.50,1.0:0.95");;
         org.gnome.Connections)           extra=(--piecewise "0.25:0.35,0.37:0.50,0.52:0.70,1.0:0.95");;
         org.gnome.Logs)                  extra=(--piecewise "0.51:0.75,0.69:0.55,0.78:0.55,0.9:0.60,1.0:0.95");;
