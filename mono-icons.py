@@ -107,7 +107,7 @@ def s_curve(t: float, radius: float) -> float:
 
 
 def build_ramp(dark, light, radius, autoscale=False, src_min=0.0, src_max=1.0,
-               linear=False):
+               linear=False, min_t=0.0):
     dark_rgb = hex_to_rgb(dark)
     light_rgb = hex_to_rgb(light)
     dark_lum = luminance(*dark_rgb) / 255.0
@@ -130,6 +130,10 @@ def build_ramp(dark, light, radius, autoscale=False, src_min=0.0, src_max=1.0,
         lum = luminance(r, g, b) / 255.0
         t = (lum - dark_lum) / global_span
         t = scale(t)
+        # Tone floor: keep the darkest ramp position above near-black so flat
+        # or dark-dominant icons stay legible instead of sinking to pure ink.
+        if min_t:
+            t = min_t + (1.0 - min_t) * t
         return tuple(
             round(dark_rgb[i] + (light_rgb[i] - dark_rgb[i]) * t) for i in range(3)
         )
@@ -183,6 +187,9 @@ def main() -> int:
                     help="map tones proportionally without re-sharpening "
                          "(for re-colouring an existing duotone icon)")
     ap.add_argument("--outdir", default=None, help="write <name>.mono.svg here")
+    ap.add_argument("--min-t", type=float, default=0.0,
+                    help="floor tone: final t = min_t + (1-min_t)*t  (raise the "
+                         "darkest end; 0.25 keeps no pixel below ~25%% of ramp)")
     ap.add_argument("svgs", nargs="+", help="source SVG files")
     args = ap.parse_args()
 
@@ -200,12 +207,17 @@ def main() -> int:
             try:
                 colors = extract_colors(content)
                 lums = [luminance(r, g, b) / 255.0 for r, g, b in colors]
-                src_min, src_max = min(lums), max(lums)
+                # Only stretch when the source actually spans several tones.
+                # A near-flat icon (one dominant colour) must keep its natural
+                # luminance position on the ramp instead of collapsing to the
+                # dark end or the light end.
+                if max(lums) - min(lums) > 0.03:
+                    src_min, src_max = min(lums), max(lums)
             except ValueError:
                 pass
         ramp = build_ramp(args.dark, args.light, args.radius,
                           autoscale=args.autoscale, src_min=src_min, src_max=src_max,
-                          linear=args.linear)
+                          linear=args.linear, min_t=0.0 if not args.min_t else args.min_t)
         new, n = recolor_content(content, ramp)
         if n == 0:
             print(f"mono-icons: skip (no #rrggbb/rgb() colours): {src}", file=sys.stderr)
