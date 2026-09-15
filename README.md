@@ -20,9 +20,12 @@ are added as glyphs traced from each app's official icon.
 - `Material-Solo/` — flat theme (all icon contexts, ~1800 apps)
 - `Material-Grad/` — duotone theme (full standalone copy of Solo, with
   luminance-mapped app icons overriding the flat ones)
-- `mono-icons.py` — the duotone generator (`Material-Solo` fills → grain) —
-  used to produce `Material-Grad` app icons from a flat source and a
-  `--dark`/`--light` ramp.
+- `mono-icons.py` — the duotone generator / recolourer. Used once at
+  conversion time to build a duotone icon from colorful source art, and every
+  accent change after that to re-colour the *existing* duotone icon from
+  itself (no external sources needed at runtime).
+- `sources/` — the original colorful art used to *convert* new duotone icons
+  (only consulted when adding an icon, never on accent recolor)
 - `install.sh` — symlinks both themes into `~/.icons`.
 - `apps/` — application icons (including ~200 hand-extracted Flathub apps)
 - `actions/`, `categories/`, `devices/`, `emblems/`, `mimetypes/`,
@@ -36,11 +39,23 @@ are added as glyphs traced from each app's official icon.
 gsettings set org.gnome.desktop.interface icon-theme Material-Solo   # or Material-Grad
 ```
 
-## Regenerating the duotone (Grad) icons
+## Managing the duotone (Grad) icons
+
+**Accent change** (runs automatically via matugen → `grad_icon.sh`): the
+existing duotone icons are re-coloured from themselves — no external sources.
 
 ```sh
-python3 mono-icons.py --dark "#2e3436" --light "#c9bfff" --radius 0.5 \
-  --autoscale --outdir out Material-Solo/apps/scalable/*.svg
+python3 mono-icons.py --dark "#000000" --light "#c9bfff" --radius 0.5 \
+  --autoscale out/Material-Grad/apps/scalable/<icon>.svg
+```
+
+**Adding a new duotone icon** (one-time, needs source art): place the colorful
+SVG in `sources/`, generate it, then replace the flat icon in Grad:
+
+```sh
+python3 mono-icons.py --dark "#000000" --light "#c9bfff" --radius 0.5 \
+  --autoscale --outdir Material-Grad/apps/scalable sources/<app>.svg
+mv Material-Grad/apps/scalable/<app>.mono.svg Material-Grad/apps/scalable/<app>.svg
 ```
 
 ## Sources and acknowledgement

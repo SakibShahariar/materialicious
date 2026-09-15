@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" version="1">
- <rect style="fill:#363345" width="28" height="24" x="10" y="4" rx="1.5" ry="1.5"/>
- <rect style="fill:#c1b7f5" width="32" height="24" x="8" y="8" rx="1.5" ry="1.5"/>
+ <rect style="fill:#0e0d12" width="28" height="24" x="10" y="4" rx="1.5" ry="1.5"/>
+ <rect style="fill:#c2b8f6" width="32" height="24" x="8" y="8" rx="1.5" ry="1.5"/>
  <rect style="fill:#c2b8f6" width="36" height="24" x="6" y="12" rx="1.5" ry="1.5"/>
  <rect style="opacity:.2" width="40" height="28" x="4" y="17" rx="2" ry="2"/>
- <rect style="fill:#3d3a4e" width="40" height="28" x="4" y="16" rx="2" ry="2"/>
+ <rect style="fill:#15141b" width="40" height="28" x="4" y="16" rx="2" ry="2"/>
  <rect style="opacity:.2" width="14" height="4" x="17" y="28" rx="1" ry="1"/>
  <rect style="fill:#c2b8f6" width="14" height="4" x="17" y="27" rx="1" ry="1"/>
  <path style="fill:#c2b8f6;opacity:0.1" d="M 11.5 4 C 10.669 4 10 4.669 10 5.5 L 10 6.5 C 10 5.669 10.669 5 11.5 5 L 36.5 5 C 37.331 5 38 5.669 38 6.5 L 38 5.5 C 38 4.669 37.331 4 36.5 4 L 11.5 4 z"/>

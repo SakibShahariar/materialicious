@@ -104,11 +104,12 @@ if [[ "$need_sweep" == "1" ]]; then
     printf '%s\n%s\n' "$target_hex" "$on_primary_hex" > "$state"
 fi
 
-# ── 6. Regenerate duotone app icons ─────────────────────────────────────────
-# These 10 icons use hardcoded ramp hexes (not ColorScheme classes) so the
-# ColorScheme sweep above never touches them. Re-generate from Papirus sources
-# with the current accent so the ramp follows the wallpaper.
-sources_dir="$repo/sources"
+# ── 6. Re-color the existing duotone app icons using themselves ─────────────
+# Each duotone SVG already carries its own tonal sculpture (a dark->accent
+# ramp encoded as hardcoded hexes). On accent change we recolour those icons
+# in place via mono-icons.py -- they do NOT depend on external Papirus art.
+# Papirus is only consulted once at conversion time, when a brand-new icon is
+# being added to the theme.
 generator="$repo/mono-icons.py"
 target_apps="$mono_theme/apps/scalable"
 
@@ -126,14 +127,14 @@ duotone_icons=(
 )
 
 for icon in "${duotone_icons[@]}"; do
-    src="$sources_dir/$icon.svg"
-    [[ -f "$src" ]] || continue
+    cur="$target_apps/$icon.svg"
+    [[ -f "$cur" ]] || continue
     python3 "$generator" --dark "#000000" --light "$target_hex" --radius 0.5 \
-        --autoscale --outdir "$target_apps" "$src" 2>/dev/null || true
+        --autoscale --outdir "$target_apps" "$cur" 2>/dev/null || true
     # mono-icons.py outputs <name>.mono.svg — rename to the canonical icon name.
     mono_out="$target_apps/$icon.mono.svg"
     if [[ -f "$mono_out" ]]; then
-        mv -f "$mono_out" "$target_apps/$icon.svg"
+        mv -f "$mono_out" "$cur"
     fi
 done
 
