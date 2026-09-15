@@ -64,6 +64,12 @@ COLOR_RE = re.compile(
     r"|(?:\b(fill|stroke)=)\"(#[0-9a-f]{6}|#[0-9a-f]{3}|rgb\(\s*\d+\s*,\s*\d+\s*,\s*\d+\s*\))\"",
 )
 
+# A shape element whose tag carries no fill or stroke at all: give its
+# (black-default) rendering an explicit ink fill so the ramp can own it.
+SHAPE_TAG_RE = re.compile(
+    r"(?i)<((?:path|rect|circle|ellipse|polygon|polyline)\b[^>]*?)(/?>)",
+)
+
 SVG_RE = re.compile(r"(?i)<svg\b[^>]*>")
 TAG_RE = re.compile(r"(?i)<(/?)svg\b")
 
@@ -204,6 +210,41 @@ def extract_colors(content: str) -> list[tuple[int, int, int]]:
     return colors
 
 
+PROTECTED_RE = re.compile(
+    r"(?is)<(defs|mask|clipPath|pattern|marker|symbol)\b.*?</\1>",
+)
+
+# A shape element whose tag carries no fill or stroke at all: give its
+# (black-default) rendering an explicit ink fill so the ramp can own it.
+SHAPE_TAG_RE = re.compile(
+    r"(?i)<((?:path|rect|circle|ellipse|polygon|polyline)\b[^>]*?)(/?>)",
+)
+
+
+def inject_default_fill(content: str) -> str:
+    # SVG default fill is black; shape elements that carry an opacity (or
+    # nothing) without an explicit fill/stroke would render as ink-black
+    # regardless of the ramp. Give them an explicit black so the ramp
+    # recolors them like any other source tone. Shapes inside <defs>/<mask>/
+    # <clipPath>/<pattern>/<marker>/<symbol> are left alone, and anything
+    # that already sets fill or stroke (attribute or style) is skipped.
+    def repl(m):
+        body, closer = m.group(1), m.group(2)
+        if re.search(r"\bfill\b", body) or re.search(r"\bstroke\b", body):
+            return m.group(0)  # already colours the shape explicitly
+        return f"<{body} fill=\"#000000\"{closer}"
+
+    protected: list[str] = []
+    def stash(m):
+        protected.append(m.group(0))
+        return f"@@PROTECT{len(protected) - 1}@@"
+    stashed = PROTECTED_RE.sub(stash, content)
+    injected = SHAPE_TAG_RE.sub(repl, stashed)
+    for i, block in enumerate(protected):
+        injected = injected.replace(f"@@PROTECT{i}@@", block)
+    return injected
+
+
 def recolor_content(content: str, ramp) -> tuple[str, int]:
     def repl(m):
         if m.group(1) is not None:
@@ -220,7 +261,7 @@ def recolor_content(content: str, ramp) -> tuple[str, int]:
         else:
             return f'{prop}="{out}"'
 
-    new, n = COLOR_RE.subn(repl, content)
+    new, n = COLOR_RE.subn(repl, inject_default_fill(content))
     return new, n
 
 

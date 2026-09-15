@@ -198,7 +198,7 @@ if [[ "$need_sweep" == "1" ]]; then
             org.gnome.TextEditor)            flags="invert min-t 0.30 max-t 0.88";;
             libreoffice-writer)              flags="min-t 0.25";;
             org.gnome.Weather)               flags="piecewise 0.0:0.30,0.46:0.55,0.62:0.65,0.80:0.85,1.0:0.95";;
-            org.gnome.tweaks)                flags="piecewise 0.48:0.10,0.68:0.35,0.89:0.55,1.0:0.95";;
+            org.gnome.tweaks)                flags="piecewise 0.47:0.38,0.68:0.50,0.89:0.72,1.0:0.90";;
             org.gnome.Boxes)                 flags="piecewise 0.31:0.40,0.77:0.72,1.0:0.98";;
             org.gnome.Settings)              flags="piecewise 0.65:0.05,0.75:0.30,0.86:0.55,1.0:0.92";;
             mpv)                             flags="piecewise 0.20:0.30,0.30:0.46,1.0:0.96";;
@@ -215,8 +215,8 @@ if [[ "$need_sweep" == "1" ]]; then
             org.gnome.Shell.Extensions)      flags="piecewise 0.66:0.50,1.0:0.92";;
             org.gnome.font-viewer)           flags="piecewise 0.39:0.50,1.0:0.95";;
             org.gnome.Connections)           flags="piecewise 0.25:0.35,0.37:0.50,0.52:0.70,1.0:0.95";;
-            org.gnome.Logs)                  flags="piecewise 0.51:0.75,0.69:0.55,0.78:0.55,0.9:0.60,1.0:0.95";;
-            org.gnome.Characters)            flags="piecewise 0.39:0.70,0.53:0.72,0.74:0.78,0.9:0.55,1.0:0.95";;
+org.gnome.Logs)                  flags="piecewise 0.31:0.32,0.43:0.36,0.51:0.42,0.69:0.52,1.0:0.82";;
+org.gnome.Characters)            flags="piecewise 0.25:0.28,0.39:0.34,0.53:0.40,0.74:0.50,1.0:0.80";;
             libreoffice-base)                flags="piecewise 0.27:0.32,0.34:0.50,0.48:0.65,0.65:0.80,1.0:0.95";;
             libreoffice-draw)                flags="piecewise 0.55:0.45,0.70:0.55,0.92:0.75,1.0:0.95";;
             libreoffice-startcenter)         flags="piecewise 0.31:0.15,0.37:0.35,0.67:0.55,0.93:0.65,1.0:0.80";;
@@ -226,6 +226,11 @@ if [[ "$need_sweep" == "1" ]]; then
             helium)                          flags="piecewise 0.28:0.45,0.36:0.55,1.0:0.95";;
             com.github.rafostar.Clapper)     flags="piecewise 0.25:0.28,0.32:0.48,0.80:0.65,0.89:0.78,1.0:0.95";;
             org.gnome.Yelp)                  flags="piecewise 0.42:0.42,0.9:0.70,1.0:0.95";;
+            com.google.Chrome)               flags="piecewise 0.40:0.32,0.50:0.42,0.80:0.72,1.0:0.95";;
+            firefox)                         flags="piecewise 0.40:0.35,0.55:0.48,0.85:0.80,1.0:0.95";;
+            firefox-nightly)                 flags="piecewise 0.30:0.30,0.45:0.42,0.65:0.60,1.0:0.92";;
+            ibus-setup-hangul)               flags="piecewise 0.28:0.35,0.50:0.48,0.86:0.78,1.0:0.95";;
+            org.gnome.DiskUtility)           flags="piecewise 0.30:0.35,0.67:0.62,0.90:0.85,1.0:0.95";;
             *)                               flags="";;
         esac
         printf '%s\t%s\n' "$src" "$flags" >> "$jobs_file"
