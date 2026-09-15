@@ -130,7 +130,7 @@ for icon in "${duotone_icons[@]}"; do
     cur="$target_apps/$icon.svg"
     [[ -f "$cur" ]] || continue
     python3 "$generator" --dark "#000000" --light "$target_hex" --radius 0.5 \
-        --autoscale --outdir "$target_apps" "$cur" 2>/dev/null || true
+        --autoscale --linear --outdir "$target_apps" "$cur" 2>/dev/null || true
     # mono-icons.py outputs <name>.mono.svg — rename to the canonical icon name.
     mono_out="$target_apps/$icon.mono.svg"
     if [[ -f "$mono_out" ]]; then

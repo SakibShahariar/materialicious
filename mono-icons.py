@@ -106,7 +106,8 @@ def s_curve(t: float, radius: float) -> float:
     return 1.0 / (1.0 + math.exp(-k * (t - 0.5)))
 
 
-def build_ramp(dark, light, radius, autoscale=False, src_min=0.0, src_max=1.0):
+def build_ramp(dark, light, radius, autoscale=False, src_min=0.0, src_max=1.0,
+               linear=False):
     dark_rgb = hex_to_rgb(dark)
     light_rgb = hex_to_rgb(light)
     dark_lum = luminance(*dark_rgb) / 255.0
@@ -122,7 +123,11 @@ def build_ramp(dark, light, radius, autoscale=False, src_min=0.0, src_max=1.0):
         # t in [0,1] relative to the ramp; autoscale remaps by source range.
         if autoscale:
             t = (t - src_min) / src_span
-        return s_curve(t, radius)
+        # --linear preserves the source icon's own tone positions exactly
+        # (used for *re-colouring* an existing duotone icon, whose sculpture
+        # is already baked in). Without it the S-curve re-sharpens the ramp
+        # on every pass and midtones collapse to the dark/light ends.
+        return t if linear else s_curve(t, radius)
 
     def ramp(r, g, b):
         lum = luminance(r, g, b) / 255.0
@@ -177,6 +182,9 @@ def main() -> int:
     ap.add_argument("--radius", type=float, default=0.5, help="S-curve knee (0..1)")
     ap.add_argument("--autoscale", action="store_true",
                     help="stretch each icon's own tone range onto the ramp")
+    ap.add_argument("--linear", action="store_true",
+                    help="map tones proportionally without re-sharpening "
+                         "(for re-colouring an existing duotone icon)")
     ap.add_argument("--outdir", default=None, help="write <name>.mono.svg here")
     ap.add_argument("svgs", nargs="+", help="source SVG files")
     args = ap.parse_args()
@@ -199,7 +207,8 @@ def main() -> int:
             except ValueError:
                 pass
         ramp = build_ramp(args.dark, args.light, args.radius,
-                          autoscale=args.autoscale, src_min=src_min, src_max=src_max)
+                          autoscale=args.autoscale, src_min=src_min, src_max=src_max,
+                          linear=args.linear)
         new, n = recolor_content(content, ramp)
         if n == 0:
             print(f"mono-icons: skip (no #rrggbb/rgb() colours): {src}", file=sys.stderr)

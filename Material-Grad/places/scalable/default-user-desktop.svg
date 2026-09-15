@@ -4,14 +4,14 @@
         color:#333333;
       }
       .ColorScheme-Background {
-        color:#30285f;
+        color:#531d39;
       }
       .ColorScheme-Highlight {
-        color:#c9bfff;
+        color:#feb0d2;
       }</style>
  </defs>
  <rect class="ColorScheme-Highlight" x="2" y="9" width="60" height="46" rx="4" ry="4" fill="currentColor"/>
- <rect id="highlight" x="2" y="9" width="60" height="46" rx="4" ry="4" fill="#c9bfff" opacity=".25"/>
+ <rect id="highlight" x="2" y="9" width="60" height="46" rx="4" ry="4" fill="#feb0d2" opacity=".25"/>
  <path class="ColorScheme-Background" d="m15.003 50.998c-1.1077 0-1.9999 0.89231-1.9999 1.9999v2.0019h37.999v-2.0019c0-1.1077-0.89231-1.9999-1.9999-1.9999z" fill="currentColor" opacity=".35"/>
  <path class="ColorScheme-Highlight" d="m18.002 47c-0.554 0-1 0.446-1 1v4c0 0.554 0.446 1 1 1h4c0.554 0 1-0.446 1-1v-4c0-0.554-0.446-1-1-1zm7.9961 0c-0.554 0-1 0.446-1 1v4c0 0.554 0.446 1 1 1h4c0.554 0 1-0.446 1-1v-4c0-0.554-0.446-1-1-1zm8 0c-0.554 0-1 0.446-1 1v4c0 0.554 0.446 1 1 1h4c0.554 0 1-0.446 1-1v-4c0-0.554-0.446-1-1-1zm8 0c-0.554 0-1 0.446-1 1v4c0 0.554 0.446 1 1 1h4c0.554 0 1-0.446 1-1v-4c0-0.554-0.446-1-1-1z" fill="currentColor"/>
  <path class="ColorScheme-Background" d="m18.002 47c-0.554 0-1 0.446-1 1v4c0 0.554 0.446 1 1 1h4c0.554 0 1-0.446 1-1v-4c0-0.554-0.446-1-1-1zm7.9961 0c-0.554 0-1 0.446-1 1v4c0 0.554 0.446 1 1 1h4c0.554 0 1-0.446 1-1v-4c0-0.554-0.446-1-1-1zm8 0c-0.554 0-1 0.446-1 1v4c0 0.554 0.446 1 1 1h4c0.554 0 1-0.446 1-1v-4c0-0.554-0.446-1-1-1zm8 0c-0.554 0-1 0.446-1 1v4c0 0.554 0.446 1 1 1h4c0.554 0 1-0.446 1-1v-4c0-0.554-0.446-1-1-1z" fill="currentColor" opacity=".65"/>
