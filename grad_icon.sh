@@ -201,6 +201,11 @@ duotone_icons=(
     krita
     transmission
     freetube
+    darktable
+    gcolor3
+    qalculate
+    kdenlive
+    obsidian
 )
 
 if [[ "$need_sweep" == "1" ]]; then
@@ -254,23 +259,26 @@ org.gnome.Characters)            flags="piecewise 0.25:0.24,0.39:0.30,0.53:0.36,
             ABDownloadManager)               flags="piecewise 0.15:0.30,0.24:0.45,0.33:0.60,1.0:0.90";;
             actions-for-nautilus-configurator) flags="piecewise 0.24:0.30,0.32:0.45,0.44:0.60,1.0:0.88";;
             chatgpt)                         flags="piecewise 0.18:0.30,0.25:0.42,0.33:0.55,1.0:0.85";;
-            gnome-color-manager)             flags="piecewise 0.22:0.30,0.30:0.45,0.42:0.62,1.0:0.88";;
-            ibus)                            flags="piecewise 0.30:0.32,0.38:0.48,0.48:0.62,1.0:0.90";;
-            ibus-anthy)                      flags="piecewise 0.28:0.30,0.36:0.45,0.46:0.60,1.0:0.90";;
-            ibus-setup)                      flags="piecewise 0.30:0.32,0.38:0.48,0.48:0.62,1.0:0.90";;
-            ibus-typing-booster)             flags="piecewise 0.22:0.30,0.30:0.42,0.40:0.58,1.0:0.88";;
+            gnome-color-manager)             flags="piecewise 0.08:0.05,0.3:0.3,0.5:0.6,0.72:0.85,1.0:0.95";;
+            ibus)                            flags="piecewise 0.08:0.05,0.3:0.3,0.5:0.6,0.72:0.85,1.0:0.95";;
+            ibus-anthy)                      flags="piecewise 0.08:0.05,0.3:0.3,0.5:0.6,0.72:0.85,1.0:0.95";;
+            ibus-setup)                      flags="piecewise 0.08:0.05,0.3:0.3,0.5:0.6,0.72:0.85,1.0:0.95";;
+            ibus-typing-booster)             flags="piecewise 0.08:0.05,0.3:0.3,0.5:0.6,0.72:0.85,1.0:0.95";;
             material-screensaver)            flags="piecewise 0.20:0.28,0.28:0.45,0.40:0.65,1.0:0.90";;
-            orca)                            flags="piecewise 0.23:0.30,0.32:0.48,0.45:0.68,1.0:0.92";;
-            org.freedesktop.IBus.Chewing.Setup) flags="piecewise 0.30:0.32,0.38:0.48,0.48:0.62,1.0:0.90";;
+            orca)                            flags="piecewise 0.05:0.05,0.2:0.25,0.4:0.5,0.6:0.75,0.8:0.9,1.0:0.95";;
+            org.freedesktop.IBus.Chewing.Setup) flags="piecewise 0.08:0.05,0.3:0.3,0.5:0.6,0.72:0.85,1.0:0.95";;
             org.freedesktop.MalcontentControl) flags="piecewise 0.28:0.35,0.40:0.48,0.55:0.62,1.0:0.85";;
             org.gnome.BrowserConnector)      flags="piecewise 0.20:0.30,0.30:0.45,0.42:0.62,1.0:0.90";;
-            org.gnome.Evolution-alarm-notify) flags="piecewise 0.25:0.35,0.38:0.48,0.55:0.62,1.0:0.85";;
+            org.gnome.Evolution-alarm-notify) flags="piecewise 0.05:0.05,0.25:0.28,0.45:0.55,0.7:0.85,1.0:0.95";;
             org.gnome.Tecla)                 flags="piecewise 0.25:0.38,0.32:0.52,0.42:0.68,1.0:0.95";;
             rygel)                           flags="piecewise 0.28:0.32,0.36:0.45,0.46:0.60,1.0:0.88";;
-            gimp)                            flags="piecewise 0.13:0.28,0.20:0.42,0.28:0.55,1.0:0.88";;
+            gimp)                            flags="piecewise 0.1:0.08,0.3:0.25,0.5:0.55,0.8:0.82,1.0:0.95";;
             krita)                           flags="piecewise 0.25:0.32,0.34:0.45,0.46:0.60,1.0:0.88";;
             transmission)                    flags="piecewise 0.20:0.30,0.28:0.42,0.36:0.55,1.0:0.88";;
-            freetube)                        flags="piecewise 0.22:0.30,0.30:0.42,0.42:0.55,1.0:0.80";;
+            freetube)                        flags="piecewise 0.05:0.05,0.3:0.35,0.55:0.55,0.8:0.7,1.0:0.85";;
+            qalculate)                       flags="piecewise 0.1:0.08,0.3:0.3,0.5:0.55,0.7:0.78,1.0:0.95";;
+            kdenlive)                        flags="piecewise 0.08:0.1,0.25:0.32,0.45:0.55,0.65:0.78,1.0:0.95";;
+            obsidian)                        flags="piecewise 0.1:0.08,0.3:0.3,0.5:0.55,0.7:0.78,1.0:0.95";;
             *)                               flags="";;
         esac
         printf '%s\t%s\n' "$src" "$flags" >> "$jobs_file"
