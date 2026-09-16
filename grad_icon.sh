@@ -226,6 +226,36 @@ duotone_icons=(
     inkscape
     flameshot
     digikam
+    monero
+    freecad
+    jadx
+    wesnoth
+    warzone2100
+    burpsuite
+    appcode
+    dataspell
+    rubymine
+    kakoune
+    min
+    qutebrowser
+    ristretto
+    apktool
+    aircrack-ng
+    intellij-idea
+    gnome-chess
+    helix
+    deluge
+    code-oss
+    github-desktop
+    metasploit
+    nmap
+    keepassxc
+    bitwarden
+    gitkraken
+    xonotic
+    scummvm
+    sweethome3d
+    godot
 )
 
 if [[ "$need_sweep" == "1" ]]; then
@@ -302,7 +332,7 @@ org.gnome.Characters)            flags="piecewise 0.25:0.24,0.39:0.30,0.53:0.36,
             kdenlive)                        flags="piecewise 0.08:0.1,0.25:0.32,0.45:0.55,0.65:0.78,1.0:0.95";;
             obsidian)                        flags="piecewise 0.28:0.45,0.4:0.6,0.45:0.66,0.62:0.8,1.0:0.97";;
             audacity)                        flags="piecewise 0.32:0.45,0.5:0.6,0.56:0.68,0.7:0.8,0.9:0.92,1.0:0.95";;
-            android-studio)                  flags="piecewise 0.12:0.08,0.2:0.22,0.25:0.4,0.4:0.6,0.55:0.8,0.7:0.9,1.0:0.97";;
+            android-studio)                  flags="piecewise 0.15:0.08,0.2:0.18,0.25:0.3,0.4:0.45,0.5:0.6,0.7:0.82,0.8:0.92,1.0:0.97";;
             vscode)                          flags="piecewise 0.03:0.12,0.3:0.35,0.4:0.5,0.55:0.68,1.0:0.92";;
             arduino)                          flags="piecewise 0.3:0.15,0.35:0.35,0.45:0.45,0.55:0.6,0.8:0.75,1.0:0.85";;
             blender)                          flags="piecewise 0.5:0.15,0.55:0.3,0.7:0.5,0.8:0.65,0.9:0.85,1.0:0.95";;
@@ -311,16 +341,46 @@ org.gnome.Characters)            flags="piecewise 0.25:0.24,0.39:0.30,0.53:0.36,
             vivaldi)                          flags="piecewise 0.3:0.15,0.33:0.35,0.5:0.55,0.6:0.7,0.85:0.9,1.0:0.95";;
             discord)                          flags="piecewise 0.05:0.12,0.5:0.45,0.55:0.6,0.85:0.8,1.0:0.95";;
             steam)                          flags="piecewise 0.03:0.1,0.3:0.35,0.5:0.55,0.7:0.7,0.85:0.88,1.0:0.95";;
-            flameshot)                          flags="piecewise 0.15:0.15,0.2:0.35,0.3:0.55,0.4:0.65,0.5:0.75,0.65:0.85,0.8:0.92";;
+            flameshot)                          flags="piecewise 0.12:0.05,0.2:0.28,0.3:0.5,0.4:0.68,0.5:0.78,0.6:0.87,0.75:0.93";;
             inkscape)                          flags="piecewise 0.05:0.1,0.3:0.3,0.5:0.5,0.7:0.68,0.9:0.85,1.0:0.92";;
             eclipse)                          flags="piecewise 0.08:0.12,0.2:0.3,0.35:0.5,0.6:0.68,0.8:0.82,1.0:0.9";;
             pycharm)                          flags="piecewise 0.05:0.15,0.2:0.3,0.35:0.5,0.6:0.66,0.75:0.82,1.0:0.92";;
             virtualbox)                          flags="piecewise 0.03:0.1,0.3:0.35,0.5:0.55,0.7:0.72,0.85:0.88,1.0:0.92";;
             digikam)                          flags="piecewise 0.03:0.12,0.25:0.3,0.4:0.48,0.6:0.62,0.8:0.78,1.0:0.88";;
             thunderbird)                          flags="piecewise 0.15:0.1,0.3:0.35,0.4:0.5,0.5:0.6,0.6:0.68,0.8:0.8,1.0:0.9";;
-            lutris)                          flags="piecewise 0.3:0.15,0.45:0.3,0.6:0.5,0.7:0.7,0.9:0.85";;
+            lutris)                          flags="piecewise 0.15:0.1,0.35:0.3,0.45:0.42,0.6:0.6,0.7:0.78,0.9:0.92";;
             tenacity)                          flags="piecewise 0.05:0.1,0.3:0.3,0.5:0.5,0.7:0.68,0.9:0.85,1.0:0.92";;
             rawtherapee)                          flags="piecewise 0.05:0.12,0.25:0.3,0.4:0.45,0.6:0.6,0.75:0.75,0.9:0.88,1.0:0.92";;
+            monero)                          flags="piecewise 0.15:0.15,0.3:0.35,0.45:0.55,0.6:0.7,0.8:0.85,1.0:0.93";;
+            freecad)                          flags="piecewise 0.15:0.15,0.3:0.35,0.45:0.55,0.6:0.7,0.8:0.85,1.0:0.93";;
+            jadx)                          flags="piecewise 0.15:0.15,0.3:0.35,0.45:0.55,0.6:0.7,0.8:0.85,1.0:0.93";;
+            wesnoth)                          flags="piecewise 0.15:0.15,0.3:0.35,0.45:0.55,0.6:0.7,0.8:0.85,1.0:0.93";;
+            warzone2100)                          flags="piecewise 0.15:0.15,0.3:0.35,0.45:0.55,0.6:0.7,0.8:0.85,1.0:0.93";;
+            burpsuite)                          flags="piecewise 0.15:0.15,0.3:0.35,0.45:0.55,0.6:0.7,0.8:0.85,1.0:0.93";;
+            appcode)                          flags="piecewise 0.15:0.15,0.3:0.35,0.45:0.55,0.6:0.7,0.8:0.85,1.0:0.93";;
+            dataspell)                          flags="piecewise 0.15:0.15,0.3:0.35,0.45:0.55,0.6:0.7,0.8:0.85,1.0:0.93";;
+            rubymine)                          flags="piecewise 0.15:0.15,0.3:0.35,0.45:0.55,0.6:0.7,0.8:0.85,1.0:0.93";;
+            kakoune)                          flags="piecewise 0.15:0.15,0.3:0.35,0.45:0.55,0.6:0.7,0.8:0.85,1.0:0.93";;
+            min)                          flags="piecewise 0.15:0.15,0.3:0.35,0.45:0.55,0.6:0.7,0.8:0.85,1.0:0.93";;
+            qutebrowser)                          flags="piecewise 0.15:0.15,0.3:0.35,0.45:0.55,0.6:0.7,0.8:0.85,1.0:0.93";;
+            ristretto)                          flags="piecewise 0.15:0.15,0.3:0.35,0.45:0.55,0.6:0.7,0.8:0.85,1.0:0.93";;
+            apktool)                          flags="piecewise 0.15:0.15,0.3:0.35,0.45:0.55,0.6:0.7,0.8:0.85,1.0:0.93";;
+            aircrack-ng)                          flags="piecewise 0.15:0.15,0.3:0.35,0.45:0.55,0.6:0.7,0.8:0.85,1.0:0.93";;
+            intellij-idea)                          flags="piecewise 0.15:0.15,0.3:0.35,0.45:0.55,0.6:0.7,0.8:0.85,1.0:0.93";;
+            gnome-chess)                          flags="piecewise 0.15:0.15,0.3:0.35,0.45:0.55,0.6:0.7,0.8:0.85,1.0:0.93";;
+            helix)                          flags="piecewise 0.15:0.15,0.3:0.35,0.45:0.55,0.6:0.7,0.8:0.85,1.0:0.93";;
+            deluge)                          flags="piecewise 0.15:0.15,0.3:0.35,0.45:0.55,0.6:0.7,0.8:0.85,1.0:0.93";;
+            code-oss)                          flags="piecewise 0.15:0.15,0.3:0.35,0.45:0.55,0.6:0.7,0.8:0.85,1.0:0.93";;
+            github-desktop)                          flags="piecewise 0.15:0.15,0.3:0.35,0.45:0.55,0.6:0.7,0.8:0.85,1.0:0.93";;
+            metasploit)                          flags="piecewise 0.15:0.15,0.3:0.35,0.45:0.55,0.6:0.7,0.8:0.85,1.0:0.93";;
+            nmap)                          flags="piecewise 0.15:0.15,0.3:0.35,0.45:0.55,0.6:0.7,0.8:0.85,1.0:0.93";;
+            keepassxc)                          flags="piecewise 0.15:0.15,0.3:0.35,0.45:0.55,0.6:0.7,0.8:0.85,1.0:0.93";;
+            bitwarden)                          flags="piecewise 0.15:0.15,0.3:0.35,0.45:0.55,0.6:0.7,0.8:0.85,1.0:0.93";;
+            gitkraken)                          flags="piecewise 0.15:0.15,0.3:0.35,0.45:0.55,0.6:0.7,0.8:0.85,1.0:0.93";;
+            xonotic)                          flags="piecewise 0.15:0.15,0.3:0.35,0.45:0.55,0.6:0.7,0.8:0.85,1.0:0.93";;
+            scummvm)                          flags="piecewise 0.15:0.15,0.3:0.35,0.45:0.55,0.6:0.7,0.8:0.85,1.0:0.93";;
+            sweethome3d)                          flags="piecewise 0.15:0.15,0.3:0.35,0.45:0.55,0.6:0.7,0.8:0.85,1.0:0.93";;
+            godot)                          flags="piecewise 0.15:0.15,0.3:0.35,0.45:0.55,0.6:0.7,0.8:0.85,1.0:0.93";;
             *)                               flags="";;
         esac
         printf '%s\t%s\n' "$src" "$flags" >> "$jobs_file"
