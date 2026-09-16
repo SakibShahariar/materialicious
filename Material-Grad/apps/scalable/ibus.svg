@@ -33,11 +33,11 @@
     <linearGradient
        id="linearGradient5554">
       <stop
-         style="stop-color:#4b4b4b;stop-opacity:1;"
+         style="stop-color:#403749;stop-opacity:1;"
          offset="0"
          id="stop5556" />
       <stop
-         style="stop-color:#969696;stop-opacity:1;"
+         style="stop-color:#9882af;stop-opacity:1;"
          offset="1"
          id="stop5558" />
     </linearGradient>
@@ -45,11 +45,11 @@
        inkscape:collect="always"
        id="linearGradient5954">
       <stop
-         style="stop-color:#ffffff;stop-opacity:1;"
+         style="stop-color:#ceb1ee;stop-opacity:1;"
          offset="0"
          id="stop5956" />
       <stop
-         style="stop-color:#ffffff;stop-opacity:0;"
+         style="stop-color:#ceb1ee;stop-opacity:0;"
          offset="1"
          id="stop5958" />
     </linearGradient>
@@ -57,33 +57,33 @@
        inkscape:collect="always"
        id="linearGradient5946">
       <stop
-         style="stop-color:#ffffff;stop-opacity:1;"
+         style="stop-color:#ceb1ee;stop-opacity:1;"
          offset="0"
          id="stop5948" />
       <stop
-         style="stop-color:#ffffff;stop-opacity:0;"
+         style="stop-color:#ceb1ee;stop-opacity:0;"
          offset="1"
          id="stop5950" />
     </linearGradient>
     <linearGradient
        id="linearGradient5684">
       <stop
-         style="stop-color:#ffffff;stop-opacity:1;"
+         style="stop-color:#ceb1ee;stop-opacity:1;"
          offset="0"
          id="stop5686" />
       <stop
-         style="stop-color:#fbfbfa;stop-opacity:0"
+         style="stop-color:#cdb0ec;stop-opacity:0"
          offset="1"
          id="stop5688" />
     </linearGradient>
     <linearGradient
        id="linearGradient5582">
       <stop
-         style="stop-color:#728fff;stop-opacity:1;"
+         style="stop-color:#937ea9;stop-opacity:1;"
          offset="0"
          id="stop5584" />
       <stop
-         style="stop-color:#cacaff;stop-opacity:1;"
+         style="stop-color:#bfa4dc;stop-opacity:1;"
          offset="1"
          id="stop5586" />
     </linearGradient>

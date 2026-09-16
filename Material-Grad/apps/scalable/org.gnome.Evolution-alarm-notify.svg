@@ -4,13 +4,13 @@
         <feColorMatrix color-interpolation-filters="sRGB" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0"/>
     </filter>
     <linearGradient id="b" gradientUnits="userSpaceOnUse" x1="4.157227" x2="123.999924" y1="113.607422" y2="113.607422">
-        <stop offset="0" stop-color="#3d3846"/>
-        <stop offset="0.431979" stop-color="#766b87"/>
-        <stop offset="1" stop-color="#3d3846"/>
+        <stop offset="0" stop-color="#372f40"/>
+        <stop offset="0.431979" stop-color="#736385"/>
+        <stop offset="1" stop-color="#372f40"/>
     </linearGradient>
     <linearGradient id="c" gradientTransform="matrix(0.913268 -0.40736 0.40736 0.913268 -8 -164)" gradientUnits="userSpaceOnUse" x1="-31.097309" x2="-13.45399" y1="213.991806" y2="215.936523">
-        <stop offset="0" stop-color="#e01b24"/>
-        <stop offset="1" stop-color="#241f31" stop-opacity="0.313726"/>
+        <stop offset="0" stop-color="#433a4e"/>
+        <stop offset="1" stop-color="#1f1b24" stop-opacity="0.313726"/>
     </linearGradient>
     <mask id="d">
         <g filter="url(#a)">

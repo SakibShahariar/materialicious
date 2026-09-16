@@ -22,82 +22,82 @@
     <linearGradient
        id="linearGradient11599">
       <stop
-         style="stop-color:#5b5b5b;stop-opacity:1"
+         style="stop-color:#615370;stop-opacity:1"
          offset="0"
          id="stop11601" />
       <stop
-         style="stop-color:#979797;stop-opacity:1"
+         style="stop-color:#a18ab9;stop-opacity:1"
          offset="0.5"
          id="stop11603" />
       <stop
-         style="stop-color:#454545;stop-opacity:1"
+         style="stop-color:#493f55;stop-opacity:1"
          offset="1"
          id="stop11605" />
     </linearGradient>
     <linearGradient
        id="linearGradient11573">
       <stop
-         style="stop-color:#ef2929;stop-opacity:1"
+         style="stop-color:#584c66;stop-opacity:1"
          offset="0"
          id="stop11575" />
       <stop
-         style="stop-color:#f79090;stop-opacity:1"
+         style="stop-color:#ab93c5;stop-opacity:1"
          offset="0.5"
          id="stop11585" />
       <stop
-         style="stop-color:#ef2929;stop-opacity:1"
+         style="stop-color:#584c66;stop-opacity:1"
          offset="1"
          id="stop11577" />
     </linearGradient>
     <linearGradient
        id="linearGradient3394">
       <stop
-         style="stop-color:#cc0000;stop-opacity:0.49803922"
+         style="stop-color:#2e2735;stop-opacity:0.49803922"
          offset="0"
          id="stop3402" />
       <stop
-         style="stop-color:#cc0000;stop-opacity:1"
+         style="stop-color:#2e2735;stop-opacity:1"
          offset="1"
          id="stop3404" />
     </linearGradient>
     <linearGradient
        id="linearGradient3243">
       <stop
-         style="stop-color:#ef2929;stop-opacity:1"
+         style="stop-color:#584c66;stop-opacity:1"
          offset="0"
          id="stop3245" />
       <stop
-         style="stop-color:#efc8c8;stop-opacity:1"
+         style="stop-color:#c4a8e2;stop-opacity:1"
          offset="0.5"
          id="stop3253" />
       <stop
-         style="stop-color:#ef2929;stop-opacity:1"
+         style="stop-color:#584c66;stop-opacity:1"
          offset="1"
          id="stop3247" />
     </linearGradient>
     <linearGradient
        id="linearGradient3229">
       <stop
-         style="stop-color:#ef2929;stop-opacity:1"
+         style="stop-color:#584c66;stop-opacity:1"
          offset="0"
          id="stop3231" />
       <stop
-         style="stop-color:#f35e5e;stop-opacity:1"
+         style="stop-color:#86739a;stop-opacity:1"
          offset="1"
          id="stop3241" />
     </linearGradient>
     <linearGradient
        id="linearGradient3197">
       <stop
-         style="stop-color:#cc0000;stop-opacity:1"
+         style="stop-color:#2e2735;stop-opacity:1"
          offset="0"
          id="stop3199" />
       <stop
-         style="stop-color:#cc0000;stop-opacity:0.49803922"
+         style="stop-color:#2e2735;stop-opacity:0.49803922"
          offset="0"
          id="stop3205" />
       <stop
-         style="stop-color:#cc0000;stop-opacity:1"
+         style="stop-color:#2e2735;stop-opacity:1"
          offset="1"
          id="stop3201" />
     </linearGradient>
@@ -122,11 +122,11 @@
     <linearGradient
        id="linearGradient4199">
       <stop
-         style="stop-color:#ffffff;stop-opacity:0.69072163"
+         style="stop-color:#ceb1ee;stop-opacity:0.69072163"
          offset="0"
          id="stop4201" />
       <stop
-         style="stop-color:#000000;stop-opacity:0"
+         style="stop-color:#0b090c;stop-opacity:0"
          offset="1"
          id="stop4203" />
     </linearGradient>
@@ -142,11 +142,11 @@
     <linearGradient
        id="linearGradient4152">
       <stop
-         style="stop-color:#788492;stop-opacity:1"
+         style="stop-color:#8b77a0;stop-opacity:1"
          offset="0"
          id="stop4154" />
       <stop
-         style="stop-color:#fafafa;stop-opacity:1"
+         style="stop-color:#cdb0ec;stop-opacity:1"
          offset="1"
          id="stop4156" />
     </linearGradient>
@@ -189,11 +189,11 @@
     <linearGradient
        id="linearGradient4242">
       <stop
-         style="stop-color:#000000;stop-opacity:1"
+         style="stop-color:#0b090c;stop-opacity:1"
          offset="0"
          id="stop4244" />
       <stop
-         style="stop-color:#000000;stop-opacity:0"
+         style="stop-color:#0b090c;stop-opacity:0"
          offset="1"
          id="stop4246" />
     </linearGradient>
@@ -218,11 +218,11 @@
     <linearGradient
        id="linearGradient2215">
       <stop
-         style="stop-color:#000000;stop-opacity:1"
+         style="stop-color:#0b090c;stop-opacity:1"
          offset="0"
          id="stop2217" />
       <stop
-         style="stop-color:#505050;stop-opacity:1"
+         style="stop-color:#554962;stop-opacity:1"
          offset="1"
          id="stop2219" />
     </linearGradient>
@@ -238,11 +238,11 @@
     <linearGradient
        id="linearGradient2949">
       <stop
-         style="stop-color:#ffffff;stop-opacity:0.45038167"
+         style="stop-color:#ceb1ee;stop-opacity:0.45038167"
          offset="0"
          id="stop2951" />
       <stop
-         style="stop-color:#ffffff;stop-opacity:0.31297711"
+         style="stop-color:#ceb1ee;stop-opacity:0.31297711"
          offset="1"
          id="stop2953" />
     </linearGradient>
@@ -258,11 +258,11 @@
     <linearGradient
        id="linearGradient2879">
       <stop
-         style="stop-color:#000000;stop-opacity:0.17557251"
+         style="stop-color:#0b090c;stop-opacity:0.17557251"
          offset="0"
          id="stop2881" />
       <stop
-         style="stop-color:#000000;stop-opacity:0"
+         style="stop-color:#0b090c;stop-opacity:0"
          offset="1"
          id="stop2883" />
     </linearGradient>
@@ -390,126 +390,126 @@
     <linearGradient
        id="linearGradient6939">
       <stop
-         style="stop-color:#dddddd;stop-opacity:1"
+         style="stop-color:#c7aae5;stop-opacity:1"
          offset="0"
          id="stop6941" />
       <stop
-         style="stop-color:#ffffff;stop-opacity:1"
+         style="stop-color:#ceb1ee;stop-opacity:1"
          offset="0.33333334"
          id="stop6947" />
       <stop
-         style="stop-color:#b7b7b7;stop-opacity:1"
+         style="stop-color:#b69cd2;stop-opacity:1"
          offset="0.66666669"
          id="stop6949" />
       <stop
-         style="stop-color:#dddddd;stop-opacity:1"
+         style="stop-color:#c7aae5;stop-opacity:1"
          offset="1"
          id="stop6943" />
     </linearGradient>
     <linearGradient
        id="linearGradient6951">
       <stop
-         style="stop-color:#6e3d09;stop-opacity:1"
+         style="stop-color:#483e53;stop-opacity:1"
          offset="0"
          id="stop6953" />
       <stop
-         style="stop-color:#ea8113;stop-opacity:1"
+         style="stop-color:#9983b0;stop-opacity:1"
          offset="0.24242425"
          id="stop6959" />
       <stop
-         style="stop-color:#5c3307;stop-opacity:1"
+         style="stop-color:#3c3445;stop-opacity:1"
          offset="0.62121212"
          id="stop6961" />
       <stop
-         style="stop-color:#e07c12;stop-opacity:1"
+         style="stop-color:#927da9;stop-opacity:1"
          offset="1"
          id="stop6955" />
     </linearGradient>
     <linearGradient
        id="linearGradient6963">
       <stop
-         style="stop-color:#696969;stop-opacity:1"
+         style="stop-color:#706081;stop-opacity:1"
          offset="0"
          id="stop6965" />
       <stop
-         style="stop-color:#000000;stop-opacity:1"
+         style="stop-color:#0b090c;stop-opacity:1"
          offset="1"
          id="stop6967" />
     </linearGradient>
     <linearGradient
        id="linearGradient6975">
       <stop
-         style="stop-color:#000000;stop-opacity:1"
+         style="stop-color:#0b090c;stop-opacity:1"
          offset="0"
          id="stop6977" />
       <stop
-         style="stop-color:#000000;stop-opacity:0"
+         style="stop-color:#0b090c;stop-opacity:0"
          offset="1"
          id="stop6979" />
     </linearGradient>
     <linearGradient
        id="linearGradient2446">
       <stop
-         style="stop-color:#ffffff;stop-opacity:1"
+         style="stop-color:#ceb1ee;stop-opacity:1"
          offset="0"
          id="stop2448" />
       <stop
-         style="stop-color:#ffffff;stop-opacity:0"
+         style="stop-color:#ceb1ee;stop-opacity:0"
          offset="1"
          id="stop2450" />
     </linearGradient>
     <linearGradient
        id="linearGradient6629">
       <stop
-         style="stop-color:#aeaeae;stop-opacity:1"
+         style="stop-color:#b097cb;stop-opacity:1"
          offset="0"
          id="stop6631" />
       <stop
-         style="stop-color:#c4c4c4;stop-opacity:0"
+         style="stop-color:#bea3db;stop-opacity:0"
          offset="1"
          id="stop6633" />
     </linearGradient>
     <linearGradient
        id="linearGradient6651">
       <stop
-         style="stop-color:#f2f2f2;stop-opacity:1"
+         style="stop-color:#cbaeea;stop-opacity:1"
          offset="0"
          id="stop6653" />
       <stop
-         style="stop-color:#c3c3c3;stop-opacity:1"
+         style="stop-color:#bea2da;stop-opacity:1"
          offset="1"
          id="stop6655" />
     </linearGradient>
     <linearGradient
        id="linearGradient6721">
       <stop
-         style="stop-color:#729fcf;stop-opacity:1"
+         style="stop-color:#a38bbb;stop-opacity:1"
          offset="0"
          id="stop6723" />
       <stop
-         style="stop-color:#3c74b1;stop-opacity:1"
+         style="stop-color:#736385;stop-opacity:1"
          offset="1"
          id="stop6725" />
     </linearGradient>
     <linearGradient
        id="linearGradient6748">
       <stop
-         style="stop-color:#729fcf;stop-opacity:1"
+         style="stop-color:#a38bbb;stop-opacity:1"
          offset="0"
          id="stop6750" />
       <stop
-         style="stop-color:#2b5582;stop-opacity:1"
+         style="stop-color:#544861;stop-opacity:1"
          offset="1"
          id="stop6752" />
     </linearGradient>
     <linearGradient
        id="linearGradient6835">
       <stop
-         style="stop-color:#ffffff;stop-opacity:1"
+         style="stop-color:#ceb1ee;stop-opacity:1"
          offset="0"
          id="stop6837" />
       <stop
-         style="stop-color:#ffffff;stop-opacity:0"
+         style="stop-color:#ceb1ee;stop-opacity:0"
          offset="1"
          id="stop6839" />
     </linearGradient>
@@ -757,93 +757,93 @@
     <linearGradient
        id="linearGradient14596">
       <stop
-         style="stop-color:#bdbdbd;stop-opacity:1"
+         style="stop-color:#ba9fd6;stop-opacity:1"
          offset="0"
          id="stop14598" />
       <stop
-         style="stop-color:#e2e2e2;stop-opacity:1"
+         style="stop-color:#c8abe6;stop-opacity:1"
          offset="0.33333334"
          id="stop14600" />
       <stop
-         style="stop-color:#a3a3a3;stop-opacity:1"
+         style="stop-color:#a991c3;stop-opacity:1"
          offset="0.66666669"
          id="stop14602" />
       <stop
-         style="stop-color:#dddddd;stop-opacity:1"
+         style="stop-color:#c7aae5;stop-opacity:1"
          offset="1"
          id="stop14604" />
     </linearGradient>
     <linearGradient
        id="linearGradient14586">
       <stop
-         style="stop-color:#6e3d09;stop-opacity:1"
+         style="stop-color:#483e53;stop-opacity:1"
          offset="0"
          id="stop14588" />
       <stop
-         style="stop-color:#ea8113;stop-opacity:1"
+         style="stop-color:#9983b0;stop-opacity:1"
          offset="0.24242425"
          id="stop14590" />
       <stop
-         style="stop-color:#5c3307;stop-opacity:1"
+         style="stop-color:#3c3445;stop-opacity:1"
          offset="0.62121212"
          id="stop14592" />
       <stop
-         style="stop-color:#e07c12;stop-opacity:1"
+         style="stop-color:#927da9;stop-opacity:1"
          offset="1"
          id="stop14594" />
     </linearGradient>
     <linearGradient
        id="linearGradient14580">
       <stop
-         style="stop-color:#696969;stop-opacity:1"
+         style="stop-color:#706081;stop-opacity:1"
          offset="0"
          id="stop14582" />
       <stop
-         style="stop-color:#000000;stop-opacity:1"
+         style="stop-color:#0b090c;stop-opacity:1"
          offset="1"
          id="stop14584" />
     </linearGradient>
     <linearGradient
        id="linearGradient14562">
       <stop
-         style="stop-color:#aeaeae;stop-opacity:1"
+         style="stop-color:#b097cb;stop-opacity:1"
          offset="0"
          id="stop14564" />
       <stop
-         style="stop-color:#c4c4c4;stop-opacity:0"
+         style="stop-color:#bea3db;stop-opacity:0"
          offset="1"
          id="stop14566" />
     </linearGradient>
     <linearGradient
        id="linearGradient14556">
       <stop
-         style="stop-color:#f2f2f2;stop-opacity:1"
+         style="stop-color:#cbaeea;stop-opacity:1"
          offset="0"
          id="stop14558" />
       <stop
-         style="stop-color:#c3c3c3;stop-opacity:1"
+         style="stop-color:#bea2da;stop-opacity:1"
          offset="1"
          id="stop14560" />
     </linearGradient>
     <linearGradient
        id="linearGradient14550">
       <stop
-         style="stop-color:#729fcf;stop-opacity:1"
+         style="stop-color:#a38bbb;stop-opacity:1"
          offset="0"
          id="stop14552" />
       <stop
-         style="stop-color:#3c74b1;stop-opacity:1"
+         style="stop-color:#736385;stop-opacity:1"
          offset="1"
          id="stop14554" />
     </linearGradient>
     <linearGradient
        id="linearGradient14544">
       <stop
-         style="stop-color:#729fcf;stop-opacity:1"
+         style="stop-color:#a38bbb;stop-opacity:1"
          offset="0"
          id="stop14546" />
       <stop
-         style="stop-color:#2b5582;stop-opacity:1"
+         style="stop-color:#544861;stop-opacity:1"
          offset="1"
          id="stop14548" />
     </linearGradient>

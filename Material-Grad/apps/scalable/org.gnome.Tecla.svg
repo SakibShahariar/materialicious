@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg height="128px" viewBox="0 0 128 128" width="128px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <linearGradient id="a" gradientUnits="userSpaceOnUse" x1="9.197266" x2="119.482384" y1="112.655273" y2="112.655273">
-        <stop offset="0" stop-color="#5e5c64"/>
-        <stop offset="0.0378502" stop-color="#77767b"/>
-        <stop offset="0.0732786" stop-color="#3d3846"/>
-        <stop offset="0.92921" stop-color="#241f31"/>
-        <stop offset="0.97104" stop-color="#5e5c64"/>
-        <stop offset="1" stop-color="#5e5c64"/>
+        <stop offset="0" stop-color="#806e94"/>
+        <stop offset="0.0378502" stop-color="#9882af"/>
+        <stop offset="0.0732786" stop-color="#52475f"/>
+        <stop offset="0.92921" stop-color="#52475f"/>
+        <stop offset="0.97104" stop-color="#806e94"/>
+        <stop offset="1" stop-color="#806e94"/>
     </linearGradient>
     <linearGradient id="b" gradientUnits="userSpaceOnUse" x1="70.51045090805" x2="120.43254953971" y1="113.86664367826" y2="113.86664367826">
-        <stop offset="0" stop-color="#5e5c64"/>
-        <stop offset="0.0378502" stop-color="#77767b"/>
-        <stop offset="0.0732786" stop-color="#3d3846"/>
-        <stop offset="0.791488" stop-color="#241f31"/>
-        <stop offset="0.916595" stop-color="#5e5c64"/>
-        <stop offset="1" stop-color="#5e5c64"/>
+        <stop offset="0" stop-color="#806e94"/>
+        <stop offset="0.0378502" stop-color="#9882af"/>
+        <stop offset="0.0732786" stop-color="#52475f"/>
+        <stop offset="0.791488" stop-color="#52475f"/>
+        <stop offset="0.916595" stop-color="#806e94"/>
+        <stop offset="1" stop-color="#806e94"/>
     </linearGradient>
     <path d="m 16.9375 34 h 94.125 c 4.9375 0 8.9375 4 8.9375 8.9375 v 64.125 c 0 4.9375 -4 8.9375 -8.9375 8.9375 h -94.125 c -4.9375 0 -8.9375 -4 -8.9375 -8.9375 v -64.125 c 0 -4.9375 4 -8.9375 8.9375 -8.9375 z m 0 0" fill="url(#a)"/>
     <path d="m 16.34375 28 h 95.3125 c 4.609375 0 8.34375 3.734375 8.34375 8.34375 v 67.3125 c 0 4.609375 -3.734375 8.34375 -8.34375 8.34375 h -95.3125 c -4.609375 0 -8.34375 -3.734375 -8.34375 -8.34375 v -67.3125 c 0 -4.609375 3.734375 -8.34375 8.34375 -8.34375 z m 0 0" fill="#806e94"/>

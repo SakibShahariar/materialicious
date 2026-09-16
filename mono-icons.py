@@ -43,8 +43,10 @@ Colour mapping
 larger = more contrast between body and detail. Values 0.3..0.7 look best.
 
 Only `#rrggbb`, `#rgb` (expanded to `#rrggbb`) and `rgb(r,g,b)` fills/strokes
-are remapped. Gradients, `currentColor` and `url(#...)` references are left
-untouched (they are the rare, hand-built highlights that should stay as-is).
+are remapped, plus gradient `stop-color`s (style or attribute form) so
+gradient-bearing artwork is recolored onto the ramp too instead of leaking
+the source palette. `currentColor` and `url(#...)` layer refs are left as-is,
+but the gradient <stop> colors they resolve to are remapped.
 
 `--autoscale` (recommended): instead of mapping every icon onto the same
 global dark/light scale, each icon's brightest colour is stretched to the
@@ -60,8 +62,8 @@ import re
 import sys
 
 COLOR_RE = re.compile(
-    r"(?i)(fill|stroke):\s*(#[0-9a-f]{6}|#[0-9a-f]{3}|rgb\(\s*\d+\s*,\s*\d+\s*,\s*\d+\s*\))"
-    r"|(?:\b(fill|stroke)=)\"(#[0-9a-f]{6}|#[0-9a-f]{3}|rgb\(\s*\d+\s*,\s*\d+\s*,\s*\d+\s*\))\"",
+    r"(?i)(fill|stroke|stop-color):\s*(#[0-9a-f]{6}|#[0-9a-f]{3}|rgb\(\s*\d+\s*,\s*\d+\s*,\s*\d+\s*\))"
+    r"|(?:\b(fill|stroke|stop-color)=)\"(#[0-9a-f]{6}|#[0-9a-f]{3}|rgb\(\s*\d+\s*,\s*\d+\s*,\s*\d+\s*\))\"",
 )
 
 # A shape element whose tag carries no fill or stroke at all: give its
