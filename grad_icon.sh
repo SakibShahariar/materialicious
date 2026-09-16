@@ -216,6 +216,16 @@ duotone_icons=(
     steam
     vivaldi
     vscode
+    eclipse
+    pycharm
+    thunderbird
+    lutris
+    rawtherapee
+    tenacity
+    virtualbox
+    inkscape
+    flameshot
+    digikam
 )
 
 if [[ "$need_sweep" == "1" ]]; then
@@ -270,7 +280,7 @@ org.gnome.Characters)            flags="piecewise 0.25:0.24,0.39:0.30,0.53:0.36,
             actions-for-nautilus-configurator) flags="piecewise 0.24:0.30,0.32:0.45,0.44:0.60,1.0:0.88";;
             chatgpt)                         flags="piecewise 0.18:0.30,0.25:0.42,0.33:0.55,1.0:0.85";;
             gnome-color-manager)             flags="piecewise 0.08:0.05,0.3:0.3,0.5:0.6,0.72:0.85,1.0:0.95";;
-            ibus)                            flags="piecewise 0.05:0.15,0.5:0.4,0.6:0.55,0.7:0.7,0.8:0.85,0.9:0.92,1.0:0.95";;
+            ibus)                            flags="piecewise 0.03:0.12,0.35:0.35,0.5:0.5,0.8:0.72,1.0:0.88";;
             ibus-anthy)                      flags="piecewise 0.51:0.35,1.0:0.95";;
             ibus-setup)                      flags="piecewise 0.08:0.05,0.3:0.3,0.5:0.6,0.72:0.85,1.0:0.95";;
             ibus-typing-booster)             flags="piecewise 0.08:0.05,0.3:0.3,0.5:0.6,0.72:0.85,1.0:0.95";;
@@ -291,16 +301,26 @@ org.gnome.Characters)            flags="piecewise 0.25:0.24,0.39:0.30,0.53:0.36,
             qalculate)                       flags="piecewise 0.1:0.08,0.3:0.3,0.5:0.55,0.7:0.78,1.0:0.95";;
             kdenlive)                        flags="piecewise 0.08:0.1,0.25:0.32,0.45:0.55,0.65:0.78,1.0:0.95";;
             obsidian)                        flags="piecewise 0.28:0.45,0.4:0.6,0.45:0.66,0.62:0.8,1.0:0.97";;
-            audacity)                          flags="piecewise 0.04:0.1,0.32:0.25,0.5:0.45,0.55:0.6,0.85:0.8,1.0:0.92";;
-            android-studio)                          flags="piecewise 0.2:0.15,0.25:0.3,0.4:0.55,0.55:0.8,1.0:0.95";;
+            audacity)                        flags="piecewise 0.32:0.45,0.5:0.6,0.56:0.68,0.7:0.8,0.9:0.92,1.0:0.95";;
+            android-studio)                  flags="piecewise 0.2:0.3,0.25:0.4,0.4:0.6,0.55:0.85,1.0:0.95";;
             vscode)                          flags="piecewise 0.03:0.12,0.3:0.35,0.4:0.5,0.55:0.68,1.0:0.92";;
             arduino)                          flags="piecewise 0.3:0.15,0.35:0.35,0.45:0.45,0.55:0.6,0.8:0.75,1.0:0.85";;
             blender)                          flags="piecewise 0.5:0.15,0.55:0.3,0.7:0.5,0.8:0.65,0.9:0.85,1.0:0.95";;
-            slack)                          flags="piecewise 0.05:0.08,0.22:0.25,0.35:0.4,0.6:0.5,0.8:0.65,1.0:0.8";;
-            opera)                          flags="piecewise 0.2:0.1,0.28:0.35,0.35:0.55,1.0:0.9";;
+            slack)                           flags="piecewise 0.05:0.08,0.22:0.22,0.45:0.35,0.7:0.5,0.9:0.62,1.0:0.7";;
+            opera)                           flags="piecewise 0.2:0.3,0.28:0.45,0.35:0.6,0.55:0.75,1.0:0.92";;
             vivaldi)                          flags="piecewise 0.3:0.15,0.33:0.35,0.5:0.55,0.6:0.7,0.85:0.9,1.0:0.95";;
             discord)                          flags="piecewise 0.05:0.12,0.5:0.45,0.55:0.6,0.85:0.8,1.0:0.95";;
             steam)                          flags="piecewise 0.03:0.1,0.3:0.35,0.5:0.55,0.7:0.7,0.85:0.88,1.0:0.95";;
+            flameshot)                          flags="piecewise 0.03:0.08,0.2:0.22,0.35:0.4,0.5:0.62,0.7:0.78,0.85:0.88,1.0:0.92";;
+            inkscape)                          flags="piecewise 0.05:0.1,0.3:0.3,0.5:0.5,0.7:0.68,0.9:0.85,1.0:0.92";;
+            eclipse)                          flags="piecewise 0.08:0.12,0.2:0.3,0.35:0.5,0.6:0.68,0.8:0.82,1.0:0.9";;
+            pycharm)                          flags="piecewise 0.05:0.15,0.2:0.3,0.35:0.5,0.6:0.66,0.75:0.82,1.0:0.92";;
+            virtualbox)                          flags="piecewise 0.03:0.1,0.3:0.35,0.5:0.55,0.7:0.72,0.85:0.88,1.0:0.92";;
+            digikam)                          flags="piecewise 0.03:0.12,0.25:0.3,0.4:0.48,0.6:0.62,0.8:0.78,1.0:0.88";;
+            thunderbird)                          flags="piecewise 0.03:0.1,0.3:0.3,0.4:0.42,0.6:0.58,0.75:0.72,0.9:0.85,1.0:0.92";;
+            lutris)                          flags="piecewise 0.05:0.12,0.25:0.3,0.4:0.45,0.55:0.58,0.7:0.72,0.85:0.85,1.0:0.9";;
+            tenacity)                          flags="piecewise 0.05:0.1,0.3:0.3,0.5:0.5,0.7:0.68,0.9:0.85,1.0:0.92";;
+            rawtherapee)                          flags="piecewise 0.05:0.12,0.25:0.3,0.4:0.45,0.6:0.6,0.75:0.75,0.9:0.88,1.0:0.92";;
             *)                               flags="";;
         esac
         printf '%s\t%s\n' "$src" "$flags" >> "$jobs_file"
