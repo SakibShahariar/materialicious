@@ -1,25 +1,25 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" version="1">
- <rect style="fill:#424125" width="56" height="40" x="4" y="12" rx="2.8" ry="2.8"/>
- <circle style="opacity:.2" cx="11" cy="22" r="3" fill="#19180e"/>
- <circle style="opacity:.2" cx="21" cy="22" r="3" fill="#19180e"/>
- <circle style="opacity:.2" cx="31" cy="22" r="3" fill="#19180e"/>
- <circle style="opacity:.2" cx="41" cy="22" r="3" fill="#19180e"/>
- <circle style="opacity:.2" cx="51" cy="22" r="3" fill="#19180e"/>
- <circle style="opacity:.2" cx="17" cy="34" r="3" fill="#19180e"/>
- <circle style="opacity:.2" cx="27" cy="34" r="3" fill="#19180e"/>
- <circle style="opacity:.2" cx="37" cy="34" r="3" fill="#19180e"/>
- <circle style="opacity:.2" cx="47" cy="34" r="3" fill="#19180e"/>
- <rect style="opacity:.2" width="40" height="6" x="12" y="43" rx="1.5" ry="1.5" fill="#19180e"/>
- <circle style="fill:#a4a15c" cx="11" cy="21" r="3"/>
- <circle style="fill:#a4a15c" cx="21" cy="21" r="3"/>
- <circle style="fill:#a4a15c" cx="31" cy="21" r="3"/>
- <circle style="fill:#a4a15c" cx="41" cy="21" r="3"/>
- <circle style="fill:#a4a15c" cx="51" cy="21" r="3"/>
- <circle style="fill:#a4a15c" cx="17" cy="33" r="3"/>
- <circle style="fill:#a4a15c" cx="27" cy="33" r="3"/>
- <circle style="fill:#a4a15c" cx="37" cy="33" r="3"/>
- <circle style="fill:#a4a15c" cx="47" cy="33" r="3"/>
- <rect style="fill:#a4a15c" width="40" height="6" x="12" y="42" rx="1.5" ry="1.5"/>
- <path style="opacity:.1;fill:#b5b266" d="m6.8008 12c-1.5512 0-2.8008 1.25-2.8008 2.801v1c0-1.551 1.2496-2.801 2.8008-2.801h50.398c1.551 0 2.801 1.25 2.801 2.801v-1c0-1.551-1.25-2.801-2.801-2.801h-50.398z"/>
- <path style="opacity:.2" d="m4 49.199v1c0 1.551 1.2496 2.801 2.8008 2.801h50.398c1.551 0 2.801-1.25 2.801-2.801v-1c0 1.551-1.25 2.801-2.801 2.801h-50.398c-1.5514 0-2.801-1.25-2.801-2.801z" fill="#19180e"/>
+ <rect style="fill:#a19e5a" width="56" height="40" x="4" y="12" rx="2.8" ry="2.8"/>
+ <circle style="opacity:.2" cx="11" cy="22" r="3" fill="#a19e5a"/>
+ <circle style="opacity:.2" cx="21" cy="22" r="3" fill="#a19e5a"/>
+ <circle style="opacity:.2" cx="31" cy="22" r="3" fill="#a19e5a"/>
+ <circle style="opacity:.2" cx="41" cy="22" r="3" fill="#a19e5a"/>
+ <circle style="opacity:.2" cx="51" cy="22" r="3" fill="#a19e5a"/>
+ <circle style="opacity:.2" cx="17" cy="34" r="3" fill="#a19e5a"/>
+ <circle style="opacity:.2" cx="27" cy="34" r="3" fill="#a19e5a"/>
+ <circle style="opacity:.2" cx="37" cy="34" r="3" fill="#a19e5a"/>
+ <circle style="opacity:.2" cx="47" cy="34" r="3" fill="#a19e5a"/>
+ <rect style="opacity:.2" width="40" height="6" x="12" y="43" rx="1.5" ry="1.5" fill="#a19e5a"/>
+ <circle style="fill:#bbb869" cx="11" cy="21" r="3"/>
+ <circle style="fill:#bbb869" cx="21" cy="21" r="3"/>
+ <circle style="fill:#bbb869" cx="31" cy="21" r="3"/>
+ <circle style="fill:#bbb869" cx="41" cy="21" r="3"/>
+ <circle style="fill:#bbb869" cx="51" cy="21" r="3"/>
+ <circle style="fill:#bbb869" cx="17" cy="33" r="3"/>
+ <circle style="fill:#bbb869" cx="27" cy="33" r="3"/>
+ <circle style="fill:#bbb869" cx="37" cy="33" r="3"/>
+ <circle style="fill:#bbb869" cx="47" cy="33" r="3"/>
+ <rect style="fill:#bbb869" width="40" height="6" x="12" y="42" rx="1.5" ry="1.5"/>
+ <path style="opacity:.1;fill:#beba6b" d="m6.8008 12c-1.5512 0-2.8008 1.25-2.8008 2.801v1c0-1.551 1.2496-2.801 2.8008-2.801h50.398c1.551 0 2.801 1.25 2.801 2.801v-1c0-1.551-1.25-2.801-2.801-2.801h-50.398z"/>
+ <path style="opacity:.2" d="m4 49.199v1c0 1.551 1.2496 2.801 2.8008 2.801h50.398c1.551 0 2.801-1.25 2.801-2.801v-1c0 1.551-1.25 2.801-2.801 2.801h-50.398c-1.5514 0-2.801-1.25-2.801-2.801z" fill="#a19e5a"/>
 </svg>
