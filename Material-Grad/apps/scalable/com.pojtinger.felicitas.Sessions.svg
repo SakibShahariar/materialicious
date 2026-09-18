@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <svg xmlns="http://www.w3.org/2000/svg" id="com.pojtinger.felicitas.Sessions-symbolic" width="64" height="64" viewBox="0 0 16 16">
-<defs id="defs2"><style id="current-color-scheme" type="text/css">.ColorScheme-Text {color:#3d2459} .ColorScheme-Highlight {color:#3d2459}</style></defs>
+<defs id="defs2"><style id="current-color-scheme" type="text/css">.ColorScheme-Text {color:#343200} .ColorScheme-Highlight {color:#343200}</style></defs>
 <g class="ColorScheme-Text" transform="translate(0.500000 15.515015) scale(0.001502 -0.001502)">
     <path style="fill:#d9bafa;paint-order:fill markers stroke" d="M4690 9994 c-19 -2 -90 -9 -157 -14 -678 -59 -1419 -294 -2023 -640
 -1340 -771 -2249 -2113 -2464 -3640 -35 -248 -41 -351 -41 -700 0 -349 6 -452

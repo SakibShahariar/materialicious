@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <svg xmlns="http://www.w3.org/2000/svg" id="org.gnome.Podcasts-symbolic" width="64" height="64" viewBox="0 0 16 16">
-<defs id="defs2"><style id="current-color-scheme" type="text/css">.ColorScheme-Text {color:#3d2459} .ColorScheme-Highlight {color:#3d2459}</style></defs>
+<defs id="defs2"><style id="current-color-scheme" type="text/css">.ColorScheme-Text {color:#343200} .ColorScheme-Highlight {color:#343200}</style></defs>
 <g class="ColorScheme-Text" transform="translate(0.500000 12.707207) scale(0.001502 -0.001502)">
     <path style="fill:#d9bafa;paint-order:fill markers stroke" d="M490 8114 c-202 -43 -375 -195 -457 -399 l-28 -70 -3 -2920 c-2
 -2115 0 -2937 8 -2980 6 -33 29 -96 50 -140 65 -134 157 -227 285 -290 144

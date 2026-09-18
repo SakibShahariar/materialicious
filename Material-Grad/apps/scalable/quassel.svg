@@ -1,18 +1,18 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="128" height="128" viewBox="0 0 128 128" style="color:#3d2459">
- <g transform="translate(64 64) scale(7.37230) translate(-10.98926 -10.98926)" style="color:#3d2459">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="128" height="128" viewBox="0 0 128 128" style="color:#343200">
+ <g transform="translate(64 64) scale(7.37230) translate(-10.98926 -10.98926)" style="color:#343200">
 
     <style type="text/css" id="current-color-scheme">
       .ColorScheme-Text {
-        color:#3d2459;
+        color:#343200;
       }
       .ColorScheme-Background{
-        color:#3d2459;
+        color:#343200;
       }
       .ColorScheme-Accent{
-        color:#3d2459;
+        color:#343200;
       }
       .ColorScheme-ButtonText {
-        color:#3d2459;
+        color:#343200;
       }
 </style>
     <g id="quassel" transform="translate(-1,-1)">

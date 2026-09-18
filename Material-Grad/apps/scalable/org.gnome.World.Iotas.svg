@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <svg xmlns="http://www.w3.org/2000/svg" id="org.gnome.World.Iotas-symbolic" width="64" height="64" viewBox="0 0 16 16">
-<defs id="defs2"><style id="current-color-scheme" type="text/css">.ColorScheme-Text {color:#3d2459} .ColorScheme-Highlight {color:#3d2459}</style></defs>
+<defs id="defs2"><style id="current-color-scheme" type="text/css">.ColorScheme-Text {color:#343200} .ColorScheme-Highlight {color:#343200}</style></defs>
 <g class="ColorScheme-Text" transform="translate(-1.376877 15.515015) scale(0.001502 -0.001502)">
     <path style="fill:#d9bafa;paint-order:fill markers stroke" d="M1250 5935 l0 -4065 625 0 625 0 0 -937 0 -938 313 313 312 312 310
 -310 c170 -170 314 -310 318 -310 5 0 7 421 5 935 l-3 935 1248 0 1247 0 0

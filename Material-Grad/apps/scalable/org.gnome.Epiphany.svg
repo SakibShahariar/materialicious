@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <svg xmlns="http://www.w3.org/2000/svg" id="org.gnome.Epiphany-symbolic" width="64" height="64" viewBox="0 0 16 16">
-<defs id="defs2"><style id="current-color-scheme" type="text/css">.ColorScheme-Text {color:#3d2459} .ColorScheme-Highlight {color:#3d2459}</style></defs>
+<defs id="defs2"><style id="current-color-scheme" type="text/css">.ColorScheme-Text {color:#343200} .ColorScheme-Highlight {color:#343200}</style></defs>
 <g class="ColorScheme-Text" transform="translate(0.003735 15.516009) scale(0.001601 -0.001601)">
     <path style="fill:#d9bafa;paint-order:fill markers stroke" d="M4720 9369 c-1007 -60 -1946 -437 -2745 -1100 -142 -117 -453 -431
 -576 -580 -600 -728 -957 -1563 -1064 -2494 -35 -304 -30 -783 11 -1100 184

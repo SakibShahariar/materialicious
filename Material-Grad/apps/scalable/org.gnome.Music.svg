@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <svg xmlns="http://www.w3.org/2000/svg" id="org.gnome.Music-symbolic" width="64" height="64" viewBox="0 0 16 16">
-<defs id="defs2"><style id="current-color-scheme" type="text/css">.ColorScheme-Text {color:#3d2459} .ColorScheme-Highlight {color:#3d2459}</style></defs>
+<defs id="defs2"><style id="current-color-scheme" type="text/css">.ColorScheme-Text {color:#343200} .ColorScheme-Highlight {color:#343200}</style></defs>
 <g class="ColorScheme-Text" transform="translate(0.500000 15.515015) scale(0.001502 -0.001502)">
     <path style="fill:#d9bafa;paint-order:fill markers stroke" d="M750 9985 c-384 -82 -679 -388 -740 -769 -18 -107 -8 -310 19 -406
 52 -180 176 -368 319 -481 97 -76 251 -152 367 -181 73 -18 117 -22 235 -22

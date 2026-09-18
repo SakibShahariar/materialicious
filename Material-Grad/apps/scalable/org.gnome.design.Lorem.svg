@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <svg xmlns="http://www.w3.org/2000/svg" id="org.gnome.design.Lorem-symbolic" width="64" height="64" viewBox="0 0 16 16">
-<defs id="defs2"><style id="current-color-scheme" type="text/css">.ColorScheme-Text {color:#3d2459} .ColorScheme-Highlight {color:#3d2459}</style></defs>
+<defs id="defs2"><style id="current-color-scheme" type="text/css">.ColorScheme-Text {color:#343200} .ColorScheme-Highlight {color:#343200}</style></defs>
 <g class="ColorScheme-Text" transform="translate(0.500000 0.500000) scale(0.938438 0.938438)">
     <path style="fill:#d9bafa;stroke:none" d="m 3 3 h 6 v 2 h -6 z m 0 0"/>
     <path style="fill:#d9bafa;stroke:none" d="m 7 4 v 8.023438 h -2 v -8.023438 z m 0 0"/>

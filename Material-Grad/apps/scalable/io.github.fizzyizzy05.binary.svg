@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <svg xmlns="http://www.w3.org/2000/svg" id="io.github.fizzyizzy05.binary-symbolic" width="64" height="64" viewBox="0 0 16 16">
-<defs id="defs2"><style id="current-color-scheme" type="text/css">.ColorScheme-Text {color:#3d2459} .ColorScheme-Highlight {color:#3d2459}</style></defs>
+<defs id="defs2"><style id="current-color-scheme" type="text/css">.ColorScheme-Text {color:#343200} .ColorScheme-Highlight {color:#343200}</style></defs>
 <g class="ColorScheme-Text" transform="translate(0.500000 15.515015) scale(0.001502 -0.001502)">
     <path style="fill:#d9bafa;paint-order:fill markers stroke" d="M2105 9984 c-990 -135 -1787 -837 -2030 -1788 -76 -300 -70 -15 -70
 -3196 0 -2715 1 -2850 18 -2955 88 -524 317 -976 682 -1341 356 -356 795 -582

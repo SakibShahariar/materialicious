@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <svg xmlns="http://www.w3.org/2000/svg" id="ca.vlacroix.Tally-symbolic" width="64" height="64" viewBox="0 0 16 16">
-<defs id="defs2"><style id="current-color-scheme" type="text/css">.ColorScheme-Text {color:#3d2459} .ColorScheme-Highlight {color:#3d2459}</style></defs>
+<defs id="defs2"><style id="current-color-scheme" type="text/css">.ColorScheme-Text {color:#343200} .ColorScheme-Highlight {color:#343200}</style></defs>
 <g class="ColorScheme-Text" transform="translate(-0.562857 -1.642857) scale(1.071429 1.071429)">
     <path style="fill:#d9bafa;stroke:none" d="m 10 5 v 1 h 1 v -1 z m 0 0"/>
     <path style="fill:#d9bafa;stroke:none" d="m 11 8 v -1 h -1 v 1 z m 0 0"/>

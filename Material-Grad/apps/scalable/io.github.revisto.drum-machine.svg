@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <svg xmlns="http://www.w3.org/2000/svg" id="io.github.revisto.drum-machine-symbolic" width="64" height="64" viewBox="0 0 16 16">
-<defs id="defs2"><style id="current-color-scheme" type="text/css">.ColorScheme-Text {color:#3d2459} .ColorScheme-Highlight {color:#3d2459}</style></defs>
+<defs id="defs2"><style id="current-color-scheme" type="text/css">.ColorScheme-Text {color:#343200} .ColorScheme-Highlight {color:#343200}</style></defs>
 <g class="ColorScheme-Text" transform="translate(0.500000 0.500000) scale(0.938438 0.938438)">
     <path style="fill:#d9bafa;stroke:none" d="m 4 0 c -2.199219 0 -4 1.800781 -4 4 v 8 c 0 2.199219 1.800781 4 4 4 h 8 c 2.199219 0 4 -1.800781 4 -4 v -8 c 0 -2.199219 -1.800781 -4 -4 -4 z m 0 2 h 8 c 1.125 0 2 0.875 2 2 v 8 c 0 1.125 -0.875 2 -2 2 h -8 c -1.125 0 -2 -0.875 -2 -2 v -8 c 0 -1.125 0.875 -2 2 -2 z m 0 0"/>
     <path style="fill:#d9bafa;stroke:none" d="m 5 7 c 0.550781 0 1 0.449219 1 1 v 1 c 0 0.550781 -0.449219 1 -1 1 s -1 -0.449219 -1 -1 v -1 c 0 -0.550781 0.449219 -1 1 -1 z m 0 0"/>
