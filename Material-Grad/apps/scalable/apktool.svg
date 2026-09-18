@@ -1,17 +1,17 @@
 <svg width="64" height="64" version="1.1" xmlns="http://www.w3.org/2000/svg">
- <path d="m4 33v6h8v22h48v-6h-8v-22h-28z" style="opacity:.2" fill="#0a0a06"/>
- <path d="m4 32v6h8v22h6v-22h6v-6z" style="fill:#a6a35e"/>
- <path d="m18 38v22h14v-28h-8v6z" style="fill:#949154"/>
- <path d="m32 32v28h14v-28z" style="fill:#777543"/>
- <path d="m46 32v28h14v-6h-8v-22z" style="fill:#595732"/>
- <path d="m4 5v28h56v-7l-7-7 7-7v-7h-36z" style="opacity:.2" fill="#0a0a06"/>
- <path d="m4 32h20v-28h-20z" style="fill:#b8b568"/>
- <path d="m24 32h11v-7h11v-21h-22z" style="fill:#b2ae64"/>
- <path d="m35 25v7h25v-7l-7-7 7-7v-7h-14v21z" style="fill:#a6a35d"/>
- <path d="m12 11v11h3v-11zm22 0v11h3v-11zm-22 14v8h3v-8z" style="opacity:.2" fill="#0a0a06"/>
- <path d="m12 10v11h3v-11zm22 0v11h3v-11zm-22 14v8h3v-8z" style="fill:#beba6b"/>
- <path d="m24 41v12h3v-12h-3zm14 0v12h3v-12h-3z" style="opacity:.2" fill="#0a0a06"/>
- <rect x="24" y="40" width="3" height="12" style="fill:#beba6b"/>
- <rect x="38" y="40" width="3" height="12" style="fill:#beba6b"/>
- <path d="m4 4v1h20 22 14v-1h-14-22-20zm49.5 14.5-0.5 0.5 7 7v-1l-6.5-6.5z" style="fill:#beba6b;opacity:.2"/>
+ <path d="m4 33v6h8v22h48v-6h-8v-22h-28z" style="opacity:.2" fill="#1f1e11"/>
+ <path d="m4 32v6h8v22h6v-22h6v-6z" style="fill:#797744"/>
+ <path d="m18 38v22h14v-28h-8v6z" style="fill:#5c5a34"/>
+ <path d="m32 32v28h14v-28z" style="fill:#3c3b22"/>
+ <path d="m46 32v28h14v-6h-8v-22z" style="fill:#262616"/>
+ <path d="m4 5v28h56v-7l-7-7 7-7v-7h-36z" style="opacity:.2" fill="#1f1e11"/>
+ <path d="m4 32h20v-28h-20z" style="fill:#a8a55f"/>
+ <path d="m24 32h11v-7h11v-21h-22z" style="fill:#928f52"/>
+ <path d="m35 25v7h25v-7l-7-7 7-7v-7h-14v21z" style="fill:#787643"/>
+ <path d="m12 11v11h3v-11zm22 0v11h3v-11zm-22 14v8h3v-8z" style="opacity:.2" fill="#1f1e11"/>
+ <path d="m12 10v11h3v-11zm22 0v11h3v-11zm-22 14v8h3v-8z" style="fill:#c0bc6c"/>
+ <path d="m24 41v12h3v-12h-3zm14 0v12h3v-12h-3z" style="opacity:.2" fill="#1f1e11"/>
+ <rect x="24" y="40" width="3" height="12" style="fill:#c0bc6c"/>
+ <rect x="38" y="40" width="3" height="12" style="fill:#c0bc6c"/>
+ <path d="m4 4v1h20 22 14v-1h-14-22-20zm49.5 14.5-0.5 0.5 7 7v-1l-6.5-6.5z" style="fill:#c0bc6c;opacity:.2"/>
 </svg>
