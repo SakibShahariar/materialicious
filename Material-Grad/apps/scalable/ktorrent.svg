@@ -1,8 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="128" height="128" viewBox="0 0 128 128" style="color:#343200">
- <g transform="translate(64 64) scale(7.87487) translate(-7.99219 -8.49219)" style="color:#343200">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="128" height="128" viewBox="0 0 128 128" style="color:#561d23">
+ <g transform="translate(64 64) scale(7.87487) translate(-7.99219 -8.49219)" style="color:#561d23">
 
  <defs>
-  <style id="current-color-scheme" type="text/css">.ColorScheme-Text { color:#343200; } .ColorScheme-Highlight { color:#343200; } .ColorScheme-NeutralText { color:#343200; } .ColorScheme-PositiveText { color:#343200; } .ColorScheme-NegativeText { color:#343200; }</style>
+  <style id="current-color-scheme" type="text/css">.ColorScheme-Text { color:#561d23; } .ColorScheme-Highlight { color:#561d23; } .ColorScheme-NeutralText { color:#561d23; } .ColorScheme-PositiveText { color:#561d23; } .ColorScheme-NegativeText { color:#561d23; }</style>
  </defs>
  <path d="M 6.5,1 C 5.669,1 5,1.67716 5,2.517578 V 9 h 6 V 2.517578 C 11,1.67716 10.331,1 9.5,1 Z M 2,10 c 0,0 3,6.000001 6,6 3,1e-6 6,-6 6,-6 z" style="fill:currentColor" class="ColorScheme-Text"/>
 </g></svg>

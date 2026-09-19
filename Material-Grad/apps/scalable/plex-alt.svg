@@ -37,7 +37,7 @@
      id="defs2">
     <style
        id="current-color-scheme"
-       type="text/css">.ColorScheme-Text {color:#343200} .ColorScheme-Highlight {color:#343200}</style>
+       type="text/css">.ColorScheme-Text {color:#561d23} .ColorScheme-Highlight {color:#561d23}</style>
   </defs>
   <metadata
      id="metadata2">
@@ -53,7 +53,7 @@
   <polyline
      points="74.75 42.5 122.648 42.5 175.5 125 122.648 207.5 74.75 207.5 127.602 125 74.75 42.5"
      id="path5"
-     style="fill:#d9bafa;fill-opacity:1"
+     style="fill:#ffb3b5;fill-opacity:1"
      transform="matrix(0.0849857,0,0,0.0849857,-2.1673357,-2.1567125)"
      class="ColorScheme-Text" />
 </svg>

@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="128" height="128" viewBox="0 0 128 128" style="color:#343200">
- <g transform="translate(64 64) scale(6.55413) translate(-11.00000 -11.04297)" style="color:#343200">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="128" height="128" viewBox="0 0 128 128" style="color:#561d23">
+ <g transform="translate(64 64) scale(6.55413) translate(-11.00000 -11.04297)" style="color:#561d23">
 
   <defs
      id="defs10" />
@@ -8,7 +8,7 @@
      type="text/css"
      id="current-color-scheme">
       .ColorScheme-Text {
-        color:#343200;
+        color:#561d23;
       }
       </style>
   <g
