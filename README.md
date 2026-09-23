@@ -15,7 +15,7 @@ The theme is a re-color + extension of the **Yet Another Monochrome Icon
 Set** with **Tela** folder shapes. App icons that aren't part of the base set
 are added as glyphs traced from each app's official icon.
 
-## Contents
+## Repository contents
 
 - `Material-Solo/` — flat theme (all icon contexts, ~1800 apps)
 - `Material-Grad/` — duotone theme (full standalone copy of Solo, with
@@ -24,13 +24,17 @@ are added as glyphs traced from each app's official icon.
   conversion time to build a duotone icon from colorful source art, and every
   accent change after that to re-colour the *existing* duotone icon from
   itself (no external sources needed at runtime).
+- `grad_icon.sh` — the matugen hook that recolours `Material-Grad` (and
+  rebuilds the icon cache) whenever the accent changes.
 - `sources/` — the original colorful art used to *convert* new duotone icons
   (only consulted when adding an icon, never on accent recolor)
 - `install.sh` — symlinks both themes into `~/.icons`.
-- `apps/` — application icons (including ~200 hand-extracted Flathub apps)
-- `actions/`, `categories/`, `devices/`, `emblems/`, `mimetypes/`,
-  `places/`, `preferences/`, `status/` — system icon contexts (mostly
-  single-color traces of the Tela and Papirus glyphs below)
+- `tools/` — the icon-picker tracing workflow used to extract app glyphs
+  (including the hand-traced Flathub icons).
+- App icons live under each theme's `apps/` directory; system icon contexts
+  (`actions/`, `categories/`, `devices/`, `emblems/`, `mimetypes/`,
+  `places/`, `preferences/`, `status/`) hold mostly single-color traces of
+  the Tela and Papirus glyphs below.
 
 ## Install
 
@@ -82,8 +86,8 @@ authors. Many thanks to them:
 - **Bibata** — cursor theme by **ful1e5** ([github.com/ful1e5/Bibata_Cursor](https://github.com/ful1e5/Bibata_Cursor));
   the sibling `Bibata-Matugen-*` cursor themes in this repo follow the same
   matugen-accent workflow.
-- **Flathub app icons** — the ~200 application icons in `apps/` are
-  single-color traces of each upstream app's official Flathub icon. Each
+- **Flathub app icons** — the ~200 application icons in `Material-Solo/apps/`
+  are single-color traces of each upstream app's official Flathub icon. Each
   such icon remains the property of its respective upstream project, whose
   licenses vary (GPL, LGPL, CC-BY-SA, MIT, proprietary, etc.). If your app's
   icon appears here and you'd like it removed, open an issue.
