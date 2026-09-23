@@ -15,6 +15,10 @@ The theme is a re-color + extension of the **Yet Another Monochrome Icon
 Set** with **Tela** folder shapes. App icons that aren't part of the base set
 are added as glyphs traced from each app's official icon.
 
+## Screenshot
+
+![Material-Solo and Material-Grad](screenshots/hero.png)
+
 ## Repository contents
 
 - `Material-Solo/` — flat theme (all icon contexts, ~1800 apps)
