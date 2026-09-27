@@ -2,16 +2,14 @@
 set -euo pipefail
 repo="$(cd "$(dirname "$0")" && pwd)"
 
-if [ -L "$HOME/.icons" ]; then
-  echo "warning: ~/.icons is a symlink into a dotfiles repo; installing next to it would duplicate the theme."
-fi
+ICONS_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/icons"
 
-mkdir -p "$HOME/.icons"
+mkdir -p "$ICONS_DIR"
 
 install_theme() {
   local name="$1"
   local src="$repo/$name"
-  local target="$HOME/.icons/$name"
+  local target="$ICONS_DIR/$name"
 
   if [ -e "$target" ] && [ "$(readlink -f "$target")" != "$src" ]; then
     echo "error: $target already exists" >&2
