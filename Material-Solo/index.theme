@@ -9,7 +9,7 @@ Example=x-directory-normal
 
 KDE-Extensions=.svg
 
-Directories=actions/scalable,actions/symbolic,apps/16,apps/scalable,apps/symbolic,categories/scalable,categories/symbolic,devices/scalable,devices/symbolic,emblems/scalable,emblems/symbolic,emotes/symbolic,legacy/symbolic,places/scalable,places/symbolic,mimetypes/scalable,mimetypes/scalable-outlined,mimetypes/symbolic,status/scalable,status/symbolic,preferences/scalable,preferences/symbolic,ui/symbolic
+Directories=actions/scalable,actions/symbolic,apps/16,apps/scalable,apps/symbolic,categories/scalable,categories/symbolic,devices/scalable,devices/symbolic,emblems/scalable,emblems/symbolic,emotes/symbolic,legacy/symbolic,places/16,places/scalable,places/symbolic,mimetypes/scalable,mimetypes/scalable-outlined,mimetypes/symbolic,status/scalable,status/symbolic,preferences/scalable,preferences/symbolic,ui/symbolic
 
 [actions/scalable]
 Context=Actions
@@ -102,10 +102,25 @@ MinSize=8
 MaxSize=512
 Type=Scalable
 
+# Small-size folder artwork. The 64px art carries a gradient, a gloss highlight
+# and a 6-unit inner edge; below ~32px all three fall under one pixel and turn
+# to anti-alias mud, with the on_primary edge disappearing entirely below 16px.
+# These files redraw the folder as two flat tones with the edge on a multiple of
+# 8 in the 64 viewBox, which is an exact pixel boundary at 8, 16, 24, 32 and 48.
+# Size=24 (not 16) is what makes GTK prefer this directory across 8-24: it
+# scores directories by declared Size proximity, so a Size=16 entry loses 20-24
+# back to places/scalable. MaxSize=27 hands 32 and up to the detailed art.
+[places/16]
+Context=Places
+Size=24
+MinSize=8
+MaxSize=27
+Type=Scalable
+
 [places/scalable]
 Context=Places
 Size=64
-MinSize=33
+MinSize=28
 MaxSize=512
 Type=Scalable
 
