@@ -265,21 +265,48 @@ def inject_default_fill(content: str) -> str:
     # nothing) without an explicit fill/stroke would render as ink-black
     # regardless of the ramp. Give them an explicit black so the ramp
     # recolors them like any other source tone. Shapes inside <defs>/<mask>/
-    # <clipPath>/<pattern>/<marker>/<symbol> are left alone, and anything
-    # that already sets fill or stroke (attribute or style) is skipped.
-    def repl(m):
-        body, closer = m.group(1), m.group(2)
-        if re.search(r"\bfill\b", body) or re.search(r"\bstroke\b", body):
-            return m.group(0)  # already colours the shape explicitly
-        return f"<{body} fill=\"#000000\"{closer}"
+    # <clipPath>/<pattern>/<marker>/<symbol> are left alone, anything that
+    # already sets fill or stroke (attribute or style) is skipped, and a bare
+    # shape whose colour comes from an ancestor group (inheritance) is also
+    # left alone so it keeps the group colour instead of default black.
+    # Example: OBS's white <g fill="#ffffff"> glyphs must inherit white and
+    # be remapped against it, not forced to ink.
+    TAG_RE = re.compile(r"(?i)<(/?)([a-zA-Z][a-zA-Z0-9]*)\b([^>]*?)(/?)(>)")
+    SHAPES = ("path", "rect", "circle", "ellipse", "polygon", "polyline")
 
     protected: list[str] = []
+
     def stash(m):
         protected.append(m.group(0))
         return f"@@PROTECT{len(protected) - 1}@@"
     stashed = COMMENT_RE.sub(stash, content)
     stashed = PROTECTED_RE.sub(stash, stashed)
-    injected = SHAPE_TAG_RE.sub(repl, stashed)
+
+    out: list[str] = []
+    stack: list[tuple[str, bool]] = []  # (tag name, provides a fill)
+    pos = 0
+    for m in TAG_RE.finditer(stashed):
+        out.append(stashed[pos:m.start()])
+        slash, tag, body, selfclose_slash = m.group(1), m.group(2).lower(), m.group(3), m.group(4)
+        if slash:
+            for i in range(len(stack) - 1, -1, -1):
+                if stack[i][0] == tag:
+                    stack.pop(i)
+                    break
+            out.append(m.group(0))
+        elif tag not in SHAPES:
+            if not selfclose_slash:
+                stack.append((tag, bool(re.search(r"\bfill\b", body, re.I))))
+            out.append(m.group(0))
+        elif re.search(r"\bfill\b|\bstroke\b", body, re.I) or any(
+            fill for _, fill in stack
+        ):
+            out.append(m.group(0))  # uses its own colour or inherits one
+        else:
+            out.append(f"<{tag}{body} fill=\"#000000\"{selfclose_slash and '/' or ''}>")
+        pos = m.end()
+    out.append(stashed[pos:])
+    injected = "".join(out)
     for i, block in enumerate(protected):
         injected = injected.replace(f"@@PROTECT{i}@@", block)
     return injected

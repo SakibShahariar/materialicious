@@ -1,10 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="128" height="128" viewBox="0 0 128 128" style="color:#561d23">
- <g transform="translate(64 64) scale(8.43799) translate(-7.99219 -7.99219)" style="color:#561d23">
-
- <defs>
-  <style id="current-color-scheme" type="text/css">
-   .ColorScheme-Text { color:#561d23; } .ColorScheme-Highlight { color:#561d23; } .ColorScheme-NeutralText { color:#561d23; } .ColorScheme-PositiveText { color:#561d23; } .ColorScheme-NegativeText { color:#561d23; }
-  </style>
- </defs>
- <path style="fill:currentColor" class="ColorScheme-Text" d="M 2 1 C 1.446 1 1 1.446 1 2 L 1 6 C 1 6.554 1.446 7 2 7 L 6 7 C 6.554 7 7 6.554 7 6 L 7 2 C 7 1.446 6.554 1 6 1 L 2 1 z M 10 1 C 9.446 1 9 1.446 9 2 L 9 6 C 9 6.554 9.446 7 10 7 L 14 7 C 14.554 7 15 6.554 15 6 L 15 2 C 15 1.446 14.554 1 14 1 L 10 1 z M 2 9 C 1.446 9 1 9.446 1 10 L 1 14 C 1 14.554 1.446 15 2 15 L 6 15 C 6.554 15 7 14.554 7 14 L 7 10 C 7 9.446 6.554 9 6 9 L 2 9 z M 12 9 C 11.446 9 11 9.4542252 11 10.019531 L 11 12 L 9.4277344 12 A 0.42863216 0.37504649 0 0 0 9.125 12.640625 L 11.697266 14.890625 A 0.42863216 0.37504649 0 0 0 12.302734 14.890625 L 14.875 12.640625 A 0.42863216 0.37504649 0 0 0 14.572266 12 L 13 12 L 13 10.019531 C 13 9.4542252 12.553999 9 12 9 z"/>
-</g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" version="1">
+ <circle style="opacity:0.2" cx="32" cy="33" r="29" fill="#855d5e"/>
+ <circle style="fill:#896061" cx="32" cy="32" r="29"/>
+ <path style="opacity:0.2" d="M 32,10.999998 A 21,21 0 0 0 11,32 a 21,21 0 0 0 0.243163,3 h 1.406251 4.669923 29.375977 A 15.000001,15.000001 0 0 1 32,47 15.000001,15.000001 0 0 1 20.017578,41 H 13.053712 A 21,21 0 0 0 32,53 21,21 0 0 0 53.000002,32 21,21 0 0 0 52.756838,29 H 50.149416 46.680664 17.304688 A 15.000001,15.000001 0 0 1 32,16.999999 15.000001,15.000001 0 0 1 43.982424,22.999998 H 50.94629 A 21,21 0 0 0 32,10.999998 Z" fill="#855d5e"/>
+ <path style="opacity:0.2" d="m 28,22 v 11 h -5 l 9,11 9,-11 H 36 V 22 Z" fill="#855d5e"/>
+ <rect style="fill:#e6a1a3" width="8" height="14" x="28" y="21"/>
+ <path style="fill:#e6a1a3" transform="matrix(1.2480755,-0.50847519,0.7205767,0.88070488,10.524042,3.3165702)" d="M -6.6055512,28.755002 4.2111025,35 -6.6055513,41.244998 Z"/>
+ <path style="opacity:0.2;fill:#e6a1a3" d="M 32 3 A 29 29 0 0 0 3 32 A 29 29 0 0 0 3.0175781 32.488281 A 29 29 0 0 1 32 4 A 29 29 0 0 1 60.974609 32.494141 A 29 29 0 0 0 61 32 A 29 29 0 0 0 32 3 z"/>
+</svg>

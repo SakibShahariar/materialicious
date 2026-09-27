@@ -8,7 +8,10 @@ set -uo pipefail
 
 # Resolve the project from an explicit override or the installed theme
 # symlink. Do not assume a particular clone location.
-mono_theme="$HOME/.icons/Material-Grad"
+mono_theme="${XDG_DATA_HOME:-$HOME/.local/share}/icons/Material-Grad"
+if [[ ! -e "$mono_theme" && -e "$HOME/.icons/Material-Grad" ]]; then
+    mono_theme="$HOME/.icons/Material-Grad"
+fi
 if [[ -n ${MATERICIOUS_PROJECT:-} ]]; then
     project=$MATERICIOUS_PROJECT
 elif [[ -L "$mono_theme" ]]; then

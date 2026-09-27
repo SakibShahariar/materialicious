@@ -1,20 +1,11 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<svg xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" width="64" height="64" version="1.1" viewBox="0 0 16.933 16.933" id="svg7" sodipodi:docname="nheko.svg" inkscape:version="1.4 (e7c3feb100, 2024-10-09)">
-  <sodipodi:namedview id="namedview7" pagecolor="#9c4444" bordercolor="#000000" borderopacity="0.25" inkscape:showpageshadow="2" inkscape:pageopacity="0.0" inkscape:pagecheckerboard="0" inkscape:deskcolor="#d1d1d1" inkscape:zoom="6.15625" inkscape:cx="15.837563" inkscape:cy="29.725888" inkscape:window-width="1183" inkscape:window-height="941" inkscape:window-x="35" inkscape:window-y="32" inkscape:window-maximized="0" inkscape:current-layer="svg7" showgrid="false"/>
-  <defs id="defs2">
-    <style id="current-color-scheme" type="text/css">.ColorScheme-Text {color:#561d23} .ColorScheme-Highlight {color:#561d23}</style></defs>
-  <metadata id="metadata2">
-    <rdf:RDF>
-      <cc:Work rdf:about="">
-        <dc:format>image/svg+xml</dc:format>
-        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-      </cc:Work>
-    </rdf:RDF>
-  </metadata>
-  <g id="g3277" style="fill:#ffb3b5;fill-opacity:1" transform="matrix(0.24043911,0,0,0.24043911,0.7677467,0.80941521)" class="ColorScheme-Text">
-    <path style="fill:#ffb3b5;fill-opacity:1;stroke-width:1.47691" d="m 37.953874,16.365644 h 7.879888 l -16.14416,34.331553 h -7.879888 z" id="path8" class="ColorScheme-Text"/>
-    <path style="fill:#ffb3b5;fill-opacity:1;stroke-width:1.47691" d="m 53.71365,16.365644 h 7.879888 L 45.449377,50.697197 H 37.56949 Z" id="path10" class="ColorScheme-Text"/>
-    <path style="fill:#ffb3b5;fill-opacity:1;stroke-width:1.47691" d="M 8.9332332,16.365644 2.0153985,27.28932 H 19.801214 l 5.13514,-10.923676 z m 29.0199588,0 -5.135141,10.923676 h 0.09008 3.112206 19.80892 L 61.595031,16.365644 H 41.065397 Z" id="path12" sodipodi:nodetypes="ccccccccccccc" class="ColorScheme-Text"/>
-    <path style="fill:#ffb3b5;fill-opacity:1;stroke-width:1.47691" d="m 22.194098,16.365644 h 7.879888 L 13.929826,50.697197 H 6.0499376 Z" id="path16" class="ColorScheme-Text"/>
-  </g>
-  </svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" version="1">
+ <path style="opacity:0.2" d="M 60,33 A 28,28 0 0 1 32,61 28,28 0 0 1 4,33 28,28 0 0 1 32,5 28,28 0 0 1 60,33 Z" fill="#593f3f"/>
+ <path style="fill:#593f3f" d="M 60,32 A 28,28 0 0 1 32,60 28,28 0 0 1 4,32 28,28 0 0 1 32,4 28,28 0 0 1 60,32 Z"/>
+ <path style="opacity:0.2" d="M 15.636719,22 10.6875,29 h 10.761719 l -7.875,15 h 5.636719 5.638671 5.636719 l 7.875,-15 h 5.636719 l -7.875,15 h 5.638672 L 53.294922,22.03125 53.3125,22 h -0.002 -11.273438 -5.638671 -5.636719 -5.638672 z" fill="#593f3f"/>
+ <path style="fill:#e5a1a3" d="m 36.398926,21 h 5.6375 l -11.55,22 h -5.6375 z"/>
+ <path style="fill:#e5a1a3" d="m 47.673926,21 h 5.6375 l -11.55,22 h -5.6375 z"/>
+ <path style="fill:#e5a1a3" d="M 15.636719 21 L 10.6875 28 L 21.449219 28 L 25.123047 21 L 15.636719 21 z M 36.398438 21 L 32.724609 28 L 32.789062 28 L 35.015625 28 L 49.1875 28 L 53.3125 21 L 38.625 21 L 36.398438 21 z"/>
+ <path style="fill:#8b6263" d="m 30.761426,21 h 5.6375 l -11.55,22 h -5.6375 z"/>
+ <path style="fill:#b27d7e" d="m 25.123926,21 h 5.6375 l -11.55,22 h -5.6375 z"/>
+ <path style="fill:#e5a1a3;opacity:0.1" d="M 32 4 A 28 28 0 0 0 4 32 A 28 28 0 0 0 4.0214844 32.585938 A 28 28 0 0 1 32 5 A 28 28 0 0 1 59.978516 32.414062 A 28 28 0 0 0 60 32 A 28 28 0 0 0 32 4 z"/>
+</svg>
