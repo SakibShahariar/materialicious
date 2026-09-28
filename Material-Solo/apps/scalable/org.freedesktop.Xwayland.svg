@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <defs><style type="text/css">.ColorScheme-Text {color:#ffb3ad} .ColorScheme-Highlight {color:#ffb3ad}</style></defs>
+  <g fill="none" stroke="#ffb3ad" stroke-width="18" stroke-linecap="round" class="ColorScheme-Text">
+    <path d="M31,31 L97,97"/>
+    <path d="M97,31 L31,97"/>
+  </g>
+</svg>

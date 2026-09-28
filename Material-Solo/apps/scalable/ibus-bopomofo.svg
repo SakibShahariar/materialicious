@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <defs><style type="text/css">.ColorScheme-Text {color:#ffb3ad} .ColorScheme-Highlight {color:#ffb3ad}</style></defs>
+    <g fill="#ffb3ad" stroke="none" class="ColorScheme-Text">
+    <rect x="30" y="86" width="68" height="24" rx="8"/>
+    <path transform="translate(30.182000,70.523000) scale(0.068182,-0.068182)" d="M696 599 695 575C675 290 646 142 607 110C591 98 575 95 552 95C519 95 444 96 371 102C401 59 424 -7 426 -51C495 -53 565 -54 608 -48C664 -42 701 -30 738 12C790 66 820 207 847 533C849 553 852 599 852 599ZM191 442C200 453 255 459 300 459H794L795 599H264L191 556ZM191 442C191 471 291 522 291 522V524C324 592 367 698 384 789L229 829C219 741 191 652 182 628C171 602 156 586 140 579C157 541 182 473 191 442Z"/>
+  </g>
+</svg>

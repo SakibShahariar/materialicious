@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <defs><style type="text/css">.ColorScheme-Text {color:#ffb3ad} .ColorScheme-Highlight {color:#ffb3ad}</style></defs>
+    <g fill="#ffb3ad" stroke="none" class="ColorScheme-Text">
+    <rect x="37" y="37" width="26" height="26" rx="7"/><rect x="65" y="37" width="26" height="26" rx="7"/><rect x="37" y="65" width="26" height="26" rx="7"/><rect x="65" y="65" width="26" height="26" rx="7"/>
+  </g>
+</svg>

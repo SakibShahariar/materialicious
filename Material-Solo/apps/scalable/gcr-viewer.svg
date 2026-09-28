@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <defs><style type="text/css">.ColorScheme-Text {color:#ffb3ad} .ColorScheme-Highlight {color:#ffb3ad}</style></defs>
+    <g fill="#ffb3ad" stroke="none" class="ColorScheme-Text">
+    <path fill-rule="evenodd" d="M23,20 L105,20 Q113,20 113,28 L113,100 Q113,108 105,108 L23,108 Q15,108 15,100 L15,28 Q15,20 23,20 Z M64,40 A20,20 0 1 0 64,80 A20,20 0 1 0 64,40 Z M64,49 L68,62 L82,62 L71,70 L75,84 L64,76 L53,84 L57,70 L46,62 L60,62 Z"/>
+  </g>
+</svg>
