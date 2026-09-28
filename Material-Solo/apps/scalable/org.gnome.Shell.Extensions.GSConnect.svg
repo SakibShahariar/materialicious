@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <defs>
+    <style type="text/css">.ColorScheme-Text {color:#ffb3ad} .ColorScheme-Highlight {color:#ffb3ad}</style>
+  </defs>
+  <path d="M25,13h78a5,5 0 0 1 5,5v20a5,5 0 0 1 -5,5h-78a5,5 0 0 1 -5,-5v-20a5,5 0 0 1 5,-5zM87,51h20a5,5 0 0 1 5,5v55a5,5 0 0 1 -5,5h-20a5,5 0 0 1 -5,-5v-55a5,5 0 0 1 5,-5z" fill="#ffb3ad" fill-opacity="1" class="ColorScheme-Text"/>
+</svg>
