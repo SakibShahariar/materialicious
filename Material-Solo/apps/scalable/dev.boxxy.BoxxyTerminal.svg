@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <defs><style type="text/css">.ColorScheme-Text {color:#ffb3ad} .ColorScheme-Highlight {color:#ffb3ad}</style></defs>
+  <g fill="none" stroke="#ffb3ad" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" class="ColorScheme-Text">
+    <rect x="34" y="34" width="60" height="60" rx="15"/>
+    <path d="M46,54 L56,62 L46,70" stroke-width="10"/>
+    <path d="M64,62 L82,62" stroke-width="10"/>
+  </g>
+</svg>
