@@ -40,6 +40,16 @@ if [[ ! -f "$colors_file" ]]; then
     exit 1
 fi
 
+required_commands=(rg grep tr head find xargs sed nproc gsettings python3 mktemp gtk-update-icon-cache)
+missing_commands=()
+for command_name in "${required_commands[@]}"; do
+    command -v "$command_name" >/dev/null 2>&1 || missing_commands+=("$command_name")
+done
+if (( ${#missing_commands[@]} > 0 )); then
+    printf 'grad_icon: missing required command(s): %s\n' "${missing_commands[*]}" >&2
+    exit 1
+fi
+
 # ── 1. Read matugen accent ──────────────────────────────────────────────────
 target_hex=""
 on_primary_hex=""
