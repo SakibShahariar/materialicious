@@ -17,15 +17,20 @@ A monochrome icon theme family for Linux desktops, with two Matugen-aware color 
 - **Material-Solo** — flat icons with a single baked-in accent color. It does not automatically change when Matugen updates.
 - **Material-Grad** — duotone icons mapped from dark to accent colors. The included Matugen hook recolors this variant when the palette changes.
 
-Both themes combine a monochrome icon set with Tela-inspired folder shapes and additional application glyphs. Application artwork is derived from upstream icons; see [Sources and licensing](#sources-and-licensing).
+Both themes combine a monochrome icon set with Tela-inspired folder shapes and additional application glyphs. Application artwork is derived from upstream icons; see [Sources](#sources).
 
 ## Preview
 
-| Icon | Material-Solo | Material-Grad |
+Examples below are the actual SVG assets shipped in each theme.
+
+| Context | Material-Solo | Material-Grad |
 |---|---|---|
-| Firefox | <img src="Material-Solo/apps/scalable/firefox.svg" alt="Firefox in Material-Solo" width="64"> | <img src="Material-Grad/apps/scalable/firefox.svg" alt="Firefox in Material-Grad" width="64"> |
-| Files | <img src="Material-Solo/apps/scalable/org.gnome.Nautilus.svg" alt="Files in Material-Solo" width="64"> | <img src="Material-Grad/apps/scalable/org.gnome.Nautilus.svg" alt="Files in Material-Grad" width="64"> |
-| Folder | <img src="Material-Solo/places/scalable/folder.svg" alt="Folder in Material-Solo" width="64"> | <img src="Material-Grad/places/scalable/folder.svg" alt="Folder in Material-Grad" width="64"> |
+| Firefox | <img src="Material-Solo/apps/scalable/firefox.svg" alt="Firefox application icon in Material-Solo" width="64"> | <img src="Material-Grad/apps/scalable/firefox.svg" alt="Firefox application icon in Material-Grad" width="64"> |
+| Files | <img src="Material-Solo/apps/scalable/org.gnome.Nautilus.svg" alt="Files application icon in Material-Solo" width="64"> | <img src="Material-Grad/apps/scalable/org.gnome.Nautilus.svg" alt="Files application icon in Material-Grad" width="64"> |
+| Terminal | <img src="Material-Solo/apps/scalable/org.gnome.Terminal.svg" alt="Terminal application icon in Material-Solo" width="64"> | <img src="Material-Grad/apps/scalable/org.gnome.Terminal.svg" alt="Terminal application icon in Material-Grad" width="64"> |
+| Folder | <img src="Material-Solo/places/scalable/folder.svg" alt="Folder icon in Material-Solo" width="64"> | <img src="Material-Grad/places/scalable/folder.svg" alt="Folder icon in Material-Grad" width="64"> |
+| Downloads folder | <img src="Material-Solo/places/scalable/folder-download.svg" alt="Downloads folder icon in Material-Solo" width="64"> | <img src="Material-Grad/places/scalable/folder-download.svg" alt="Downloads folder icon in Material-Grad" width="64"> |
+| Computer device | <img src="Material-Solo/devices/scalable/computer.svg" alt="Computer device icon in Material-Solo" width="64"> | <img src="Material-Grad/devices/scalable/computer.svg" alt="Computer device icon in Material-Grad" width="64"> |
 
 ## Install
 
@@ -45,14 +50,14 @@ For Matugen integration and dependency setup, follow [SETUP.md](SETUP.md). Only 
 The generator `mono-icons.py` recolors SVG artwork. For example, to recolor an existing Grad icon:
 
 ```sh
-python3 mono-icons.py --dark "#000000" --light "#c9bfff" --radius 0.5 \
+python3 mono-icons.py --dark "#000000" --light "#c9bfff" --radius 0.5 \\
   --linear Material-Grad/apps/scalable/<icon>.svg
 ```
 
 To create a duotone icon from source artwork, place the source SVG in `sources/` and run:
 
 ```sh
-python3 mono-icons.py --dark "#000000" --light "#c9bfff" --radius 0.5 \
+python3 mono-icons.py --dark "#000000" --light "#c9bfff" --radius 0.5 \\
   --autoscale --outdir Material-Grad/apps/scalable sources/<app>.svg
 ```
 
@@ -60,7 +65,7 @@ The generator writes a `.mono.svg` output. Review it before replacing an existin
 
 ## Request an icon
 
-Before opening a request, check whether the icon already exists. Use the [missing-icon issue template](.github/ISSUE_TEMPLATE/missing-icon.yml) and include the application ID or icon name, icon context, and an official upstream source when available.
+Check whether the icon already exists, then use the [missing-icon issue template](.github/ISSUE_TEMPLATE/missing-icon.yml). Provide the app or icon name and explain what's missing; links and screenshots are optional.
 
 ## License
 
