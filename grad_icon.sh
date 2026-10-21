@@ -122,11 +122,13 @@ active=$(gsettings get org.gnome.desktop.interface icon-theme | tr -d "'") || {
     exit 1
 }
 if [[ "$need_sweep" == "1" ]]; then
+    # Arm the EXIT trap before changing the setting, so even a partially
+    # successful gsettings failure attempts to restore the previous theme.
+    theme_switched=1
     if ! gsettings set org.gnome.desktop.interface icon-theme Adwaita; then
         echo "grad_icon: cannot switch temporarily to Adwaita" >&2
         exit 1
     fi
-    theme_switched=1
 fi
 
 # ── 4. ColorScheme sweep — places (folders) ─────────────────────────────────
