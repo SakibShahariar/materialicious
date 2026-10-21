@@ -31,8 +31,16 @@ if [[ ! -f "$repo/mono-icons.py" || ! -d "$repo/sources" ]]; then
     echo "grad_icon: project root '$repo' must contain mono-icons.py and sources/; set MATERICIOUS_PROJECT" >&2
     exit 1
 fi
-if [[ ! -d "$mono_theme/apps" ]]; then
-    echo "grad_icon: installed theme not found at $mono_theme" >&2
+if [[ ! -d "$mono_theme/apps/scalable" || ! -d "$mono_theme/places" ]]; then
+    echo "grad_icon: installed theme is missing apps/scalable or places under $mono_theme" >&2
+    exit 1
+fi
+if ! mkdir -p -- "$(dirname -- "$state")"; then
+    echo "grad_icon: cannot create state directory" >&2
+    exit 1
+fi
+if [[ ! -w "$(dirname -- "$state")" ]]; then
+    echo "grad_icon: state directory is not writable" >&2
     exit 1
 fi
 if [[ ! -f "$colors_file" ]]; then
@@ -321,7 +329,10 @@ duotone_icons=(
 )
 
 if [[ "$need_sweep" == "1" ]]; then
-    jobs_file="$(mktemp)"
+    jobs_file="$(mktemp)" || {
+        echo "grad_icon: cannot create temporary jobs file" >&2
+        exit 1
+    }
     for icon in "${duotone_icons[@]}"; do
         src="$sources_dir/$icon.svg"
         [[ -f "$src" ]] || continue
@@ -449,6 +460,7 @@ org.gnome.Characters)            flags="piecewise 0.25:0.24,0.39:0.30,0.53:0.36,
     done
     if ! python3 "$generator" --dark "#000000" --light "$target_hex" --radius 0.5 \
         --autoscale --outdir "$target_apps" --jobs "$jobs_file"; then
+        rm -f -- "$target_apps/"*.mono.svg
         echo "grad_icon: duotone icon generation failed; state was not updated" >&2
         exit 1
     fi
@@ -456,7 +468,11 @@ org.gnome.Characters)            flags="piecewise 0.25:0.24,0.39:0.30,0.53:0.36,
     jobs_file=""
     # mono-icons.py outputs <name>.mono.svg — rename to the canonical icon name.
     for src in "$target_apps/"*.mono.svg; do
-        [[ -f "$src" ]] && mv -f "$src" "${src%.mono.svg}.svg"
+        [[ -f "$src" ]] || continue
+        if ! mv -f -- "$src" "${src%.mono.svg}.svg"; then
+            echo "grad_icon: failed to install generated icon $src" >&2
+            exit 1
+        fi
     done
 fi
 
