@@ -101,7 +101,7 @@ class MonoIconsTests(unittest.TestCase):
             (bin_dir / "gtk-update-icon-cache").write_text("#!/bin/sh\nexit 0\n")
             (bin_dir / "gsettings").write_text(
                 "#!/bin/sh\n"
-                'if [ "$1" = "get" ]; then printf "\'CustomTheme\\n"; exit 0; fi\n'
+                "if [ \"$1\" = \"get\" ]; then printf \"'CustomTheme'\\n\"; exit 0; fi\n"
                 'printf "%s\\n" "$*" >> "$HOME/gsettings.log"\n'
             )
             for executable in bin_dir.iterdir():
