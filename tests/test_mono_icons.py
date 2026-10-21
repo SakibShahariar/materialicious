@@ -47,6 +47,11 @@ class MonoIconsTests(unittest.TestCase):
         self.assertIn('/* fill: #ffffff; */', recolored)
         self.assertIn('.shape { fill:#c9bfff; }', recolored)
         self.assertIn('<path class="shape" d="M0 0h1v1z" fill="#000000"/>', recolored)
+        quoted_source = """<svg><path fill='#ffffff'/><path stroke="#ffffff"/></svg>"""
+        quoted_result, quoted_count = mono_icons.recolor_content(quoted_source, ramp)
+        self.assertEqual(quoted_count, 2)
+        self.assertIn("fill='#c9bfff'", quoted_result)
+        self.assertIn('stroke="#c9bfff"', quoted_result)
 
     def test_named_and_rgba_colors_are_reported_as_unsupported(self):
         source = (
