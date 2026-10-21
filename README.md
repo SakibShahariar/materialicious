@@ -7,7 +7,7 @@ A monochrome icon theme family for Linux desktops, with two Matugen-aware color 
 </p>
 
 <p align="center">
-  <a href="Material-Solo/LICENSE"><img alt="License: GPL-3.0-only" src="https://img.shields.io/badge/license-GPL--3.0--only-blue.svg"></a>
+  <a href="LICENSE"><img alt="License: GPL-3.0-only" src="https://img.shields.io/badge/license-GPL--3.0--only-blue.svg"></a>
   <img alt="Icon themes" src="https://img.shields.io/badge/themes-Solo%20%7C%20Grad-8b6cef">
   <img alt="Matugen" src="https://img.shields.io/badge/Matugen-supported-6c9">
 </p>
@@ -62,16 +62,20 @@ The generator writes a `.mono.svg` output. Review it before replacing an existin
 
 Before opening a request, check whether the icon already exists. Use the [missing-icon issue template](.github/ISSUE_TEMPLATE/missing-icon.yml) and include the application ID or icon name, icon context, and an official upstream source when available.
 
-## Sources and licensing
+## License
 
-Materialicious incorporates or derives artwork from several projects:
+**Project license:** [GPL-3.0-only](LICENSE)
 
-- [Yet Another Monochrome Icon Set (YAMIS)](https://bitbucket.org/dirn-typo/yet-another-monochrome-icon-set) by dirn, loosely based on Orion by Storm Rosenaa.
-- [Tela](https://github.com/vinceliuice/Tela-icon-theme) by vinceliuice, used for folder shapes and source glyphs.
-- [Papirus](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme), used for selected application and fallback glyphs.
-- [GNOME Adwaita / hicolor](https://gitlab.gnome.org/GNOME/adwaita-icon-theme), used for a small number of system glyphs.
-- [Bibata](https://github.com/ful1e5/Bibata_Cursor), whose Matugen-accent workflow is followed by the sibling cursor themes.
-- Individual application icons from Flathub and their respective upstream projects.
-- [Matugen](https://github.com/InioX/matugen), used to generate palette colors.
+Third-party artwork retains its respective upstream licenses and attribution requirements. Required YAMIS attribution is preserved in both themes’ `Authors` files.
 
-Materialicious is licensed under **GPL-3.0-only**; see the [Material-Solo](Material-Solo/LICENSE) and [Material-Grad](Material-Grad/LICENSE) license files. Third-party artwork remains subject to its own license and attribution requirements. Required YAMIS attribution is preserved in both themes’ `Authors` files.
+## Sources
+
+Materialicious incorporates or derives artwork from these projects:
+
+- [Yet Another Monochrome Icon Set (YAMIS)](https://bitbucket.org/dirn-typo/yet-another-monochrome-icon-set) — by dirn, loosely based on Orion by Storm Rosenaa.
+- [Tela](https://github.com/vinceliuice/Tela-icon-theme) — folder shapes and source glyphs.
+- [Papirus](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme) — selected application and fallback glyphs.
+- [GNOME Adwaita / hicolor](https://gitlab.gnome.org/GNOME/adwaita-icon-theme) — selected system glyphs.
+- [Bibata](https://github.com/ful1e5/Bibata_Cursor) — reference for the sibling cursor themes’ Matugen-accent workflow.
+- Application icons from Flathub and their respective upstream projects.
+- [Matugen](https://github.com/InioX/matugen) — palette generation.
