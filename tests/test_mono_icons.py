@@ -82,6 +82,47 @@ class MonoIconsTests(unittest.TestCase):
         self.assertNotIn("Traceback", result.stderr)
         self.assertIn("invalid --piecewise", result.stderr)
 
+    def test_hook_restores_icon_theme_and_keeps_state_on_generator_failure(self):
+        with tempfile.TemporaryDirectory() as directory:
+            home = Path(directory)
+            bin_dir = home / "bin"
+            bin_dir.mkdir()
+            theme = home / ".icons" / "Material-Grad"
+            (theme / "apps" / "scalable").mkdir(parents=True)
+            (theme / "places").mkdir(parents=True)
+            colors = home / ".config" / "matugen" / "matugen-colors.css"
+            colors.parent.mkdir(parents=True)
+            colors.write_text("--primary: #333333;\n--on_primary: #eeeeee;\n")
+            state = home / ".local" / "share" / "matugen-icon-themes" / "state"
+            state.parent.mkdir(parents=True)
+            state.write_text("#111111\n#222222\n")
+            (bin_dir / "rg").write_text("#!/bin/sh\nexit 1\n")
+            (bin_dir / "python3").write_text("#!/bin/sh\nexit 1\n")
+            (bin_dir / "gtk-update-icon-cache").write_text("#!/bin/sh\nexit 0\n")
+            (bin_dir / "gsettings").write_text(
+                "#!/bin/sh\n"
+                'if [ "$1" = "get" ]; then printf "\'CustomTheme\\n"; exit 0; fi\n'
+                'printf "%s\\n" "$*" >> "$HOME/gsettings.log"\n'
+            )
+            for executable in bin_dir.iterdir():
+                executable.chmod(0o755)
+            environment = {
+                **__import__("os").environ,
+                "HOME": str(home),
+                "PATH": f"{bin_dir}:/usr/bin:/bin",
+                "MATERICIOUS_PROJECT": str(ROOT),
+            }
+            result = subprocess.run(
+                ["bash", str(ROOT / "grad_icon.sh")],
+                capture_output=True, text=True, check=False, env=environment, timeout=30,
+            )
+            log = (home / "gsettings.log").read_text()
+            self.assertNotEqual(result.returncode, 0)
+            self.assertIn("icon-theme Adwaita", log)
+            self.assertIn("icon-theme CustomTheme", log)
+            self.assertEqual(state.read_text(), "#111111\n#222222\n")
+            self.assertIn("generation failed", result.stderr)
+
     def test_mixed_batch_inputs_generate_valid_file_and_fail_overall(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
