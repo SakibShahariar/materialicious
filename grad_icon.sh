@@ -50,6 +50,24 @@ if (( ${#missing_commands[@]} > 0 )); then
     exit 1
 fi
 
+active=""
+theme_switched=0
+jobs_file=""
+state_tmp=""
+cleanup() {
+    if [[ -n "${jobs_file:-}" ]]; then
+        rm -f -- "$jobs_file"
+    fi
+    if [[ -n "${state_tmp:-}" ]]; then
+        rm -f -- "$state_tmp"
+    fi
+    if [[ "${theme_switched:-0}" == "1" && -n "${active:-}" ]]; then
+        gsettings set org.gnome.desktop.interface icon-theme "$active" ||
+            echo "grad_icon: failed to restore icon theme '$active'" >&2
+    fi
+}
+trap cleanup EXIT
+
 # ── 1. Read matugen accent ──────────────────────────────────────────────────
 target_hex=""
 on_primary_hex=""
@@ -99,9 +117,16 @@ else
 fi
 
 # ── 3. Pre-toggle to Adwaita (only when the ColorScheme sweep will run) ────
-active=$(gsettings get org.gnome.desktop.interface icon-theme | tr -d "'")
+active=$(gsettings get org.gnome.desktop.interface icon-theme | tr -d "'") || {
+    echo "grad_icon: cannot read the current icon theme" >&2
+    exit 1
+}
 if [[ "$need_sweep" == "1" ]]; then
-    gsettings set org.gnome.desktop.interface icon-theme Adwaita
+    if ! gsettings set org.gnome.desktop.interface icon-theme Adwaita; then
+        echo "grad_icon: cannot switch temporarily to Adwaita" >&2
+        exit 1
+    fi
+    theme_switched=1
 fi
 
 # ── 4. ColorScheme sweep — places (folders) ─────────────────────────────────
@@ -137,7 +162,6 @@ if [[ "$need_sweep" == "1" ]]; then
         rg -0 -l -F "color:$old_on" "$mono_theme/apps" -g '*.svg' 2>/dev/null \
             | xargs -r -0 -P "$(nproc)" sed -i "s/color:$old_on/color:$on_primary_hex/gI"
     fi
-    printf '%s\n%s\n' "$target_hex" "$on_primary_hex" > "$state"
 fi
 
 # ── 6. Regenerate the duotone app icons from the repo's own sources ────────
@@ -421,16 +445,38 @@ org.gnome.Characters)            flags="piecewise 0.25:0.24,0.39:0.30,0.53:0.36,
         esac
         printf '%s\t%s\n' "$src" "$flags" >> "$jobs_file"
     done
-    python3 "$generator" --dark "#000000" --light "$target_hex" --radius 0.5 \
-        --autoscale --outdir "$target_apps" --jobs "$jobs_file" 2>/dev/null || true
-    rm -f "$jobs_file"
+    if ! python3 "$generator" --dark "#000000" --light "$target_hex" --radius 0.5 \
+        --autoscale --outdir "$target_apps" --jobs "$jobs_file"; then
+        echo "grad_icon: duotone icon generation failed; state was not updated" >&2
+        exit 1
+    fi
+    rm -f -- "$jobs_file"
+    jobs_file=""
     # mono-icons.py outputs <name>.mono.svg — rename to the canonical icon name.
     for src in "$target_apps/"*.mono.svg; do
         [[ -f "$src" ]] && mv -f "$src" "${src%.mono.svg}.svg"
     done
 fi
 
-# ── 7. Rebuild icon cache + restore theme ────────────────────────────────────
-gtk-update-icon-cache -f -t "$mono_theme" 2>/dev/null
-gsettings set org.gnome.desktop.interface icon-theme "$active"
-sleep 0.15
+# ── 7. Rebuild icon cache, then atomically record successful state ───────────
+if ! gtk-update-icon-cache -f -t "$mono_theme"; then
+    echo "grad_icon: failed to rebuild icon cache; state was not updated" >&2
+    exit 1
+fi
+mkdir -p -- "$(dirname -- "$state")" || {
+    echo "grad_icon: cannot create state directory" >&2
+    exit 1
+}
+state_tmp=$(mktemp "${state}.tmp.XXXXXX") || {
+    echo "grad_icon: cannot create temporary state file" >&2
+    exit 1
+}
+if ! printf '%s\n%s\n' "$target_hex" "$on_primary_hex" > "$state_tmp"; then
+    echo "grad_icon: cannot write temporary state file" >&2
+    exit 1
+fi
+if ! mv -f -- "$state_tmp" "$state"; then
+    echo "grad_icon: cannot commit state file" >&2
+    exit 1
+fi
+state_tmp=""
