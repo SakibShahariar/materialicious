@@ -224,7 +224,7 @@ PROTECTED_RE = re.compile(
     r"(?is)<(defs|mask|clipPath|pattern|marker|symbol)\b.*?</\1>",
 )
 
-COMMENT_RE = re.compile(r"(?s)<!--.*?-->")
+COMMENT_RE = re.compile(r"(?s)<!--.*?-->|/\*.*?\*/")
 COLOR_VALUE_RE = re.compile(
     r"""(?ix)\b(fill|stroke|stop-color)\s*:\s*([^;}]+)|"""
     r"""\b(fill|stroke|stop-color)\s*=\s*(["'])(.*?)\4"""
