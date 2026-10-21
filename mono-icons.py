@@ -174,7 +174,10 @@ def build_ramp(dark, light, radius, autoscale=False, src_min=0.0, src_max=1.0,
             # ~0.45) re-spreads the inverted tones so both the page body and
             # the pencil accents keep contrast instead of flattening to
             # midtones.
-            t = (lum - src_min) / src_span
+            if src_span > 1e-12:
+                t = (lum - src_min) / src_span
+            else:
+                t = (lum - dark_lum) / global_span
             t = 1.0 - t
             import math
             t = 1.0 / (1.0 + math.exp(-9.0 * (t - 0.45)))
