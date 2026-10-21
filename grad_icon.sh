@@ -102,7 +102,7 @@ fi
 # Fast path: accent unchanged on disk AND emblem matches → skip the ColorScheme
 # sweep; the duotone regeneration below always runs (10 icons, cheap) so icons
 # hardened to the current accent always exist.
-if [[ -n "$actual_hex" && "$actual_hex" == "$target_hex" && "$old_on" == "$on_primary_hex" ]]; then
+if [[ -n "$actual_hex" && "$actual_hex" == "$target_hex" && "$old_hex" == "$target_hex" && "$old_on" == "$on_primary_hex" ]]; then
     need_sweep=0
 else
     need_sweep=1
