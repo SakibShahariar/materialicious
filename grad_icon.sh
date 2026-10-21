@@ -6,13 +6,39 @@ set -uo pipefail
 # 2. Regenerate the 10 duotone app icons from Papirus sources via mono-icons.py
 # 3. Rebuild the icon cache
 
-# The project root (sources/ + mono-icons.py live there). The installed copy
-# runs from ~/Scripts, so resolve the project not the script's own directory.
-project=${MATERICIOUS_PROJECT:-$HOME/Projects/materialicious}
-repo="$project"
-colors_file=~/.config/matugen/matugen-colors.css
-state=~/.local/share/matugen-icon-themes/state
-mono_theme=~/.icons/Material-Grad
+# Resolve the project from an explicit override or the installed theme
+# symlink. Do not assume a particular clone location.
+mono_theme="$HOME/.icons/Material-Grad"
+if [[ -n ${MATERICIOUS_PROJECT:-} ]]; then
+    project=$MATERICIOUS_PROJECT
+elif [[ -L "$mono_theme" ]]; then
+    theme_realpath=$(readlink -f -- "$mono_theme" 2>/dev/null || true)
+    if [[ -n "$theme_realpath" ]]; then
+        project=$(dirname -- "$theme_realpath")
+    else
+        echo "grad_icon: cannot resolve $mono_theme; set MATERICIOUS_PROJECT" >&2
+        exit 1
+    fi
+else
+    script_dir=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)
+    project=$script_dir
+fi
+repo=$project
+colors_file="$HOME/.config/matugen/matugen-colors.css"
+state="$HOME/.local/share/matugen-icon-themes/state"
+
+if [[ ! -f "$repo/mono-icons.py" || ! -d "$repo/sources" ]]; then
+    echo "grad_icon: project root '$repo' must contain mono-icons.py and sources/; set MATERICIOUS_PROJECT" >&2
+    exit 1
+fi
+if [[ ! -d "$mono_theme/apps" ]]; then
+    echo "grad_icon: installed theme not found at $mono_theme" >&2
+    exit 1
+fi
+if [[ ! -f "$colors_file" ]]; then
+    echo "grad_icon: matugen colors file not found at $colors_file" >&2
+    exit 1
+fi
 
 # ── 1. Read matugen accent ──────────────────────────────────────────────────
 target_hex=""
