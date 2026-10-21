@@ -19,6 +19,14 @@ A monochrome icon theme family for Linux desktops, with two Matugen-aware color 
 
 Both themes combine a monochrome icon set with Tela-inspired folder shapes and additional application glyphs. Application artwork is derived from upstream icons; see [Sources and licensing](#sources-and-licensing).
 
+## Preview
+
+| Icon | Material-Solo | Material-Grad |
+|---|---|---|
+| Firefox | <img src="Material-Solo/apps/scalable/firefox.svg" alt="Firefox in Material-Solo" width="64"> | <img src="Material-Grad/apps/scalable/firefox.svg" alt="Firefox in Material-Grad" width="64"> |
+| Files | <img src="Material-Solo/apps/scalable/org.gnome.Nautilus.svg" alt="Files in Material-Solo" width="64"> | <img src="Material-Grad/apps/scalable/org.gnome.Nautilus.svg" alt="Files in Material-Grad" width="64"> |
+| Folder | <img src="Material-Solo/places/scalable/folder.svg" alt="Folder in Material-Solo" width="64"> | <img src="Material-Grad/places/scalable/folder.svg" alt="Folder in Material-Grad" width="64"> |
+
 ## Install
 
 Clone or download this repository, then run:
