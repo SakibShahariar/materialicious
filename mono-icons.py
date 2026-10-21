@@ -383,7 +383,8 @@ def main() -> int:
                     extra.append("--piecewise")
                     extra.append(args.piecewise)
                 if not os.path.isfile(src):
-                    print(f"mono-icons: skip (missing): {src}", file=sys.stderr)
+                    print(f"mono-icons: missing input: {src}", file=sys.stderr)
+                    n_fail += 1
                     continue
                 if run_job(src, extra):
                     n_fail += 1
@@ -399,7 +400,8 @@ def main() -> int:
     n_fail = 0
     for src in args.svgs:
         if not os.path.isfile(src):
-            print(f"mono-icons: skip (missing): {src}", file=sys.stderr)
+            print(f"mono-icons: missing input: {src}", file=sys.stderr)
+            n_fail += 1
             continue
         if run_job(src, []):
             n_fail += 1
