@@ -21,7 +21,7 @@ are added as glyphs traced from each app's official icon.
 
 ## Repository contents
 
-- `Material-Solo/` — flat theme (all icon contexts, ~1800 apps)
+- `Material-Solo/` — flat theme with application icons and system icon contexts
 - `Material-Grad/` — duotone theme (full standalone copy of Solo, with
   luminance-mapped app icons overriding the flat ones)
 - `mono-icons.py` — the duotone generator / recolourer. Used once at
@@ -33,12 +33,11 @@ are added as glyphs traced from each app's official icon.
 - `sources/` — the original colorful art used to *convert* new duotone icons
   (only consulted when adding an icon, never on accent recolor)
 - `install.sh` — symlinks both themes into `~/.icons`.
-- `tools/` — the icon-picker tracing workflow used to extract app glyphs
-  (including the hand-traced Flathub icons).
 - App icons live under each theme's `apps/` directory; system icon contexts
   (`actions/`, `categories/`, `devices/`, `emblems/`, `mimetypes/`,
   `places/`, `preferences/`, `status/`) hold mostly single-color traces of
-  the Tela and Papirus glyphs below.
+  the Tela and Papirus glyphs below. Counts are approximate: around 200 app glyphs
+are traced from Flathub icons, alongside the larger set of system-context icons.
 
 ## Install
 
@@ -61,7 +60,8 @@ icons keep the accent baked into the SVG files until you recolor them manually.
 
 ```sh
 python3 mono-icons.py --dark "#000000" --light "#c9bfff" --radius 0.5 \
-  --autoscale out/Material-Grad/apps/scalable/<icon>.svg
+  --linear Material-Grad/apps/scalable/<icon>.svg
+mv Material-Grad/apps/scalable/<icon>.mono.svg Material-Grad/apps/scalable/<icon>.svg
 ```
 
 **Adding a new duotone icon** (one-time, needs source art): place the colorful
@@ -107,12 +107,13 @@ authors. Many thanks to them:
   the Scheme/template generator that produces the accent colors used to
   recolor every icon.
 
-The `Authors` file additionally credits the base YAMIS author, as required
-by its license.
+The `Material-Solo/Authors` and `Material-Grad/Authors` files credit the base
+YAMIS author, as required by its license.
 
 ## License
 
-**GPL-3.0-only** — see `LICENSE`.
+**GPL-3.0-only** — see [Material-Solo/LICENSE](Material-Solo/LICENSE) and
+[Material-Grad/LICENSE](Material-Grad/LICENSE).
 
 This theme is a derivative work of GPL-3.0 projects (YAMIS by dirn, Tela by
 vinceliuice, Papirus, Bibata), so it is distributed under the GNU General
