@@ -1,6 +1,6 @@
 [Icon Theme]
 Name=Material-Solo
-Inherits=hicolor
+Inherits=Adwaita,hicolor
 Comment=Materialicious flat: Tela folders + single accent apps
 
 DisplayDepth=32
