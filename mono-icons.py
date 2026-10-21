@@ -46,7 +46,9 @@ Only `#rrggbb`, `#rgb` (expanded to `#rrggbb`) and `rgb(r,g,b)` fills/strokes
 are remapped, plus gradient `stop-color`s (style or attribute form) so
 gradient-bearing artwork is recolored onto the ramp too instead of leaking
 the source palette. `currentColor` and `url(#...)` layer refs are left as-is,
-but the gradient <stop> colors they resolve to are remapped.
+but the gradient <stop> colors they resolve to are remapped. Named CSS colors,
+`rgba()`, and other unsupported color syntax are left unchanged and reported
+as warnings so source colors do not fail silently.
 
 `--autoscale` (recommended): instead of mapping every icon onto the same
 global dark/light scale, each icon's brightest colour is stretched to the
