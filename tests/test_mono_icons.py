@@ -157,10 +157,11 @@ class MonoIconsTests(unittest.TestCase):
                 [sys.executable, str(ROOT / "mono-icons.py"), "--jobs", str(jobs), "--outdir", str(output)],
                 capture_output=True, text=True, check=False,
             )
-        self.assertEqual(result.returncode, 1)
-        self.assertTrue((output / "valid.mono.svg").is_file())
-        self.assertIn("missing input", result.stderr)
-        self.assertNotIn("Traceback", result.stderr)
+            # Assert before TemporaryDirectory cleans up the generated output.
+            self.assertEqual(result.returncode, 1)
+            self.assertTrue((output / "valid.mono.svg").is_file(), result.stdout + result.stderr)
+            self.assertIn("missing input", result.stderr)
+            self.assertNotIn("Traceback", result.stderr)
 
 
 if __name__ == "__main__":
