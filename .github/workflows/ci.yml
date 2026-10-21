@@ -23,3 +23,21 @@ jobs:
         run: python -m py_compile mono-icons.py
       - name: Check shell syntax
         run: bash -n grad_icon.sh install.sh
+      - name: Check for dangling icon symlinks
+        run: |
+          if find Material-Solo Material-Grad -xtype l -print -quit | grep -q .; then
+            echo "Found dangling symlinks in an icon theme" >&2
+            find Material-Solo Material-Grad -xtype l -print
+            exit 1
+          fi
+      - name: Install icon cache utility
+        run: |
+          if ! command -v gtk-update-icon-cache >/dev/null 2>&1; then
+            sudo apt-get update
+            sudo apt-get install -y libgtk-3-bin
+          fi
+      - name: Smoke-test icon theme metadata and cache generation
+        run: |
+          for theme in Material-Solo Material-Grad; do
+            gtk-update-icon-cache -f -t "$theme"
+          done
