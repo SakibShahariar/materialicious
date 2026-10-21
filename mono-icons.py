@@ -227,7 +227,7 @@ PROTECTED_RE = re.compile(
 COMMENT_RE = re.compile(r"(?s)<!--.*?-->")
 COLOR_VALUE_RE = re.compile(
     r"""(?ix)\b(fill|stroke|stop-color)\s*:\s*([^;}]+)|"""
-    r"""\b(fill|stroke|stop-color)\s*=\s*(["'])(.*?)\3"""
+    r"""\b(fill|stroke|stop-color)\s*=\s*(["'])(.*?)\4"""
 )
 
 
@@ -240,7 +240,7 @@ def unsupported_color_values(content: str) -> list[str]:
         "revert-layer", "transparent", "context-fill", "context-stroke",
     }
     for match in COLOR_VALUE_RE.finditer(content):
-        value = (match.group(2) if match.group(1) else match.group(4)).strip().lower()
+        value = (match.group(2) if match.group(1) else match.group(5)).strip().lower()
         if re.fullmatch(r"#[0-9a-f]{3}(?:[0-9a-f]{3})?", value):
             continue
         if re.fullmatch(r"rgb\(\s*\d+\s*,\s*\d+\s*,\s*\d+\s*\)", value):
