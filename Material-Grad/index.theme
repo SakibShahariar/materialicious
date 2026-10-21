@@ -1,6 +1,6 @@
 [Icon Theme]
 Name=Material-Grad
-Inherits=hicolor
+Inherits=Adwaita,hicolor
 Comment=Materialicious duotone: Tela folders + luminance-mapped accent apps
 
 DisplayDepth=32
