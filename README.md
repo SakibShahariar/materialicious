@@ -77,6 +77,13 @@ python3 mono-icons.py --dark "#000000" --light "#c9bfff" --radius 0.5 \
 mv Material-Grad/apps/scalable/<app>.mono.svg Material-Grad/apps/scalable/<app>.svg
 ```
 
+## Requesting an icon
+
+Use the [missing-icon request template](.github/ISSUE_TEMPLATE/missing-icon.yml).
+Include the application ID or icon name, the icon context, and an official
+upstream source link when possible. Check existing icons first to avoid
+duplicate requests.
+
 ## Sources and acknowledgement
 
 Every icon in this theme is derived from work by the following projects and
