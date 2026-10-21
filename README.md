@@ -36,8 +36,9 @@ are added as glyphs traced from each app's official icon.
 - App icons live under each theme's `apps/` directory; system icon contexts
   (`actions/`, `categories/`, `devices/`, `emblems/`, `mimetypes/`,
   `places/`, `preferences/`, `status/`) hold mostly single-color traces of
-  the Tela and Papirus glyphs below. Counts are approximate: around 200 app glyphs
-are traced from Flathub icons, alongside the larger set of system-context icons.
+  the Tela and Papirus glyphs below.
+  Counts are approximate: around 200 app glyphs are traced from Flathub icons,
+  alongside the larger set of system-context icons.
 
 ## Install
 
@@ -116,8 +117,7 @@ YAMIS author, as required by its license.
 [Material-Grad/LICENSE](Material-Grad/LICENSE).
 
 This theme is a derivative work of GPL-3.0 projects (YAMIS by dirn, Tela by
-vinceliuice, Papirus, Bibata), so it is distributed under the GNU General
-Public License v3 to stay license-compatible with its sources. Every
-original SVG in this theme is released under the same terms. App icons
-traced from Flathub are subject to their respective upstream licenses (see
-above).
+vinceliuice, Papirus, Bibata), and the theme is distributed under the GNU
+General Public License v3. This does not relicense third-party application
+artwork: app icons traced from Flathub remain subject to their respective
+upstream licenses (see above).
