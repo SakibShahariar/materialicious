@@ -59,6 +59,27 @@ class MonoIconsTests(unittest.TestCase):
         self.assertIn("rgba(1, 2, 3, 0.5)", unsupported)
         self.assertNotIn("blue", unsupported)
 
+    def test_missing_inputs_show_usage_instead_of_traceback(self):
+        result = subprocess.run(
+            [sys.executable, str(ROOT / "mono-icons.py")],
+            capture_output=True, text=True, check=False,
+        )
+        self.assertEqual(result.returncode, 2)
+        self.assertNotIn("Traceback", result.stderr)
+        self.assertIn("provide SVG input files", result.stderr)
+
+    def test_invalid_numeric_ranges_are_rejected(self):
+        with tempfile.TemporaryDirectory() as directory:
+            source = Path(directory) / "icon.svg"
+            source.write_text('<svg xmlns="http://www.w3.org/2000/svg"><path fill="#ffffff" d="M0 0h1v1z"/></svg>')
+            result = subprocess.run(
+                [sys.executable, str(ROOT / "mono-icons.py"), "--min-t", "0.8", "--max-t", "0.2", str(source)],
+                capture_output=True, text=True, check=False,
+            )
+        self.assertEqual(result.returncode, 2)
+        self.assertNotIn("Traceback", result.stderr)
+        self.assertIn("less than or equal to", result.stderr)
+
     def test_invalid_color_is_reported_without_traceback(self):
         with tempfile.TemporaryDirectory() as directory:
             source = Path(directory) / "icon.svg"
