@@ -304,9 +304,22 @@ def main() -> int:
                          "from the CLI and apply to every job.")
     args = ap.parse_args()
 
-    if not (args.dark.startswith("#") and args.light.startswith("#")):
-        print("mono-icons: dark/light must be #rrggbb", file=sys.stderr)
-        return 2
+    if args.jobs and args.svgs:
+        ap.error("--jobs cannot be combined with positional SVG inputs")
+    if not args.jobs and not args.svgs:
+        ap.error("provide SVG input files or use --jobs FILE")
+    if args.jobs and not os.path.isfile(args.jobs):
+        ap.error(f"jobs file does not exist or is not a file: {args.jobs}")
+
+    for option, value in (("--dark", args.dark), ("--light", args.light)):
+        if not re.fullmatch(r"#[0-9a-fA-F]{3}(?:[0-9a-fA-F]{3})?", value):
+            ap.error(f"{option} must be a valid #rgb or #rrggbb color")
+    if not 0.0 <= args.radius <= 1.0:
+        ap.error("--radius must be between 0 and 1")
+    if not (0.0 <= args.min_t <= 1.0 and 0.0 <= args.max_t <= 1.0):
+        ap.error("--min-t and --max-t must be between 0 and 1")
+    if args.min_t > args.max_t:
+        ap.error("--min-t must be less than or equal to --max-t")
 
     def run_job(src, extra: list):
         content = open(src, encoding="utf-8", errors="ignore").read()
@@ -327,10 +340,21 @@ def main() -> int:
         if args.piecewise:
             spec = args.piecewise
             piecewise = []
-            for pair in spec.split(","):
-                lum, t = pair.split(":")
-                piecewise.append((float(lum), float(t)))
-            piecewise.sort()
+            try:
+                for pair in spec.split(","):
+                    parts = pair.split(":")
+                    if len(parts) != 2:
+                        raise ValueError("expected LUM:T pairs")
+                    lum, t = (float(part) for part in parts)
+                    if not (0.0 <= lum <= 1.0 and 0.0 <= t <= 1.0):
+                        raise ValueError("luminance and ramp positions must be between 0 and 1")
+                    piecewise.append((lum, t))
+                piecewise.sort()
+                if any(left[0] == right[0] for left, right in zip(piecewise, piecewise[1:])):
+                    raise ValueError("source luminance breakpoints must be unique")
+            except ValueError as exc:
+                print(f"mono-icons: invalid --piecewise value {spec!r}: {exc}", file=sys.stderr)
+                return 1
         ramp = build_ramp(args.dark, args.light, args.radius,
                           autoscale=args.autoscale, src_min=src_min, src_max=src_max,
                           linear=args.linear,
