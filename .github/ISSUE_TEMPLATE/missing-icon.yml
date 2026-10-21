@@ -1,0 +1,55 @@
+name: Missing icon request
+description: Request an application icon or an icon mapping.
+title: "Icon request: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Before submitting, search the repository for the app ID or icon name.
+        Prefer the upstream project's official icon or documented source.
+  - type: input
+    id: app_id
+    attributes:
+      label: Application ID or icon name
+      description: Use the desktop file ID when available.
+      placeholder: org.example.Application
+    validations:
+      required: true
+  - type: dropdown
+    id: context
+    attributes:
+      label: Icon context
+      options:
+        - Applications
+        - Actions
+        - Categories
+        - Devices
+        - Emblems
+        - Places
+        - Status
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: source_url
+    attributes:
+      label: Upstream project or icon source
+      description: Link to the official project or icon asset, if available.
+      placeholder: https://example.org/
+    validations:
+      required: false
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected icon or appearance
+      description: Describe the app/logo and any useful visual details.
+      placeholder: The app's official icon is a blue square with a white mark.
+    validations:
+      required: true
+  - type: textarea
+    id: extra
+    attributes:
+      label: Additional context
+      description: Include desktop file names, package IDs, or screenshots if useful.
+    validations:
+      required: false
