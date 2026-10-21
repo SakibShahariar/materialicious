@@ -22,7 +22,7 @@ jobs:
       - name: Compile generator
         run: python -m py_compile mono-icons.py
       - name: Check shell syntax
-        run: bash -n grad_icon.sh install.sh
+        run: bash -n grad_icon.sh && bash -n install.sh
       - name: Check for dangling icon symlinks
         run: |
           if find Material-Solo Material-Grad -xtype l -print -quit | grep -q .; then
