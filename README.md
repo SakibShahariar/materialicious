@@ -66,4 +66,4 @@ Materialicious incorporates or derives artwork from several projects:
 - Individual application icons from Flathub and their respective upstream projects.
 - [Matugen](https://github.com/InioX/matugen), used to generate palette colors.
 
-The `Authors` files in both theme directories retain the required YAMIS attribution. Materialicious is distributed under **GPL-3.0-only**; see [Material-Solo/LICENSE](Material-Solo/LICENSE) and [Material-Grad/LICENSE](Material-Grad/LICENSE). This project license does not replace the separate licenses or ownership of third-party application artwork.
+Materialicious is licensed under **GPL-3.0-only**; see the [Material-Solo](Material-Solo/LICENSE) and [Material-Grad](Material-Grad/LICENSE) license files. Third-party artwork remains subject to its own license and attribution requirements. Required YAMIS attribution is preserved in both themes’ `Authors` files.
