@@ -224,6 +224,33 @@ PROTECTED_RE = re.compile(
     r"(?is)<(defs|mask|clipPath|pattern|marker|symbol)\b.*?</\1>",
 )
 
+COMMENT_RE = re.compile(r"(?s)<!--.*?-->")
+COLOR_VALUE_RE = re.compile(
+    r"""(?ix)\b(fill|stroke|stop-color)\s*:\s*([^;}]+)|"""
+    r"""\b(fill|stroke|stop-color)\s*=\s*(["'])(.*?)\3"""
+)
+
+
+def unsupported_color_values(content: str) -> list[str]:
+    """Return color syntaxes this recolorer intentionally leaves unchanged."""
+    content = COMMENT_RE.sub("", content)
+    unsupported = []
+    allowed_keywords = {
+        "none", "currentcolor", "inherit", "initial", "unset", "revert",
+        "revert-layer", "transparent", "context-fill", "context-stroke",
+    }
+    for match in COLOR_VALUE_RE.finditer(content):
+        value = (match.group(2) if match.group(1) else match.group(4)).strip().lower()
+        if re.fullmatch(r"#[0-9a-f]{3}(?:[0-9a-f]{3})?", value):
+            continue
+        if re.fullmatch(r"rgb\(\s*\d+\s*,\s*\d+\s*,\s*\d+\s*\)", value):
+            continue
+        if value in allowed_keywords or value.startswith(("url(", "var(")):
+            continue
+        if value not in unsupported:
+            unsupported.append(value)
+    return unsupported
+
 # A shape element whose tag carries no fill or stroke at all: give its
 # (black-default) rendering an explicit ink fill so the ramp can own it.
 SHAPE_TAG_RE = re.compile(
@@ -248,7 +275,8 @@ def inject_default_fill(content: str) -> str:
     def stash(m):
         protected.append(m.group(0))
         return f"@@PROTECT{len(protected) - 1}@@"
-    stashed = PROTECTED_RE.sub(stash, content)
+    stashed = COMMENT_RE.sub(stash, content)
+    stashed = PROTECTED_RE.sub(stash, stashed)
     injected = SHAPE_TAG_RE.sub(repl, stashed)
     for i, block in enumerate(protected):
         injected = injected.replace(f"@@PROTECT{i}@@", block)
@@ -271,7 +299,17 @@ def recolor_content(content: str, ramp) -> tuple[str, int]:
         else:
             return f'{prop}="{out}"'
 
-    new, n = COLOR_RE.subn(repl, inject_default_fill(content))
+    recolorable = inject_default_fill(content)
+    comments = []
+
+    def stash_comment(match):
+        comments.append(match.group(0))
+        return f"@@COMMENT{len(comments) - 1}@@"
+
+    masked = COMMENT_RE.sub(stash_comment, recolorable)
+    new, n = COLOR_RE.subn(repl, masked)
+    for index, comment in enumerate(comments):
+        new = new.replace(f"@@COMMENT{index}@@", comment)
     return new, n
 
 
@@ -331,6 +369,12 @@ def main() -> int:
 
     def run_job(src, extra: list):
         content = open(src, encoding="utf-8", errors="ignore").read()
+        for value in unsupported_color_values(content):
+            print(
+                f"mono-icons: warning: unsupported SVG color value {value!r} "
+                f"left unchanged: {src}",
+                file=sys.stderr,
+            )
         src_min, src_max = 0.0, 1.0
         if args.autoscale:
             try:
