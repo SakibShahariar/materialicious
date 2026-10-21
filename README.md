@@ -52,6 +52,10 @@ gsettings set org.gnome.desktop.interface icon-theme Material-Solo   # or Materi
 **Accent change** (runs automatically via matugen → `grad_icon.sh`): the
 existing duotone icons are re-coloured from themselves — no external sources.
 
+`Material-Solo` is intentionally static: the matugen hook recolors only
+`Material-Grad`. Changing the generated accent does not recolor Solo; its
+icons keep the accent baked into the SVG files until you recolor them manually.
+
 ```sh
 python3 mono-icons.py --dark "#000000" --light "#c9bfff" --radius 0.5 \
   --autoscale out/Material-Grad/apps/scalable/<icon>.svg
@@ -87,7 +91,8 @@ authors. Many thanks to them:
   icons with no Tela equivalent.
 - **GNOME Adwaita / hicolor** — a few system app icons sourced for glyph
   extraction.
-- **Bibata** — cursor theme by **ful1e5** ([github.com/ful1e5/Bibata_Cursor](https://github.com/ful1e5/Bibata_Cursor));
+- **Bibata** — cursor theme by **ful1e5**
+  ([github.com/ful1e5/Bibata_Cursor](https://github.com/ful1e5/Bibata_Cursor));
   the sibling `Bibata-Matugen-*` cursor themes in this repo follow the same
   matugen-accent workflow.
 - **Flathub app icons** — the ~200 application icons in `Material-Solo/apps/`
