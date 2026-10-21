@@ -36,7 +36,7 @@ class MonoIconsTests(unittest.TestCase):
             '<svg xmlns="http://www.w3.org/2000/svg">'
             '<!-- fill: #ffffff; <path d="M0 0h1v1z"/> -->'
             '<defs><path d="M0 0h1v1z"/></defs>'
-            '<style>.shape { fill: #ffffff; }</style>'
+            '<style>/* fill: #ffffff; */ .shape { fill: #ffffff; }</style>'
             '<path class="shape" d="M0 0h1v1z"/>'
             '</svg>'
         )
@@ -44,6 +44,7 @@ class MonoIconsTests(unittest.TestCase):
         recolored, _ = mono_icons.recolor_content(source, ramp)
         self.assertIn('<!-- fill: #ffffff; <path d="M0 0h1v1z"/> -->', recolored)
         self.assertIn('<defs><path d="M0 0h1v1z"/></defs>', recolored)
+        self.assertIn('/* fill: #ffffff; */', recolored)
         self.assertIn('.shape { fill:#c9bfff; }', recolored)
         self.assertIn('<path class="shape" d="M0 0h1v1z" fill="#000000"/>', recolored)
 
