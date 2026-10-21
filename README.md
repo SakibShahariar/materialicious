@@ -50,6 +50,9 @@ gsettings set org.gnome.desktop.interface icon-theme Material-Solo   # or Materi
 Only **Material-Grad** follows matugen accent changes automatically. **Material-Solo**
 keeps its baked-in accent and remains unchanged when the wallpaper palette changes.
 
+See [SETUP.md](SETUP.md) for dependency requirements and copy-paste steps to
+enable the matugen hook.
+
 ## Managing the duotone (Grad) icons
 
 **Accent change** (runs automatically via matugen → `grad_icon.sh`): the
