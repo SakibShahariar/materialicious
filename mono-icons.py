@@ -147,7 +147,8 @@ def build_ramp(dark, light, radius, autoscale=False, src_min=0.0, src_max=1.0,
     # Per-icon: stretch the source's own tone range across the ramp so the
     # darkest and brightest tones in THIS icon land on the dark/light ends
     # (telegram's light-blue circle + white plane no longer collapse together).
-    src_span = src_max - src_min or 1.0
+    # A degenerate span falls back to the global palette normalization below.
+    src_span = src_max - src_min
 
     def ramp(r, g, b):
         lum = luminance(r, g, b) / 255.0
@@ -178,9 +179,13 @@ def build_ramp(dark, light, radius, autoscale=False, src_min=0.0, src_max=1.0,
             import math
             t = 1.0 / (1.0 + math.exp(-9.0 * (t - 0.45)))
         else:
-            t = (lum - dark_lum) / global_span
-            if autoscale:
-                t = (t - src_min) / src_span
+            if autoscale and src_span > 1e-12:
+                # src_min/src_max are source luminance coordinates, not
+                # palette-normalized ramp coordinates. Normalize in the same
+                # coordinate space to avoid shifting the endpoints.
+                t = (lum - src_min) / src_span
+            else:
+                t = (lum - dark_lum) / global_span
             if linear:
                 t = max(0.0, min(1.0, t))
             else:
