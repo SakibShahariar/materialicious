@@ -47,6 +47,9 @@ are added as glyphs traced from each app's official icon.
 gsettings set org.gnome.desktop.interface icon-theme Material-Solo   # or Material-Grad
 ```
 
+Only **Material-Grad** follows matugen accent changes automatically. **Material-Solo**
+keeps its baked-in accent and remains unchanged when the wallpaper palette changes.
+
 ## Managing the duotone (Grad) icons
 
 **Accent change** (runs automatically via matugen → `grad_icon.sh`): the
