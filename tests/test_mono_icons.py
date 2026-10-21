@@ -31,6 +31,33 @@ class MonoIconsTests(unittest.TestCase):
         value = ramp(128, 128, 128)
         self.assertTrue(all(126 <= channel <= 130 for channel in value))
 
+    def test_comments_and_protected_elements_are_preserved(self):
+        source = (
+            '<svg xmlns="http://www.w3.org/2000/svg">'
+            '<!-- fill: #ffffff; <path d="M0 0h1v1z"/> -->'
+            '<defs><path d="M0 0h1v1z"/></defs>'
+            '<style>.shape { fill: #ffffff; }</style>'
+            '<path class="shape" d="M0 0h1v1z"/>'
+            '</svg>'
+        )
+        ramp = mono_icons.build_ramp("#000000", "#c9bfff", 0.5, linear=True)
+        recolored, _ = mono_icons.recolor_content(source, ramp)
+        self.assertIn('<!-- fill: #ffffff; <path d="M0 0h1v1z"/> -->', recolored)
+        self.assertIn('<defs><path d="M0 0h1v1z"/></defs>', recolored)
+        self.assertIn('.shape { fill:#c9bfff; }', recolored)
+        self.assertIn('<path class="shape" d="M0 0h1v1z" fill="#000000"/>', recolored)
+
+    def test_named_and_rgba_colors_are_reported_as_unsupported(self):
+        source = (
+            '<svg><path fill="red"/><path fill="rgba(1, 2, 3, 0.5)"/>'
+            '<!-- fill: blue -->'
+            '</svg>'
+        )
+        unsupported = mono_icons.unsupported_color_values(source)
+        self.assertIn("red", unsupported)
+        self.assertIn("rgba(1, 2, 3, 0.5)", unsupported)
+        self.assertNotIn("blue", unsupported)
+
     def test_invalid_color_is_reported_without_traceback(self):
         with tempfile.TemporaryDirectory() as directory:
             source = Path(directory) / "icon.svg"
