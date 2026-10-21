@@ -65,7 +65,7 @@ import sys
 
 COLOR_RE = re.compile(
     r"(?i)(fill|stroke|stop-color):\s*(#[0-9a-f]{6}|#[0-9a-f]{3}|rgb\(\s*\d+\s*,\s*\d+\s*,\s*\d+\s*\))"
-    r"|(?:\b(fill|stroke|stop-color)=)\"(#[0-9a-f]{6}|#[0-9a-f]{3}|rgb\(\s*\d+\s*,\s*\d+\s*,\s*\d+\s*\))\"",
+    r"""|(?:\b(fill|stroke|stop-color)\s*=\s*)(["'])(#[0-9a-f]{6}|#[0-9a-f]{3}|rgb\(\s*\d+\s*,\s*\d+\s*,\s*\d+\s*\))\4""",
 )
 
 # A shape element whose tag carries no fill or stroke at all: give its
@@ -213,7 +213,7 @@ def extract_colors(content: str) -> list[tuple[int, int, int]]:
         if m.group(1) is not None:
             val = m.group(2)
         else:
-            val = m.group(4)
+            val = m.group(5)
         if val.startswith("#"):
             r, g, b = hex_to_rgb(val)
         else:
@@ -290,7 +290,7 @@ def recolor_content(content: str, ramp) -> tuple[str, int]:
         if m.group(1) is not None:
             prop, val = m.group(1), m.group(2)
         else:
-            prop, val = m.group(3), m.group(4)
+            prop, val = m.group(3), m.group(5)
         if val.startswith("#"):
             r, g, b = hex_to_rgb(val)
         else:
@@ -299,7 +299,8 @@ def recolor_content(content: str, ramp) -> tuple[str, int]:
         if m.group(1) is not None:
             return f"{prop}:{out}"
         else:
-            return f'{prop}="{out}"'
+            quote = m.group(4)
+            return f"{prop}={quote}{out}{quote}"
 
     recolorable = inject_default_fill(content)
     comments = []
