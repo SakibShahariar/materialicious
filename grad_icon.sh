@@ -210,7 +210,6 @@ duotone_icons=(
     brave-origin-nightly
     dev.boxxy.BoxxyTerminal
     nekobox
-    org.kde.optiimage
     wechat
     qbittorrent
     vlc
