@@ -225,6 +225,7 @@ duotone_icons=(
     gparted
     io.bassi.Amberol
     io.github.SakibShahariar.MediaGrab
+    io.github.sakibshahariar.Faultline
     libreoffice-writer
     org.gnome.Calendar
     org.gnome.DiskUtility
