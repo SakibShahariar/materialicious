@@ -224,6 +224,7 @@ duotone_icons=(
     com.mattjakeman.ExtensionManager
     gparted
     io.bassi.Amberol
+    io.github.SakibShahariar.MediaGrab
     libreoffice-writer
     org.gnome.Calendar
     org.gnome.DiskUtility
