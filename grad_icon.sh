@@ -209,6 +209,7 @@ duotone_icons=(
     dev.zed.Zed
     brave-origin-nightly
     dev.boxxy.BoxxyTerminal
+    nekobox
     wechat
     qbittorrent
     vlc
