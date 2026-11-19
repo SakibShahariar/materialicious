@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
-  <defs><style type="text/css">.ColorScheme-Text {color:#f1be6d} .ColorScheme-Highlight {color:#f1be6d}</style></defs>
+  <defs><style type="text/css">.ColorScheme-Text {color:#f1b3e6} .ColorScheme-Highlight {color:#f1b3e6}</style></defs>
   <g class="ColorScheme-Text" transform="rotate(-8 61 49)">
     <rect x="24" y="24" width="80" height="52" rx="11" fill="none" stroke="currentColor" stroke-width="9"/>
     <g fill="currentColor">
