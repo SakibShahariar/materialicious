@@ -208,6 +208,7 @@ duotone_icons=(
     firefox-nightly
     dev.zed.Zed
     brave-origin-nightly
+    dev.boxxy.BoxxyTerminal
     wechat
     qbittorrent
     vlc
