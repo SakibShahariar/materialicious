@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <g fill="#2a2a2a" stroke="#2a2a2a" stroke-width="5" stroke-linejoin="round">
+    <path d="M34 38 24 8l32 20z"/>
+    <path d="M88 28 114 8l-12 30z"/>
+    <circle cx="64" cy="50" r="28"/>
+    <circle cx="99" cy="54" r="10"/>
+    <path d="M18 70 4 54l30-6 12 22z"/>
+    <path d="M110 70 124 54 94 48l-12 22z"/>
+    <rect x="18" y="68" width="92" height="46" rx="4"/>
+  </g>
   <g fill="#e6e6e6">
     <path d="M34 38 24 8l32 20z"/>
     <path d="M88 28 114 8l-12 30z"/>
