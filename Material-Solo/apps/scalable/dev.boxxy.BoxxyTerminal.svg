@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
-  <defs><style type="text/css">.ColorScheme-Text {color:#f1b3e6} .ColorScheme-Highlight {color:#f1b3e6}</style></defs>
-  <g fill="none" stroke="#f1b3e6" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" class="ColorScheme-Text">
-    <rect x="34" y="34" width="60" height="60" rx="15"/>
-    <path d="M46,54 L56,62 L46,70" stroke-width="10"/>
-    <path d="M64,62 L82,62" stroke-width="10"/>
+  <defs>
+    <style type="text/css">.ColorScheme-Text {color:#f1b3e6} .ColorScheme-Highlight {color:#f1b3e6}</style>
+    <mask id="cutouts">
+      <rect x="0" y="0" width="128" height="128" fill="#fff"/>
+      <path d="M30 70 44 82 30 94M52 94h26" fill="none" stroke="#000" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="56" cy="41" r="3" fill="#000"/>
+      <circle cx="77" cy="39" r="3" fill="#000"/>
+    </mask>
+  </defs>
+  <g class="ColorScheme-Text" mask="url(#cutouts)">
+    <path d="M42 52a22 22 0 0 1 44 0z" fill="currentColor" fill-opacity=".45"/>
+    <path d="M34 50C28 34 38 18 56 15c14-3 32 3 40 17 3 6 2 13-1 18-7-11-16-16-26-15-12 1-22 7-35 15z" fill="currentColor" fill-opacity=".85"/>
+    <path d="M35 46 24 33l15 5z" fill="currentColor" fill-opacity=".85"/>
+    <rect x="12" y="50" width="104" height="64" rx="14" fill="currentColor" fill-opacity=".9"/>
   </g>
 </svg>
