@@ -226,6 +226,7 @@ duotone_icons=(
     io.bassi.Amberol
     io.github.SakibShahariar.MediaGrab
     io.github.sakibshahariar.Faultline
+    io.github.sakibshahariar.RpmDrop
     libreoffice-writer
     org.gnome.Calendar
     org.gnome.DiskUtility

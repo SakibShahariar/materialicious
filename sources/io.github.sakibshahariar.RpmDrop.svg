@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 128 128">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#204a7d"/>
+      <stop offset="1" stop-color="#3f83c4"/>
+    </linearGradient>
+    <linearGradient id="boxFront" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#dbe5f2"/>
+    </linearGradient>
+    <linearGradient id="boxTop" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f3f7fd"/>
+      <stop offset="1" stop-color="#cedcef"/>
+    </linearGradient>
+    <linearGradient id="arrowGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffc061"/>
+      <stop offset="1" stop-color="#f2931f"/>
+    </linearGradient>
+    <filter id="drop" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="2.5" stdDeviation="2.5" flood-color="#0c2340" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <!-- Background squircle -->
+  <rect x="4" y="4" width="120" height="120" rx="27" fill="url(#bg)"/>
+  <!-- Subtle top sheen -->
+  <path d="M4 31 A27 27 0 0 1 31 4 H97 A27 27 0 0 1 124 31 V41 C96 31 32 31 4 41 Z"
+        fill="#ffffff" opacity="0.06"/>
+
+  <!-- Package -->
+  <g filter="url(#drop)">
+    <!-- Open lid / top face -->
+    <path d="M34 57 L47 45 H81 L94 57 Z" fill="url(#boxTop)"/>
+    <!-- Front face -->
+    <path d="M34 57 H94 V92 a5 5 0 0 1 -5 5 H39 a5 5 0 0 1 -5 -5 Z" fill="url(#boxFront)"/>
+    <!-- Vertical tape seam -->
+    <rect x="61" y="57" width="6" height="40" fill="#bccbe0" opacity="0.75"/>
+    <!-- Horizontal band -->
+    <rect x="34" y="71" width="60" height="6" fill="#c8d6e8" opacity="0.85"/>
+  </g>
+
+  <!-- Drop / install arrow -->
+  <path d="M59 20 H69 V49 H77 L64 70 L51 49 H59 Z" fill="url(#arrowGrad)"/>
+</svg>
