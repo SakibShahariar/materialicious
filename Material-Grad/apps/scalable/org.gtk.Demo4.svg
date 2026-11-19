@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
-  <path d="M64 8 116 37 64 66 12 37z" fill="#e9adde"/>
-  <path d="M12 40 64 69v47L12 87z" fill="#70536a"/>
-  <path d="M64 69 116 40v47L64 116z" fill="#080608"/>
+  <g stroke="#080608" stroke-width="2" stroke-linejoin="round">
+    <path d="M64 8 116 37 64 66 12 37z" fill="#e9adde"/>
+    <path d="M12 40 64 69v47L12 87z" fill="#c693bd"/>
+    <path d="M64 69 116 40v47L64 116z" fill="#4c3949"/>
+    <path d="M64 8 116 37 64 66 12 37z" fill="none" stroke="#dba3d1" stroke-width="1"/>
+  </g>
 </svg>

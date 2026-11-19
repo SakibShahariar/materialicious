@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
-  <path d="M26 8h76a18 18 0 0 1 18 18v76a18 18 0 0 1-18 18H26A18 18 0 0 1 8 102V26A18 18 0 0 1 26 8z" fill="#080608"/>
-  <path d="M26 8h44v112H26A18 18 0 0 1 8 102V26A18 18 0 0 1 26 8z" fill="#e9adde"/>
+  <path d="M26 8h76a18 18 0 0 1 18 18v76a18 18 0 0 1-18 18H26A18 18 0 0 1 8 102V26A18 18 0 0 1 26 8z" fill="#e4aada" stroke="#080608" stroke-width="3"/>
+  <path d="M26 8h32v112H26A18 18 0 0 1 8 102V26A18 18 0 0 1 26 8z" fill="#cb97c2"/>
+  <path d="M58 8h24v112H58z" fill="#8b6785"/>
+  <path d="M82 8h20a18 18 0 0 1 18 18v76a18 18 0 0 1-18 18H82z" fill="#362834"/>
+  <path d="M26 8h76a18 18 0 0 1 18 18v4H8V26A18 18 0 0 1 26 8z" fill="#e9adde" opacity=".35"/>
 </svg>
