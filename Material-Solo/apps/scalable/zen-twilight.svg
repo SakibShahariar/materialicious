@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
   <defs>
-    <style type="text/css">.ColorScheme-Text {color:#ffb3ad} .ColorScheme-Highlight {color:#ffb3ad}</style>
+    <style type="text/css">.ColorScheme-Text {color:#f1b3e6} .ColorScheme-Highlight {color:#f1b3e6}</style>
   </defs>
-  <g transform="translate(0.000000,128.000000) scale(0.100000,-0.100000)" fill="#ffb3ad" stroke="none" class="ColorScheme-Text">
+  <g transform="translate(0.000000,128.000000) scale(0.100000,-0.100000)" fill="#f1b3e6" stroke="none" class="ColorScheme-Text">
     <path d="M523 1116 c-83 -20 -163 -67 -228 -131 -192 -192 -193 -497 -2 -689
 99 -98 211 -146 347 -146 135 0 248 47 345 145 98 97 145 210 145 345 0 316
 -299 550 -607 476z m281 -114 c90 -42 149 -100 193 -188 153 -310 -137 -655
