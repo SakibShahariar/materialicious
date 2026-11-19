@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
   <defs><style type="text/css">.ColorScheme-Text {color:#f1b3e6} .ColorScheme-Highlight {color:#f1b3e6}</style></defs>
-  <g class="ColorScheme-Text" fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M64 13 108 38v50L64 113 20 88V38z"/>
-    <path d="M20 38 64 63l44-25M64 63v50"/>
+  <g class="ColorScheme-Text" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linejoin="round">
+    <path d="M64 11 112 39 64 66 16 39z"/>
+    <path d="M16 42 64 69v45L16 87z"/>
+    <path d="M64 69 112 42v45L64 114z"/>
   </g>
 </svg>
