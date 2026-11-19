@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <defs><style type="text/css">.ColorScheme-Text {color:#f1be6d} .ColorScheme-Highlight {color:#f1be6d}</style></defs>
+  <g class="ColorScheme-Text" transform="rotate(-8 61 49)">
+    <rect x="24" y="24" width="80" height="52" rx="11" fill="none" stroke="currentColor" stroke-width="9"/>
+    <g fill="currentColor">
+      <rect x="29" y="32" width="6" height="8" rx="3"/>
+      <rect x="29" y="45" width="6" height="8" rx="3"/>
+      <rect x="29" y="58" width="6" height="8" rx="3"/>
+      <rect x="88" y="32" width="6" height="8" rx="3"/>
+      <rect x="88" y="45" width="6" height="8" rx="3"/>
+      <rect x="88" y="58" width="6" height="8" rx="3"/>
+      <path d="M52 33 86 49 52 65z"/>
+    </g>
+  </g>
+  <path class="ColorScheme-Text" d="M64 80v26M50 92l14 14 14-14" fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
