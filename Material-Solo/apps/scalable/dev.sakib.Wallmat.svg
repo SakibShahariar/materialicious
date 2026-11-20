@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+ <style id="current-color-scheme" type="text/css">
+  .ColorScheme-Text { color:#89d6b8; } .ColorScheme-Highlight { color:#89d6b8; } .ColorScheme-NeutralText { color:#89d6b8; } .ColorScheme-PositiveText { color:#89d6b8; } .ColorScheme-NegativeText { color:#89d6b8; }
+ </style>
+ <g fill="none" stroke="currentColor" class="ColorScheme-Text" stroke-width="5">
+  <rect x="13" y="13" width="102" height="102" rx="24"/>
+  <g transform="rotate(-10 64 64)"><rect x="32" y="26" width="62" height="74" rx="9"/></g>
+  <g transform="rotate(8 64 64)"><rect x="34" y="26" width="62" height="74" rx="9"/></g>
+  <rect x="33" y="29" width="62" height="70" rx="9"/>
+ </g>
+ <g fill="currentColor" class="ColorScheme-Text">
+  <circle cx="76" cy="48" r="7"/>
+  <path d="M37 85 L52 65 L64 76 L78 60 L91 78 L91 92 L37 92 Z"/>
+ </g>
+</svg>

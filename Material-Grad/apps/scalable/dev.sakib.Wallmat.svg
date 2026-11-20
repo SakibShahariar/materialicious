@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <!-- Grayscale source for the Material-Grad duotone generator. -->
+  <rect x="10" y="10" width="108" height="108" rx="26" fill="#090607"/>
+  <g transform="rotate(-10 64 64)">
+    <rect x="32" y="26" width="62" height="74" rx="9" fill="#714e5d"/>
+  </g>
+  <g transform="rotate(8 64 64)">
+    <rect x="34" y="26" width="62" height="74" rx="9" fill="#bf849e"/>
+  </g>
+  <rect x="33" y="29" width="62" height="70" rx="9" fill="#f5aacb"/>
+  <circle cx="76" cy="48" r="8" fill="#090607"/>
+  <path d="M33 84 L52 60 L64 73 L78 55 L95 78 L95 99 L33 99 Z" fill="#090607"/>
+  <path d="M33 92 L49 79 L62 90 L79 74 L95 90 L95 99 L33 99 Z" fill="#1e1519"/>
+</svg>
