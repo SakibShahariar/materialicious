@@ -208,9 +208,6 @@ duotone_icons=(
     firefox-nightly
     dev.zed.Zed
     brave-origin-nightly
-    dev.boxxy.BoxxyTerminal
-    io.github.giantpinkrobots.varia
-    nekobox
     wechat
     qbittorrent
     vlc
@@ -225,7 +222,6 @@ duotone_icons=(
     org.gnome.Meld
     org.gnome.SimpleScan
     com.mattjakeman.ExtensionManager
-    com.belmoussaoui.Obfuscate
     gparted
     io.bassi.Amberol
     io.github.SakibShahariar.MediaGrab
@@ -235,7 +231,6 @@ duotone_icons=(
     org.gnome.Calendar
     org.gnome.DiskUtility
     org.gnome.clocks
-    org.gtk.Demo4
     org.gnome.tweaks
     mpv
     org.gnome.Boxes

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <!-- Simple package/cube icon for COPR hub -->
+  <rect x="6" y="10" width="36" height="30" rx="4" ry="4" fill="#070709"/>
+  <path d="M6 16 L24 6 L42 16 L24 26 Z" fill="#2a2835"/>
+  <path d="M6 16 L24 26 L24 40 L6 30 Z" fill="#0d0c11"/>
+  <path d="M42 16 L24 26 L24 40 L42 30 Z" fill="#18171e"/>
+  <!-- hub dot -->
+  <circle cx="24" cy="22" r="3" fill="#c2b8f6"/>
+</svg>
