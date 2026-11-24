@@ -225,6 +225,7 @@ duotone_icons=(
     gparted
     io.bassi.Amberol
     io.github.SakibShahariar.MediaGrab
+    io.github.SakibShahariar.Viloja
     io.github.sakibshahariar.Faultline
     io.github.sakibshahariar.RpmDrop
     libreoffice-writer
